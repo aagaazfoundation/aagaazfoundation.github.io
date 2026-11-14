@@ -9,9 +9,21 @@ You never need to touch the design. Every change below is a change to a text fil
 3. Click the **pencil** icon (top right of the file).
 4. Make your change.
 5. Click **Commit changes** (green button), then **Commit changes** again.
-6. Wait about a minute. Refresh the live site.
+6. Wait about two minutes. Refresh the live site.
 
 **If something goes wrong:** every change is saved in the file's **History**. Open the file → **History** → pick the last good version → **⋯** → **View file** → copy it back. Nothing is ever lost.
+
+## Getting an update from Claude
+
+When Claude changes the site for you, you get a file called `site-upload.zip`.
+
+1. In the repository, tap **Add file** → **Upload files**.
+2. Choose `site-upload.zip`. Don't unzip it and don't rename it.
+3. Tap **Commit changes**.
+
+The **Publish site** run in the Actions tab unpacks it, replaces the old site files and publishes. About two minutes later the site is updated.
+
+Always start Claude from the latest version: if you edited anything on GitHub yourself, tell Claude, or upload those files to the chat, so your edit isn't overwritten by the next zip.
 
 ## What lives where
 
@@ -32,7 +44,7 @@ You never need to touch the design. Every change below is a change to a text fil
 | Menu labels, button text, footer small print | `_data/ui/en.yml` |
 | The phase 2 directory | `_data/directory.yml` |
 
-Leave `_layouts`, `_includes` and `assets/css` alone. Those are the design. The one exception: the site's colours are a short list at the top of `assets/css/site.css`, each with a note saying what it is for. Changing a value there changes it everywhere.
+Leave `_layouts`, `_includes`, `.github` and `assets/css` alone. Those are the design. The one exception: the site's colours are a short list at the top of `assets/css/site.css`, each with a note saying what it is for. Changing a value there changes it everywhere.
 
 ## The top of every page file
 

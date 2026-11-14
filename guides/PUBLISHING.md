@@ -32,23 +32,33 @@ Create a new email address for Aagaaz (for example a Gmail). Use it for GitHub, 
 3. Choose **Public**. (Free publishing needs this. The site has no secrets in it.)
 4. Leave everything else unticked. Click **Create repository**.
 
-### A4. Upload the files
+### A4. Add the publishing file (once)
 
-1. Unzip `aagaaz-site.zip` on your laptop. Open the `aagaaz-site` folder so you can see what is inside it (`_config.yml`, `index.md`, `assets`, and so on).
-2. On your new repository page, click the link **uploading an existing file**.
-3. Select **everything inside** the `aagaaz-site` folder and drag it onto the page. Drag the contents, not the folder itself.
-4. Wait for the upload to finish. Scroll down and click **Commit changes**.
+The site is uploaded as one zip file, which works from an iPad or a laptop. A small publishing file unpacks it into the right folders and puts the site online. You add that file once.
+
+1. In the repository, tap **Add file** → **Create new file**.
+2. In the file name box, type exactly: `.github/workflows/publish.yml`
+   Each `/` you type turns the part before it into a folder. That is expected.
+3. Open `publish.yml` (sent to you with this guide), copy all of it, and paste it into the big text box.
+4. Tap **Commit changes**, then **Commit changes** again.
 
 ### A5. Switch publishing on
 
-1. In the repository, click **Settings** (the tab along the top) → **Pages** (left-hand list).
-2. Under **Build and deployment**, set **Source** to **Deploy from a branch**.
-3. Set **Branch** to **main** and the folder to **/ (root)**. Click **Save**.
-4. Wait two minutes. Refresh the page. It will show **Your site is live at https://YOURUSERNAME.github.io**.
+1. Tap **Settings** (the tab along the top) → **Pages** (left-hand list).
+2. Under **Build and deployment**, set **Source** to **GitHub Actions**. (Not "Deploy from a branch".)
 
-Open that link on your phone. That is your working site.
+### A6. Upload the site
 
-**If it does not appear:** click the **Actions** tab. A red cross means the build failed; click it to read the message, and send it to me.
+1. Go back to the **Code** tab. Tap **Add file** → **Upload files**.
+2. Choose `site-upload.zip`. **Do not unzip it.** Keep the name exactly `site-upload.zip`.
+3. Tap **Commit changes**.
+4. Tap the **Actions** tab. A run called **Publish site** starts. It unpacks the zip, then builds and publishes. It takes about two minutes. A green tick means done.
+
+Open `https://YOURUSERNAME.github.io` on your phone. That is your working site.
+
+**If it fails:** a red cross appears in the Actions tab. Tap it, take screenshots of the error, and send them to me.
+
+**Every later update from me works the same way:** I send you a new `site-upload.zip`, you upload it (step A6), and the site updates. Small text edits you can still make directly on GitHub, and those publish on their own too.
 
 ---
 
@@ -71,7 +81,7 @@ Do Part A first, so the site already works on its free github.io address.
 
 ### B2. Tell GitHub about the domain
 
-1. In your repository: **Settings** → **Pages** → **Custom domain**. Type your domain (for example `aagaazfoundation.org`) and click **Save**. GitHub adds a small file called `CNAME` to the site. Leave it there.
+1. In your repository: **Settings** → **Pages** → **Custom domain**. Type `aagaazfoundation.org` and tap **Save**.
 
 ### B3. Point the domain at GitHub (in GoDaddy)
 
