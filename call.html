@@ -1,0 +1,3 @@
+{%- assign _h = site.data.helplines | where: "id", include.line | first -%}
+<a class="tel" href="tel:{{ _h.number }}">{{ _h.number }}</a>
+{%- comment -%} Usage in any page:  {% include call.html line="child" %}  (ids are in _data/helplines.yml) {%- endcomment -%}

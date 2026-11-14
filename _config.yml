@@ -1,0 +1,75 @@
+# ─────────────────────────────────────────────────────────────
+#  AAGAAZ FOUNDATION WEBSITE: MAIN SETTINGS
+#  Change the text after each colon. Keep the quote marks.
+#  Lines starting with # are notes for you and are ignored.
+# ─────────────────────────────────────────────────────────────
+
+title: "Aagaaz Foundation"
+tagline: "From awareness to action"
+description: "Clear steps, your rights and where to go after sexual harassment or abuse."
+founder_name: "Ayesha Bindal"
+
+# Your web address once you have bought a domain, for example "https://aagaazfoundation.org"
+# Leave as "" until then.
+url: ""
+baseurl: ""
+
+# Contact. While this is "", the About page says contact details are coming soon
+# and never shows an empty link.
+contact_email: "contact.aagaazfoundation@gmail.com"
+instagram: ""            # just the handle, without the @
+
+# Where the Quick exit button sends people. Keep it boring.
+quick_exit_url: "https://www.google.com/search?q=weather+today"
+
+# LEGAL REVIEW
+# While done is false:
+#   - every law page shows a "being checked by a lawyer" note
+#   - search engines are asked not to list the site
+# When your lawyer has signed off, set done to true and fill in the other two lines.
+legal_review:
+  done: false
+  reviewer: ""           # for example "a practising advocate at the Punjab and Haryana High Court"
+  date: ""               # for example "2026-12-05"
+
+# LANGUAGES
+# To switch Hindi on, remove the # from the two hi lines. See guides/HOW-TO-UPDATE.md first.
+languages:
+  - code: en
+    name: "English"
+#  - code: hi
+#    name: "हिन्दी"
+default_lang: en
+
+# ─────────────────────────────────────────────────────────────
+#  Everything below here is plumbing. You should not need to change it.
+# ─────────────────────────────────────────────────────────────
+markdown: kramdown
+future: true          # lets workshop files carry dates that are still ahead
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+collections:
+  toolkit:
+    output: true
+    permalink: /toolkit/:name/
+  workshops:
+    output: true
+    permalink: /workshops/:name/
+
+defaults:
+  - scope: { path: "" }
+    values: { layout: page, lang: en }
+  - scope: { path: "", type: toolkit }
+    values: { layout: chapter, lang: en }
+  - scope: { path: "", type: workshops }
+    values: { layout: workshop, lang: en }
+
+exclude:
+  - README.md
+  - guides
+  - templates
+  - Gemfile
+  - Gemfile.lock
+  - vendor

@@ -1,0 +1,22 @@
+{%- assign t = site.data.ui[page.lang] | default: site.data.ui.en -%}
+{%- if site.data.toolkit.pdf and site.data.toolkit.pdf != "" %}
+<p><a class="button" href="{{ '/assets/downloads/' | append: site.data.toolkit.pdf | relative_url }}">{{ t.download_pdf }}{% if site.data.toolkit.pdf_size != "" %} · {{ site.data.toolkit.pdf_size }}{% endif %}</a></p>
+{%- endif %}
+<ol class="contents">
+{%- for ch in site.data.toolkit.chapters -%}
+  {%- assign doc = site.toolkit | where: "slug", ch.slug | where: "lang", page.lang | first -%}
+  {%- assign short = site.pages | where: "toolkit_chapter", ch.slug | where: "lang", page.lang | first -%}
+  {%- assign name = ch.title[page.lang] | default: ch.title.en %}
+  <li class="contents__item">
+    <span class="chip chip--{{ ch.colour }}" aria-hidden="true">{{ ch.mark }}</span>
+    <span class="contents__text">
+      {%- if doc %}
+      <a class="contents__title" href="{{ doc.url | relative_url }}">{{ doc.title | default: name }}</a>
+      {%- else %}
+      <span class="contents__title">{{ name }}</span>
+      <span class="contents__status">{{ t.coming_soon }}{% if short %} · <a href="{{ short.url | relative_url }}">{{ t.read_short }}</a>{% endif %}</span>
+      {%- endif %}
+    </span>
+  </li>
+{%- endfor %}
+</ol>

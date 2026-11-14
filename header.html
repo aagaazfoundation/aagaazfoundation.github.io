@@ -1,0 +1,21 @@
+{%- assign t = site.data.ui[page.lang] | default: site.data.ui.en -%}
+{%- include find-page.html ref="home" -%}
+<header class="site-header">
+  <div class="wrap site-header__in">
+    <a class="brand" href="{{ found.url | relative_url }}" aria-label="{{ t.home_label }}"><span class="brand__tag">{{ site.title }}</span></a>
+    {%- if site.languages.size > 1 and page.ref %}
+    <p class="langs" aria-label="{{ t.languages_label }}">
+      {%- assign _all = site.pages | concat: site.documents -%}
+      {%- for l in site.languages -%}
+      {%- assign alt = _all | where: "ref", page.ref | where: "lang", l.code | first -%}
+      {%- if alt %}<a href="{{ alt.url | relative_url }}" lang="{{ l.code }}" hreflang="{{ l.code }}"{% if l.code == page.lang %} aria-current="true"{% endif %}>{{ l.name }}</a>{% endif -%}
+      {%- endfor %}
+    </p>
+    {%- endif %}
+    <nav class="nav-inline" aria-label="{{ t.menu }}"><ul>{% include nav-items.html %}</ul></nav>
+    <details class="menu">
+      <summary>{{ t.menu }}</summary>
+      <nav aria-label="{{ t.menu }}"><ul>{% include nav-items.html %}</ul></nav>
+    </details>
+  </div>
+</header>

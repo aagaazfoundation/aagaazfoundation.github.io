@@ -1,0 +1,8 @@
+{%- assign t = site.data.ui[page.lang] | default: site.data.ui.en -%}
+{%- if chapter %}
+<aside class="chapter-link">
+  <p class="chapter-link__title">{{ t.chapter_link_title }}</p>
+  <p>{{ t.chapter_link_text }}</p>
+  <p><a class="button" href="{{ chapter.url | relative_url }}">{{ t.chapter_link_button }}: {{ chapter.title }}</a></p>
+</aside>
+{%- endif -%}

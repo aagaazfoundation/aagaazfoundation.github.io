@@ -1,0 +1,8 @@
+{%- assign t = site.data.ui[page.lang] | default: site.data.ui.en -%}
+<ul class="lines">
+{%- for h in site.data.helplines -%}
+{%- if h.show_first %}
+  <li><a class="line" href="tel:{{ h.number }}"><span class="line__num">{{ h.number }}</span><span class="line__text"><strong>{{ h.name[page.lang] | default: h.name.en }}</strong> <span>{{ h.note[page.lang] | default: h.note.en }}</span></span><span class="line__call" aria-hidden="true">{{ t.call }}</span></a></li>
+{%- endif -%}
+{%- endfor %}
+</ul>

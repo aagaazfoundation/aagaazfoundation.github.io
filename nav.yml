@@ -1,0 +1,10 @@
+# The menu, in order. "ref" must match the ref: line at the top of a page file.
+# Labels come from _data/ui/en.yml (nav section).
+- ref: home
+- ref: first-steps
+- ref: law
+- ref: online
+- ref: helping
+- ref: toolkit
+- ref: workshops
+- ref: about

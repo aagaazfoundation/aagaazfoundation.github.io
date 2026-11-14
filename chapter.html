@@ -1,0 +1,40 @@
+---
+layout: default
+---
+{%- assign t = site.data.ui[page.lang] | default: site.data.ui.en -%}
+{%- assign meta = site.data.toolkit.chapters | where: "slug", page.slug | first -%}
+{%- include find-page.html ref="toolkit" -%}
+{%- assign toolkit_home = found -%}
+{%- assign order = "" | split: "" -%}
+{%- for ch in site.data.toolkit.chapters -%}
+  {%- assign doc = site.toolkit | where: "slug", ch.slug | where: "lang", page.lang | first -%}
+  {%- if doc -%}{%- assign order = order | push: doc -%}{%- endif -%}
+{%- endfor -%}
+{%- assign here = -1 -%}
+{%- for d in order -%}{%- if d.url == page.url -%}{%- assign here = forloop.index0 -%}{%- endif -%}{%- endfor -%}
+{%- assign prev_i = here | minus: 1 -%}
+{%- assign next_i = here | plus: 1 -%}
+<div class="page--{{ meta.colour | default: page.colour | default: 'blue' }}">
+<div class="band">
+  <div class="wrap">
+    <p class="eyebrow"><a href="{{ toolkit_home.url | relative_url }}">{{ t.nav.toolkit }}</a>{% if meta.mark %} · {{ meta.mark }}{% endif %}</p>
+    <h1>{{ page.title }}</h1>
+    {%- if page.summary %}<p class="band__sub">{{ page.summary }}</p>{% endif %}
+  </div>
+</div>
+<div class="wrap layout">
+<div class="prose">
+  {%- if page.legal != false %}{% include review-note.html %}{% endif %}
+{{ content }}
+  <nav class="pager" aria-label="{{ t.nav.toolkit }}">
+    {%- if here > 0 %}{% assign p = order[prev_i] %}<a class="pager__prev" href="{{ p.url | relative_url }}"><span>←</span> {{ p.title }}</a>{% endif %}
+    {%- if next_i < order.size and here >= 0 %}{% assign n = order[next_i] %}<a class="pager__next" href="{{ n.url | relative_url }}">{{ n.title }} <span>→</span></a>{% endif %}
+  </nav>
+  <p><a href="{{ toolkit_home.url | relative_url }}">{{ t.back_to }} {{ t.nav.toolkit }}</a></p>
+  {%- if page.last_updated %}
+  <p class="updated">{{ t.last_updated }}: <time datetime="{{ page.last_updated | date: '%Y-%m-%d' }}">{{ page.last_updated | date: "%-d %B %Y" }}</time></p>
+  {%- endif %}
+</div>
+{% include side-help.html %}
+</div>
+</div>

@@ -1,0 +1,17 @@
+{%- assign t = site.data.ui[page.lang] | default: site.data.ui.en -%}
+{%- capture legal_num -%}{% include call.html line="legal-aid" %}{%- endcapture -%}
+{%- capture sos_num -%}{% include call.html line="emergency" %}{%- endcapture -%}
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="site-footer__title">{{ t.footer_disclaimer_title }}</p>
+    <p>{{ t.footer_disclaimer | replace: "%NUM%", legal_num }}</p>
+    <p>{{ t.footer_not_helpline | replace: "%NUM%", sos_num }}</p>
+    <ul class="site-footer__links">
+      {%- include find-page.html ref="safety" %}
+      {% if found %}<li><a href="{{ found.url | relative_url }}">{{ t.footer_safety }}</a></li>{% endif %}
+      {%- include find-page.html ref="about" %}
+      {% if found %}<li><a href="{{ found.url | relative_url }}">{{ t.footer_about }}</a></li>{% endif %}
+    </ul>
+    <p class="site-footer__small">{{ site.title }} · {{ site.tagline }}</p>
+  </div>
+</footer>

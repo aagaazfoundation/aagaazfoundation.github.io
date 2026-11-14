@@ -1,0 +1,47 @@
+---
+layout: default
+---
+{%- assign t = site.data.ui[page.lang] | default: site.data.ui.en -%}
+<div class="hero">
+  <div class="wrap hero__grid">
+    <div class="hero__copy">
+      <p class="hero__tag">{{ site.tagline }}</p>
+      <h1>{{ page.hero_title }}</h1>
+      <p class="hero__text">{{ page.hero_text }}</p>
+    </div>
+    <section class="helpnow" id="help-now" aria-labelledby="help-now-title">
+      <h2 id="help-now-title">{{ t.help_now }}</h2>
+      {% include helplines.html %}
+      <p class="helpnow__free">{{ t.help_free }}</p>
+    </section>
+  </div>
+</div>
+
+<section class="wrap doors-section" aria-labelledby="doors-title">
+  <h2 id="doors-title">{{ page.doors_title }}</h2>
+  <p class="reassure">{{ page.reassure }}</p>
+  <ul class="doors">
+  {%- for d in page.doors -%}
+  {%- include find-page.html ref=d.ref -%}
+  {%- if found %}
+    <li><a class="door" href="{{ found.url | relative_url }}"><span class="door__say">{{ d.say }}</span><span class="door__then">{{ d.then }} <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+  {%- endif -%}
+  {%- endfor %}
+  </ul>
+</section>
+
+<section class="wrap more-section" aria-labelledby="more-title">
+  <h2 id="more-title">{{ page.more_title }}</h2>
+  <ul class="cards cards--grid">
+  {%- for r in page.more -%}
+  {%- include find-page.html ref=r -%}
+  {%- if found %}
+    <li><a class="card" href="{{ found.url | relative_url }}"><span class="card__title">{{ found.title }}</span>{% if found.summary %}<span class="card__text">{{ found.summary }}</span>{% endif %}<svg class="card__arrow" aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+  {%- endif -%}
+  {%- endfor %}
+  </ul>
+</section>
+
+<section class="wrap prose home-about">
+{{ content }}
+</section>

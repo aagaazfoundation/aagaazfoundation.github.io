@@ -1,0 +1,2 @@
+{%- assign found = site.pages | where: "ref", include.ref | where: "lang", page.lang | first -%}
+{%- unless found -%}{%- assign found = site.pages | where: "ref", include.ref | where: "lang", site.default_lang | first -%}{%- endunless -%}

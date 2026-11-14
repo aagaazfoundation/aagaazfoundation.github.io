@@ -1,0 +1,9 @@
+{%- assign t = site.data.ui[page.lang] | default: site.data.ui.en -%}
+<div class="age-choice" data-age-choice hidden>
+  <p>{{ t.age_question }}</p>
+  <div class="age-choice__buttons">
+    <button type="button" id="age-u18" data-age="u18" aria-pressed="false">{{ t.age_u18 }}</button>
+    <button type="button" id="age-adult" data-age="adult" aria-pressed="false">{{ t.age_adult }}</button>
+    <button type="button" id="age-both" data-age="both" aria-pressed="true" class="age-choice__both">{{ t.age_both }}</button>
+  </div>
+</div>

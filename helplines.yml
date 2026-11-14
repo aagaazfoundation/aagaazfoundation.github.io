@@ -1,0 +1,77 @@
+# ─────────────────────────────────────────────────────────────
+#  HELPLINE NUMBERS: the one place they live.
+#  Every page reads its numbers from this file, so a change here
+#  changes the whole site.
+#
+#  show_first: true   → appears in "Need help now?" on every page
+#  last_checked       → the date YOU last confirmed the number works (YYYY-MM-DD)
+#  hi / pa            → fill in when the Hindi / Punjabi versions are made
+# ─────────────────────────────────────────────────────────────
+
+- id: emergency
+  number: "112"
+  show_first: true
+  name:
+    en: "Emergency"
+    hi: ""
+  note:
+    en: "Police, ambulance, fire. Any hour."
+    hi: ""
+  last_checked: ""
+
+- id: women
+  number: "181"
+  show_first: true
+  name:
+    en: "Women's helpline"
+    hi: ""
+  note:
+    en: "For women facing violence or harassment. 24 hours."
+    hi: ""
+  last_checked: ""
+  # TO CONFIRM: 181 is confirmed for Haryana and Punjab. For Chandigarh it is listed
+  # by the Social Welfare Department (Sector 19) but confirm with your CCPCR contact.
+
+- id: child
+  number: "1098"
+  show_first: true
+  name:
+    en: "Child Helpline"
+    hi: ""
+  note:
+    en: "If you're under 18, or worried about a child. 24 hours."
+    hi: ""
+  last_checked: ""
+
+- id: cyber
+  number: "1930"
+  show_first: true
+  name:
+    en: "Cybercrime helpline"
+    hi: ""
+  note:
+    en: "For anything that happened online."
+    hi: ""
+  last_checked: ""
+
+- id: legal-aid
+  number: "15100"
+  show_first: false
+  name:
+    en: "Legal aid helpline"
+    hi: ""
+  note:
+    en: "Free legal help, run by the National Legal Services Authority."
+    hi: ""
+  last_checked: ""
+
+- id: mental-health
+  number: "14416"
+  show_first: false
+  name:
+    en: "Tele-MANAS"
+    hi: ""
+  note:
+    en: "Free mental health support. 24 hours."
+    hi: ""
+  last_checked: ""

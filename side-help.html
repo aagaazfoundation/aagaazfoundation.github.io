@@ -1,0 +1,5 @@
+{%- assign t = site.data.ui[page.lang] | default: site.data.ui.en -%}
+<aside class="side" aria-label="{{ t.help_now }}">
+  <p class="side__title">{{ t.help_now }}</p>
+  {% include helplines.html %}
+</aside>

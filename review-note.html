@@ -1,0 +1,8 @@
+{%- assign t = site.data.ui[page.lang] | default: site.data.ui.en -%}
+{%- if site.legal_review.done -%}
+{%- if site.legal_review.reviewer != "" %}
+<p class="review review--done">{{ t.review_done }} {{ site.legal_review.reviewer }}{% if site.legal_review.date != "" %}, {{ site.legal_review.date | date: "%-d %B %Y" }}{% endif %}.</p>
+{%- endif -%}
+{%- else %}
+<p class="review"><strong>{{ t.review_pending_title }}</strong> {{ t.review_pending_text }}</p>
+{%- endif -%}

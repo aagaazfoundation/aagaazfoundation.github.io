@@ -1,0 +1,210 @@
+# ─────────────────────────────────────────────────────────────
+#  "FIND HELP NEAR YOU": the directory (phase 2)
+#
+#  THE RULE: an entry only appears on the website when it has a
+#  last_verified date. No date, no display. So nothing unchecked
+#  can reach a survivor by accident.
+#
+#  To verify an entry: phone the number or visit, confirm the name,
+#  address, phone and hours, then fill in last_verified (YYYY-MM-DD)
+#  and verified_how (for example "phoned, spoke to front desk").
+#  Re-check every entry at least every 6 months.
+#
+#  NEVER guess an address or a phone number. If you don't know it,
+#  leave it as "" and leave last_verified as "".
+#
+#  type:  one-stop-centre | hospital | legal-aid | police | child-rights | campus
+#  city:  chandigarh | panchkula | mohali
+#  The entries below come from your booklet draft (Part 8). None has
+#  been verified yet, so none will display.
+# ─────────────────────────────────────────────────────────────
+
+# Area lookup for the pincode search. Add pincodes only from India Post's
+# own pincode finder, never from memory.
+areas:
+  - city: chandigarh
+    name: { en: "Chandigarh", hi: "" }
+    government: "Union Territory"
+    pincodes: []          # TO FILL from India Post
+  - city: panchkula
+    name: { en: "Panchkula", hi: "" }
+    government: "Haryana"
+    pincodes: []          # TO FILL from India Post
+  - city: mohali
+    name: { en: "Mohali (SAS Nagar)", hi: "" }
+    government: "Punjab"
+    pincodes: []          # TO FILL from India Post
+
+entries:
+  # ── CHANDIGARH ─────────────────────────────────────────────
+  - type: one-stop-centre
+    city: chandigarh
+    name: "One Stop Centre (Sakhi)"
+    address: "Nari Niketan, Sector 26"      # FROM BOOKLET DRAFT, NOT VERIFIED
+    phone: "0172-2793026"                    # FROM BOOKLET DRAFT, NOT VERIFIED
+    hours: ""
+    notes: ""
+    last_verified: ""
+    verified_how: ""
+
+  - type: hospital
+    city: chandigarh
+    name: "Government Multi Specialty Hospital (GMSH)"
+    address: "Sector 16"                     # FROM BOOKLET DRAFT, NOT VERIFIED
+    phone: ""
+    hours: ""
+    notes: "TO CONFIRM: does this hospital conduct medico-legal examinations for sexual assault and POCSO cases?"
+    last_verified: ""
+    verified_how: ""
+
+  - type: hospital
+    city: chandigarh
+    name: "Government Medical College and Hospital (GMCH)"
+    address: "Sector 32"                     # FROM BOOKLET DRAFT, NOT VERIFIED
+    phone: ""
+    hours: ""
+    notes: "TO CONFIRM: medico-legal examinations?"
+    last_verified: ""
+    verified_how: ""
+
+  - type: hospital
+    city: chandigarh
+    name: "PGIMER"
+    address: "Sector 12"                     # FROM BOOKLET DRAFT, NOT VERIFIED
+    phone: ""
+    hours: ""
+    notes: "TO CONFIRM: medico-legal examinations?"
+    last_verified: ""
+    verified_how: ""
+
+  - type: police
+    city: chandigarh
+    name: "Women police station"
+    address: "Sector 17"                     # FROM BOOKLET DRAFT, NOT VERIFIED
+    phone: ""
+    hours: ""
+    notes: ""
+    last_verified: ""
+    verified_how: ""
+
+  - type: legal-aid
+    city: chandigarh
+    name: "District Legal Services Authority (DLSA)"
+    address: "District Courts, Sector 43"    # BOOKLET DRAFT SAYS [verify]
+    phone: ""
+    hours: ""
+    notes: ""
+    last_verified: ""
+    verified_how: ""
+
+  - type: child-rights
+    city: chandigarh
+    name: "Chandigarh Commission for Protection of Child Rights (CCPCR)"
+    address: ""                              # TO FIND
+    phone: ""                                # TO FIND
+    hours: ""
+    notes: ""
+    last_verified: ""
+    verified_how: ""
+
+  # ── PANCHKULA ──────────────────────────────────────────────
+  - type: one-stop-centre
+    city: panchkula
+    name: "One Stop Centre (Sakhi)"
+    address: ""   # TWO SOURCES DISAGREE: Civil Hospital, Sector 6, or Room 27, New Mini Secretariat. VERIFY BY PHONE.
+    phone: ""
+    hours: ""
+    notes: ""
+    last_verified: ""
+    verified_how: ""
+
+  - type: hospital
+    city: panchkula
+    name: "Civil Hospital"
+    address: "Sector 6"                      # FROM BOOKLET DRAFT, NOT VERIFIED
+    phone: ""
+    hours: ""
+    notes: "TO CONFIRM: medico-legal examinations?"
+    last_verified: ""
+    verified_how: ""
+
+  - type: police
+    city: panchkula
+    name: "Women police station"
+    address: ""                              # TO FIND
+    phone: ""
+    hours: ""
+    notes: ""
+    last_verified: ""
+    verified_how: ""
+
+  - type: legal-aid
+    city: panchkula
+    name: "District Legal Services Authority (DLSA)"
+    address: ""                              # TO FIND
+    phone: ""
+    hours: ""
+    notes: ""
+    last_verified: ""
+    verified_how: ""
+
+  - type: child-rights
+    city: panchkula
+    name: "Haryana State Commission for Protection of Child Rights"
+    address: ""                              # TO FIND
+    phone: ""
+    hours: ""
+    notes: ""
+    last_verified: ""
+    verified_how: ""
+
+  # ── MOHALI (SAS NAGAR) ─────────────────────────────────────
+  - type: one-stop-centre
+    city: mohali
+    name: "One Stop Centre (Sakhi)"
+    address: "Civil Hospital, Phase 6, near Jan Aushadhi Kendra"   # FROM BOOKLET DRAFT, NOT VERIFIED
+    phone: "99144-00406"                                           # FROM BOOKLET DRAFT, NOT VERIFIED
+    hours: ""
+    notes: ""
+    last_verified: ""
+    verified_how: ""
+
+  - type: hospital
+    city: mohali
+    name: "Civil Hospital"
+    address: "Phase 6"                       # FROM BOOKLET DRAFT, NOT VERIFIED
+    phone: ""
+    hours: ""
+    notes: "TO CONFIRM: medico-legal examinations?"
+    last_verified: ""
+    verified_how: ""
+
+  - type: police
+    city: mohali
+    name: "Women police station"
+    address: ""                              # TO FIND
+    phone: ""
+    hours: ""
+    notes: ""
+    last_verified: ""
+    verified_how: ""
+
+  - type: legal-aid
+    city: mohali
+    name: "District Legal Services Authority (DLSA)"
+    address: ""                              # TO FIND
+    phone: ""
+    hours: ""
+    notes: ""
+    last_verified: ""
+    verified_how: ""
+
+  - type: child-rights
+    city: mohali
+    name: "Punjab State Commission for Protection of Child Rights"
+    address: ""                              # TO FIND
+    phone: ""
+    hours: ""
+    notes: ""
+    last_verified: ""
+    verified_how: ""

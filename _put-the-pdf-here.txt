@@ -1,0 +1,1 @@
+Put the finished toolkit PDF in this folder. See guides/HOW-TO-UPDATE.md. This note is ignored by the website.

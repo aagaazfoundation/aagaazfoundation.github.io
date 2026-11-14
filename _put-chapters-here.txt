@@ -1,0 +1,1 @@
+Toolkit chapters go in this folder, one file per chapter. See guides/HOW-TO-UPDATE.md. This note is ignored by the website.

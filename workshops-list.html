@@ -1,0 +1,38 @@
+{%- assign t = site.data.ui[page.lang] | default: site.data.ui.en -%}
+{%- assign mine = site.workshops | where: "lang", page.lang -%}
+{%- assign upcoming = mine | where: "status", "upcoming" -%}
+{%- assign past = mine | where: "status", "past" | sort: "when" | reverse -%}
+<h2>{{ t.workshops_upcoming }}</h2>
+{%- if upcoming.size == 0 %}
+<p>{{ t.workshops_none_upcoming }}</p>
+{%- else %}
+<ul class="sessions">
+  {%- for w in upcoming %}
+  <li class="session">
+    <p class="session__when">{% if w.when %}{{ w.when | date: "%-d %B %Y" }}{% else %}{{ w.when_text }}{% endif %}</p>
+    <h3>{{ w.title }}</h3>
+    <p>{% if w.place %}{{ w.place }}{% endif %}{% if w.place and w.audience %} · {% endif %}{% if w.audience %}{{ w.audience }}{% endif %}</p>
+    {%- if w.format %}<p>{{ w.format }}</p>{% endif %}
+  </li>
+  {%- endfor %}
+</ul>
+{%- endif %}
+<h2>{{ t.workshops_past }}</h2>
+{%- if past.size == 0 %}
+<p>{{ t.workshops_none_past }}</p>
+{%- else %}
+<ul class="sessions">
+  {%- for w in past %}
+  {%- assign body = w.content | strip_html | strip -%}
+  <li class="session">
+    <p class="session__when">{% if w.when %}{{ w.when | date: "%-d %B %Y" }}{% else %}{{ w.when_text }}{% endif %}</p>
+    <h3>{{ w.title }}</h3>
+    <p>{% if w.place %}{{ w.place }}{% endif %}{% if w.place and w.audience %} · {% endif %}{% if w.audience %}{{ w.audience }}{% endif %}{% if w.reached %} · {{ w.reached }} {{ t.workshop_reached }}{% endif %}</p>
+    {%- if w.photos and w.photos.size > 0 %}{% assign ph = w.photos | first %}
+    <img class="session__photo" src="{{ '/assets/img/workshops/' | append: ph.file | relative_url }}" alt="{{ ph.alt | escape }}" loading="lazy">
+    {%- endif %}
+    {%- if body != "" or w.photos %}<p><a href="{{ w.url | relative_url }}">{{ t.workshop_read }}</a></p>{% endif %}
+  </li>
+  {%- endfor %}
+</ul>
+{%- endif %}

@@ -1,0 +1,34 @@
+---
+layout: default
+---
+{%- assign t = site.data.ui[page.lang] | default: site.data.ui.en -%}
+{%- include find-chapter.html -%}
+<div class="band">
+  <div class="wrap">
+    {%- if page.section -%}
+    {%- include find-page.html ref=page.section %}
+    <p class="eyebrow"><a href="{{ found.url | relative_url }}">{{ t.nav[page.section] }}</a></p>
+    {%- elsif page.eyebrow %}
+    <p class="eyebrow">{{ page.eyebrow }}</p>
+    {%- endif %}
+    <h1>{{ page.title }}</h1>
+    {%- if page.summary %}
+    <p class="band__sub">{{ page.summary }}</p>
+    {%- endif %}
+  </div>
+</div>
+<div class="wrap layout">
+<div class="prose">
+{%- if chapter and page.when_chapter_is_live == "replace" %}
+  <p><a class="button" href="{{ chapter.url | relative_url }}">{{ t.chapter_link_button }}: {{ chapter.title }}</a></p>
+{%- else %}
+  {%- if page.legal %}{% include review-note.html %}{% endif %}
+{{ content }}
+  {% include chapter-link.html %}
+  {%- if page.last_updated %}
+  <p class="updated">{{ t.last_updated }}: <time datetime="{{ page.last_updated | date: '%Y-%m-%d' }}">{{ page.last_updated | date: "%-d %B %Y" }}</time></p>
+  {%- endif %}
+{%- endif %}
+</div>
+{% include side-help.html %}
+</div>

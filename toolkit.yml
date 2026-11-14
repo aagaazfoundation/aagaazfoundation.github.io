@@ -1,0 +1,71 @@
+# ─────────────────────────────────────────────────────────────
+#  THE TOOLKIT: chapter list
+#
+#  This list drives the "coming soon" page. A chapter goes live
+#  the moment a file with the same name exists in the _toolkit folder.
+#  Example: add  _toolkit/first-hours.md  and "The first hours"
+#  stops saying "Coming soon" and becomes a link. Nothing else to change.
+#
+#  slug   = the file name (without .md) and the web address
+#  mark   = what shows in the small square next to the title
+#  colour = the booklet's chapter colour. Kept for reference; the website uses one colour scheme.
+# ─────────────────────────────────────────────────────────────
+
+# When the finished PDF is ready, put it in assets/downloads/ and write its
+# file name here, for example "aagaaz-toolkit.pdf". The download button then appears.
+pdf: ""
+pdf_size: ""        # for example "1.1 MB", shown next to the button
+
+chapters:
+  - slug: quick-card
+    mark: "★"
+    colour: yellow
+    title: { en: "The quick card", hi: "" }
+  - slug: not-your-fault
+    mark: "1"
+    colour: red
+    title: { en: "It is not your fault", hi: "" }
+  - slug: what-counts
+    mark: "2"
+    colour: blue
+    title: { en: "What counts", hi: "" }
+  - slug: first-hours
+    mark: "3"
+    colour: green
+    title: { en: "The first hours", hi: "" }
+  - slug: under-18
+    mark: "4"
+    colour: purple
+    title: { en: "If you're under 18: what happens, and your rights", hi: "" }
+  - slug: harassment
+    mark: "5"
+    colour: red
+    title: { en: "If it's harassment", hi: "" }
+  - slug: online
+    mark: "6"
+    colour: blue
+    title: { en: "If it's online", hi: "" }
+  - slug: rights-at-a-glance
+    mark: "7"
+    colour: green
+    title: { en: "Your rights at a glance", hi: "" }
+  - slug: where-to-go
+    mark: "8"
+    colour: purple
+    title: { en: "Where to go in the Tri-City", hi: "" }
+  - slug: questions
+    mark: "9"
+    colour: red
+    title: { en: "Questions people ask", hi: "" }
+  - slug: if-a-friend-tells-you
+    mark: "10"
+    colour: blue
+    title: { en: "If a friend tells you", hi: "" }
+  - slug: 18-or-older
+    mark: "11"
+    colour: green
+    title: { en: "If you are 18 or older", hi: "" }
+  - slug: glossary
+    mark: "A"
+    colour: yellow
+    title: { en: "Words that might help", hi: "" }

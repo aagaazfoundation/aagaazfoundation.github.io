@@ -1,0 +1,32 @@
+{%- assign t = site.data.ui[page.lang] | default: site.data.ui.en -%}
+{%- include find-chapter.html -%}
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.default_lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{% if page.ref == "home" %}{{ site.title }}{% else %}{{ page.title }} · {{ site.title }}{% endif %}</title>
+<meta name="description" content="{{ page.summary | default: site.description | strip_html | escape }}">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#ffffff">
+{%- unless site.legal_review.done %}
+<meta name="robots" content="noindex">
+{%- endunless %}
+{%- if chapter and page.when_chapter_is_live == "replace" %}
+<meta http-equiv="refresh" content="0; url={{ chapter.url | relative_url }}">
+{%- endif %}
+<link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
+<link rel="preload" href="{{ '/assets/fonts/bricolage-800.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}">
+</head>
+<body>
+<a class="skip" href="#main">{{ t.skip }}</a>
+{% include header.html %}
+<main id="main" class="page page--{{ page.colour | default: 'blue' }}">
+{{ content }}
+</main>
+{% include footer.html %}
+{% include helpbar.html %}
+<script src="{{ '/assets/js/site.js' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}" defer></script>
+</body>
+</html>

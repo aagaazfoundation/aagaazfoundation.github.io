@@ -1,0 +1,69 @@
+# ─────────────────────────────────────────────────────────────
+#  BUTTONS, MENU LABELS AND SMALL PRINT (English)
+#  For Hindi, copy this whole file to hi.yml and translate the
+#  text after each colon. Do not translate the words before the colon.
+# ─────────────────────────────────────────────────────────────
+
+skip: "Skip to content"
+menu: "Menu"
+home_label: "Aagaaz Foundation, home"
+
+nav:
+  home: "Home"
+  first-steps: "What to do first"
+  law: "Know the law"
+  online: "Online abuse"
+  helping: "Helping someone else"
+  toolkit: "Toolkit"
+  workshops: "Workshops"
+  about: "About"
+
+help_now: "Need help now?"
+help_now_intro: "Tap a number to call."
+help_free: "112 and 1098 are free to call, at any hour."
+call: "Call"
+quick_exit: "Quick exit"
+quick_exit_hint: "Leaves this site straight away"
+
+age_question: "Which describes you? The steps are the same. Some rights are different."
+age_u18: "I'm under 18"
+age_adult: "I'm 18 or older"
+age_both: "Show both"
+tag_u18: "Under 18"
+tag_adult: "18 or older"
+
+review_pending_title: "This page is being checked by a lawyer."
+review_pending_text: "Use it as general information for now."
+review_done: "Checked by"
+
+chapter_link_title: "Want the full version?"
+chapter_link_text: "This page is the short version. The toolkit chapter has every step."
+chapter_link_button: "Read the full chapter"
+
+last_updated: "Last updated"
+back_to: "Back to"
+read_more: "Read"
+coming_soon: "Coming soon"
+read_short: "Read the short version now"
+read_chapter: "Read this chapter"
+download_pdf: "Download the toolkit (PDF)"
+
+workshops_upcoming: "Coming up"
+workshops_past: "Past sessions"
+workshops_none_past: "No sessions have been held yet. The write-up of the first one will appear here."
+workshops_none_upcoming: "No sessions are scheduled right now."
+workshop_read: "Read the write-up"
+workshop_reached: "people attended"
+fact_when: "When"
+fact_where: "Where"
+fact_who: "Who"
+fact_format: "Format"
+fact_attended: "Attended"
+
+footer_disclaimer_title: "Information, not legal advice"
+footer_disclaimer: "This site explains what the law says and what usually happens. It cannot account for your situation and it does not replace a lawyer. Free legal help exists so that you can get one: call %NUM%."
+footer_not_helpline: "Aagaaz is not a helpline and cannot respond to emergencies. If you are in danger, call %NUM%."
+footer_safety: "Staying safe on this site"
+footer_about: "About and contact"
+
+languages_label: "Language"

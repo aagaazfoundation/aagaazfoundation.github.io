@@ -1,0 +1,11 @@
+{%- assign t = site.data.ui[page.lang] | default: site.data.ui.en -%}
+<div class="helpbar">
+  <details class="helpbar__help">
+    <summary><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M6.6 2.5h3.1l1.5 4.6-2.1 1.7a12.6 12.6 0 0 0 6.1 6.1l1.7-2.1 4.6 1.5v3.1c0 1.1-.9 2.1-2.1 2.1C10.3 19.5 4.5 13.7 4.5 4.6c0-1.2 1-2.1 2.1-2.1z"/></svg><span>{{ t.help_now }}</span></summary>
+    <div class="sheet">
+      <p class="sheet__intro">{{ t.help_now_intro }}</p>
+      {% include helplines.html %}
+    </div>
+  </details>
+  <a class="helpbar__exit" href="{{ site.quick_exit_url }}" rel="noreferrer noopener" data-quick-exit title="{{ t.quick_exit_hint }}"><span>{{ t.quick_exit }}</span><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" d="M5 5l14 14M19 5L5 19"/></svg></a>
+</div>

@@ -1,0 +1,4 @@
+{%- assign chapter = nil -%}
+{%- if page.toolkit_chapter -%}
+{%- assign chapter = site.toolkit | where: "slug", page.toolkit_chapter | where: "lang", page.lang | first -%}
+{%- endif -%}

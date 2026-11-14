@@ -1,0 +1,7 @@
+{%- assign t = site.data.ui[page.lang] | default: site.data.ui.en -%}
+{%- for item in site.data.nav -%}
+{%- include find-page.html ref=item.ref -%}
+{%- if found %}
+<li><a href="{{ found.url | relative_url }}"{% if found.url == page.url or page.section == item.ref %} aria-current="page"{% endif %}>{{ t.nav[item.ref] }}</a></li>
+{%- endif -%}
+{%- endfor -%}
