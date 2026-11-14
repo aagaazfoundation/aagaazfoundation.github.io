@@ -1,0 +1,60 @@
+# Publishes the Aagaaz site.
+# Runs every time anything in the repository changes.
+# If a file called site-upload.zip has been uploaded, it first unpacks it into
+# the right folders (replacing the old site files), then builds and publishes.
+name: Publish site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Unpack site-upload.zip if one was uploaded
+        run: |
+          if [ -f site-upload.zip ]; then
+            rm -rf /tmp/unpack && mkdir -p /tmp/unpack
+            unzip -q site-upload.zip -d /tmp/unpack
+            SRC=/tmp/unpack
+            if [ -d /tmp/unpack/aagaaz-site ]; then SRC=/tmp/unpack/aagaaz-site; fi
+            find . -mindepth 1 -maxdepth 1 ! -name .git ! -name .github ! -name CNAME -exec rm -rf {} +
+            cp -a "$SRC"/. .
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "Unpack site-upload.zip" || echo "Nothing changed"
+            git push origin HEAD:main
+          else
+            echo "No site-upload.zip, building the files as they are."
+          fi
+
+      - uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+
+      - uses: actions/upload-pages-artifact@v5
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5
