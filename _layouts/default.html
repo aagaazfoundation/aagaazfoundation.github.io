@@ -5,7 +5,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>{% if page.ref == "home" %}{{ site.title }}{% else %}{{ page.title }} · {{ site.title }}{% endif %}</title>
+{%- assign site_name = t.site_name | default: site.title %}
+<title>{% if page.ref == "home" %}{{ site_name }}{% else %}{{ page.title }} · {{ site_name }}{% endif %}</title>
 <meta name="description" content="{{ page.summary | default: site.description | strip_html | escape }}">
 <meta name="referrer" content="no-referrer">
 <meta name="theme-color" content="#ffffff">
@@ -16,7 +17,7 @@
 <meta http-equiv="refresh" content="0; url={{ chapter.url | relative_url }}">
 {%- endif %}
 <link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
-<link rel="preload" href="{{ '/assets/fonts/bricolage-800.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ '/assets/fonts/noto-sans-700.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}">
 </head>
 <body>

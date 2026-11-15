@@ -15,6 +15,13 @@ reached: 120                 # how many people attended. Leave empty if you don'
 # PHOTOS: put the image files in assets/img/workshops/ first.
 # Keep each under about 300 KB (resize to 1600 pixels wide).
 # No recognisable faces of students. alt = one line describing the photo for people who can't see it.
+# Hindi versions (optional; the Hindi Workshops page uses these if filled)
+title_hi: ""
+when_text_hi: ""
+place_hi: ""
+audience_hi: ""
+format_hi: ""
+
 photos:
   - file: "example-room.jpg"
     alt: "A school hall seen from the back, with rows of students facing a stage"

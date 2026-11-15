@@ -1,0 +1,75 @@
+# ─────────────────────────────────────────────────────────────
+#  बटन, मेनू और छोटे संदेश (हिन्दी)
+#  BUTTONS, MENU LABELS AND SMALL PRINT (Hindi)
+#  Change only the text after each colon. Keep %NUM% where it appears:
+#  the site puts a helpline number there.
+# ─────────────────────────────────────────────────────────────
+
+site_name: "आग़ाज़ फ़ाउंडेशन"
+tagline: "जागरूकता से कार्रवाई तक"
+
+skip: "सीधे जानकारी पर जाएँ"
+menu: "मेनू"
+home_label: "आग़ाज़ फ़ाउंडेशन, होम पेज"
+
+nav:
+  home: "होम"
+  first-steps: "सबसे पहले क्या करें"
+  law: "कानून क्या कहता है"
+  online: "ऑनलाइन उत्पीड़न"
+  helping: "किसी और की मदद"
+  toolkit: "टूलकिट"
+  workshops: "वर्कशॉप"
+  about: "हमारे बारे में"
+
+help_now: "अभी मदद चाहिए?"
+help_now_intro: "कॉल करने के लिए नंबर पर टैप करें।"
+help_free: "112 और 1098 पर कॉल करना मुफ़्त है। ये नंबर हर समय चालू रहते हैं।"
+call: "कॉल"
+quick_exit: "तुरंत निकलें"
+quick_exit_hint: "यह साइट तुरंत बंद होकर दूसरी साइट खुल जाती है"
+
+age_question: "आपकी उम्र कितनी है? कदम दोनों के लिए एक जैसे हैं, पर कुछ अधिकार अलग हैं।"
+age_u18: "मेरी उम्र 18 से कम है"
+age_adult: "मेरी उम्र 18 या उससे ज़्यादा है"
+age_both: "दोनों दिखाएँ"
+tag_u18: "18 साल से कम"
+tag_adult: "18 साल या उससे ज़्यादा"
+
+review_pending_title: "इस पेज की जाँच अभी एक वकील से करवाई जा रही है।"
+review_pending_text: "तब तक इसे आम जानकारी की तरह पढ़ें।"
+review_done: "इस पेज की जाँच की है:"
+
+chapter_link_title: "पूरी जानकारी चाहिए?"
+chapter_link_text: "इस पेज पर जानकारी छोटे में दी गई है। टूलकिट में हर कदम पूरा समझाया गया है।"
+chapter_link_button: "टूलकिट में पूरा पढ़ें"
+
+last_updated: "यह पेज आख़िरी बार बदला गया"
+back_to: "वापस जाएँ:"
+read_more: "पढ़ें"
+coming_soon: "जल्द आ रहा है"
+read_short: "तब तक यह छोटा पेज पढ़ें"
+read_chapter: "यह हिस्सा पढ़ें"
+download_pdf: "टूलकिट डाउनलोड करें (PDF)"
+
+workshops_upcoming: "आने वाले सेशन"
+workshops_past: "हो चुके सेशन"
+workshops_none_past: "अभी तक कोई सेशन नहीं हुआ है। पहला सेशन होने के बाद उसकी जानकारी यहाँ मिलेगी।"
+workshops_none_upcoming: "अभी कोई सेशन तय नहीं है।"
+workshop_read: "पूरी जानकारी पढ़ें"
+workshop_reached: "लोग शामिल हुए"
+fact_when: "कब"
+fact_where: "कहाँ"
+fact_who: "किनके लिए"
+fact_format: "कैसे होगा"
+fact_attended: "शामिल हुए"
+
+footer_disclaimer_title: "यह सिर्फ़ जानकारी है, कानूनी सलाह नहीं"
+footer_disclaimer: "यह साइट बताती है कि कानून क्या कहता है और आम तौर पर क्या होता है। यह आपके मामले की हर बात नहीं जान सकती, और वकील की जगह नहीं ले सकती। वकील की मदद मुफ़्त मिल सकती है। इसके लिए %NUM% पर कॉल करें।"
+footer_not_helpline: "आग़ाज़ कोई हेल्पलाइन नहीं है और इमरजेंसी में मदद नहीं कर सकता। अगर आप ख़तरे में हैं, तो %NUM% पर कॉल करें।"
+footer_safety: "इस साइट को सुरक्षित तरीक़े से कैसे देखें"
+footer_about: "हमारे बारे में और संपर्क"
+
+languages_label: "भाषा"
+other_lang_cta: "Read in English"
+other_lang_code: en

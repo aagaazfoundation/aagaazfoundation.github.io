@@ -123,14 +123,20 @@ When a chapter is live and you no longer want the short version, open the short 
 ### Mark the legal review as done
 Open `_config.yml`. Under `legal_review:` set `done: true`, and fill in `reviewer:` and `date:`. The "being checked by a lawyer" notes disappear, each law page shows who checked it, and search engines are allowed to list the site.
 
-### Add Hindi
-The site is built for it. In outline:
-1. Copy `_data/ui/en.yml` to `_data/ui/hi.yml` and translate the text after each colon.
-2. Fill in the `hi:` lines in `_data/helplines.yml` and `_data/toolkit.yml`.
-3. Make a folder called `hi` and add translated pages, following `templates/hindi-page-template.md`.
-4. In `_config.yml`, remove the `#` from the two `hi` lines under `languages:`.
+### The Hindi pages
+Every page has a Hindi version in the `hi` folder, with the same file name (for example `first-steps.md` and `hi/first-steps.md`). A button at the top of each page switches between the two.
 
-A language switch then appears in the header, on every page that has a Hindi version. Translate after the legal review, not before, and start with What to do first. Punjabi works the same way with `pa`.
+- **When you change an English page, change the Hindi page too.** The two don't update each other. If you ask me to make a change, I'll do both.
+- Hindi menu labels, buttons and small print are in `_data/ui/hi.yml`.
+- Hindi helpline names are the `hi:` lines in `_data/helplines.yml`, and Hindi chapter titles are in `_data/toolkit.yml`.
+- For a workshop, fill in the `title_hi`, `place_hi` and other `_hi` lines in its file so the Hindi Workshops page shows it in Hindi.
+
+### Add Punjabi later
+It works the same way as Hindi, with the code `pa`:
+1. Copy `_data/ui/hi.yml` to `_data/ui/pa.yml` and translate the text after each colon.
+2. Add `pa:` lines in `_data/helplines.yml` and `_data/toolkit.yml`.
+3. Make a folder called `pa` and copy each page into it, following `templates/hindi-page-template.md` but with `lang: pa` and `/pa/` addresses.
+4. In `_config.yml`, add `pa` under `languages:` and a `pa` default under `defaults:` (copy the `hi` lines).
 
 ## Rules worth keeping
 

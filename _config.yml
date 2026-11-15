@@ -33,12 +33,12 @@ legal_review:
   date: ""               # for example "2026-12-05"
 
 # LANGUAGES
-# To switch Hindi on, remove the # from the two hi lines. See guides/HOW-TO-UPDATE.md first.
+# Hindi is on. Hindi pages live in the hi folder. To add Punjabi later, see guides/HOW-TO-UPDATE.md.
 languages:
   - code: en
     name: "English"
-#  - code: hi
-#    name: "हिन्दी"
+  - code: hi
+    name: "हिन्दी"
 default_lang: en
 
 # ─────────────────────────────────────────────────────────────
@@ -61,6 +61,8 @@ collections:
 defaults:
   - scope: { path: "" }
     values: { layout: page, lang: en }
+  - scope: { path: "hi" }
+    values: { lang: hi }
   - scope: { path: "", type: toolkit }
     values: { layout: chapter, lang: en }
   - scope: { path: "", type: workshops }

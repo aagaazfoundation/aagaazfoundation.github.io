@@ -91,6 +91,25 @@ The website's phase 1 pages make the claims below. Each is written for a general
 
 ---
 
+## D. The Hindi version
+
+Every page also exists in Hindi (under `aagaazfoundation.org/hi/`). It is a translation of the English pages, written in everyday spoken Hindi. It was published on 15 November 2026 with the same "being checked" note as the English pages, and fully revised the same day for natural phrasing.
+
+It needs one read by someone fluent in Hindi, ideally with legal Hindi. Please check in particular:
+
+- **English in brackets on first use:** यौन उत्पीड़न (sexual harassment), यौन शोषण (sexual abuse), यौन हमला (sexual assault), बलात्कार (rape), सहमति (consent), मुआवज़ा (compensation), बयान (statement)
+- **Offence names in the Adults table** follow the official Hindi text of the BNS where I could (for example स्त्री की लज्जा भंग करने के इरादे से हमला, दृश्यरतिकता). The left-hand column describes each offence in plain words. Are both right?
+- **Other terms:** FIR (प्रथम सूचना रिपोर्ट); पॉक्सो (POCSO), लैंगिक अपराधों से बालकों का संरक्षण अधिनियम 2012; ज़िला विधिक सेवा प्राधिकरण (DLSA); बाल कल्याण समिति; आंतरिक समिति and स्थानीय समिति; विशेष अदालत (स्पेशल कोर्ट); सहायक व्यक्ति (सपोर्ट पर्सन)
+- **"Adult" is written as बड़े (18 साल या उससे ज़्यादा उम्र के व्यक्ति)**, not वयस्क, so children understand it
+- **"You will not get into trouble" is written as "आप किसी मुसीबत में नहीं पड़ेंगे"** (see also point A7)
+- The Workplace page addresses the reader in the feminine (आप कर सकती हैं), because the POSH Act protects women. Other pages use the usual generic forms
+- The "What to say" list on the Helping page uses तुम, because that is how a friend would speak
+- Anything that still reads as stiff or unclear to a 13-year-old or a parent
+
+Any change to the English wording after this review must be made in the Hindi page too.
+
+---
+
 ## C. Still open from the toolkit drafts (not on the website yet)
 
 These matter for the toolkit and for the phase 2 directory, not for the phase 1 pages.

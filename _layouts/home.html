@@ -5,7 +5,13 @@ layout: default
 <div class="hero">
   <div class="wrap hero__grid">
     <div class="hero__copy">
-      <p class="hero__tag">{{ site.tagline }}</p>
+      {%- if site.languages.size > 1 and t.other_lang_code %}
+      {%- assign other_home = site.pages | where: "ref", "home" | where: "lang", t.other_lang_code | first -%}
+      {%- if other_home %}
+      <p><a class="lang-cta" href="{{ other_home.url | relative_url }}" lang="{{ t.other_lang_code }}" hreflang="{{ t.other_lang_code }}">{{ t.other_lang_cta }}</a></p>
+      {%- endif -%}
+      {%- endif %}
+      <p class="hero__tag">{{ t.tagline | default: site.tagline }}</p>
       <h1>{{ page.hero_title }}</h1>
       <p class="hero__text">{{ page.hero_text }}</p>
     </div>

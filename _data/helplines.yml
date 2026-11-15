@@ -13,10 +13,10 @@
   show_first: true
   name:
     en: "Emergency"
-    hi: ""
+    hi: "इमरजेंसी नंबर"
   note:
     en: "Police, ambulance, fire. Any hour."
-    hi: ""
+    hi: "पुलिस, एम्बुलेंस, फ़ायर ब्रिगेड। किसी भी समय।"
   last_checked: ""
 
 - id: women
@@ -24,10 +24,10 @@
   show_first: true
   name:
     en: "Women's helpline"
-    hi: ""
+    hi: "महिला हेल्पलाइन"
   note:
     en: "For women facing violence or harassment. 24 hours."
-    hi: ""
+    hi: "हिंसा या उत्पीड़न झेल रही महिलाओं के लिए। 24 घंटे।"
   last_checked: ""
   # TO CONFIRM: 181 is confirmed for Haryana and Punjab. For Chandigarh it is listed
   # by the Social Welfare Department (Sector 19) but confirm with your CCPCR contact.
@@ -37,10 +37,10 @@
   show_first: true
   name:
     en: "Child Helpline"
-    hi: ""
+    hi: "चाइल्ड हेल्पलाइन"
   note:
     en: "If you're under 18, or worried about a child. 24 hours."
-    hi: ""
+    hi: "अगर आपकी उम्र 18 से कम है, या आपको किसी बच्चे की फ़िक्र है। 24 घंटे।"
   last_checked: ""
 
 - id: cyber
@@ -48,10 +48,10 @@
   show_first: true
   name:
     en: "Cybercrime helpline"
-    hi: ""
+    hi: "साइबर क्राइम हेल्पलाइन"
   note:
     en: "For anything that happened online."
-    hi: ""
+    hi: "इंटरनेट या फ़ोन पर हुई किसी भी घटना के लिए।"
   last_checked: ""
 
 - id: legal-aid
@@ -59,10 +59,10 @@
   show_first: false
   name:
     en: "Legal aid helpline"
-    hi: ""
+    hi: "कानूनी सहायता हेल्पलाइन"
   note:
     en: "Free legal help, run by the National Legal Services Authority."
-    hi: ""
+    hi: "मुफ़्त कानूनी मदद। इसे राष्ट्रीय विधिक सेवा प्राधिकरण (NALSA) चलाता है।"
   last_checked: ""
 
 - id: mental-health
@@ -70,8 +70,8 @@
   show_first: false
   name:
     en: "Tele-MANAS"
-    hi: ""
+    hi: "टेली-मानस (Tele-MANAS)"
   note:
     en: "Free mental health support. 24 hours."
-    hi: ""
+    hi: "मन की परेशानी के लिए मुफ़्त मदद। 24 घंटे।"
   last_checked: ""

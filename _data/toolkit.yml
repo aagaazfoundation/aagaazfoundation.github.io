@@ -20,52 +20,52 @@ chapters:
   - slug: quick-card
     mark: "★"
     colour: yellow
-    title: { en: "The quick card", hi: "" }
+    title: { en: "The quick card", hi: "सबसे ज़रूरी बातें, एक कार्ड पर" }
   - slug: not-your-fault
     mark: "1"
     colour: red
-    title: { en: "It is not your fault", hi: "" }
+    title: { en: "It is not your fault", hi: "यह आपकी ग़लती नहीं है" }
   - slug: what-counts
     mark: "2"
     colour: blue
-    title: { en: "What counts", hi: "" }
+    title: { en: "What counts", hi: "यौन उत्पीड़न और यौन शोषण क्या होता है" }
   - slug: first-hours
     mark: "3"
     colour: green
-    title: { en: "The first hours", hi: "" }
+    title: { en: "The first hours", hi: "शुरू के कुछ घंटे" }
   - slug: under-18
     mark: "4"
     colour: purple
-    title: { en: "If you're under 18: what happens, and your rights", hi: "" }
+    title: { en: "If you're under 18: what happens, and your rights", hi: "अगर आपकी उम्र 18 से कम है: क्या होता है, और आपके अधिकार" }
   - slug: harassment
     mark: "5"
     colour: red
-    title: { en: "If it's harassment", hi: "" }
+    title: { en: "If it's harassment", hi: "अगर आपके साथ यौन उत्पीड़न हुआ है" }
   - slug: online
     mark: "6"
     colour: blue
-    title: { en: "If it's online", hi: "" }
+    title: { en: "If it's online", hi: "अगर यह ऑनलाइन हुआ है" }
   - slug: rights-at-a-glance
     mark: "7"
     colour: green
-    title: { en: "Your rights at a glance", hi: "" }
+    title: { en: "Your rights at a glance", hi: "आपके सारे अधिकार, एक जगह" }
   - slug: where-to-go
     mark: "8"
     colour: purple
-    title: { en: "Where to go in the Tri-City", hi: "" }
+    title: { en: "Where to go in the Tri-City", hi: "चंडीगढ़, पंचकूला और मोहाली में कहाँ जाएँ" }
   - slug: questions
     mark: "9"
     colour: red
-    title: { en: "Questions people ask", hi: "" }
+    title: { en: "Questions people ask", hi: "वे सवाल जो लोग अक्सर पूछते हैं" }
   - slug: if-a-friend-tells-you
     mark: "10"
     colour: blue
-    title: { en: "If a friend tells you", hi: "" }
+    title: { en: "If a friend tells you", hi: "अगर कोई दोस्त आपको बताए" }
   - slug: 18-or-older
     mark: "11"
     colour: green
-    title: { en: "If you are 18 or older", hi: "" }
+    title: { en: "If you are 18 or older", hi: "अगर आपकी उम्र 18 या उससे ज़्यादा है" }
   - slug: glossary
     mark: "A"
     colour: yellow
-    title: { en: "Words that might help", hi: "" }
+    title: { en: "Words that might help", hi: "कुछ शब्दों के मतलब" }

@@ -8,7 +8,7 @@ Start with the guides:
 - `guides/HOW-TO-UPDATE.md`: how to change text, add workshops and publish toolkit chapters
 - `guides/LEGAL-REVIEW-CHECKLIST.md`: every legal claim on the site, for the reviewing lawyer
 
-What the site does not do, on purpose: no logins, no forms, no cookies, no analytics, no requests to any other website. Fonts are stored with the site (Atkinson Hyperlegible and Bricolage Grotesque, both under the SIL Open Font License).
+What the site does not do, on purpose: no logins, no forms, no cookies, no analytics, no requests to any other website. Fonts are stored with the site (Noto Sans and Noto Sans Devanagari, under the SIL Open Font License).
 
 ## Phase 2: "Find help near you"
 
