@@ -7,7 +7,7 @@
 title: "Aagaaz Foundation"
 tagline: "From awareness to action"
 description: "Clear steps, your rights and where to go after sexual harassment or abuse."
-founder_name: "Ayesha Bindal"
+founder_name: "Ayesha Sachin Bindal"
 
 # Your web address once you have bought a domain, for example "https://aagaazfoundation.org"
 # Leave as "" until then.
@@ -24,11 +24,12 @@ quick_exit_url: "https://www.google.com/search?q=weather+today"
 
 # LEGAL REVIEW
 # While done is false:
-#   - every law page shows a "being checked by a lawyer" note
-#   - search engines are asked not to list the site
+#   - search engines are asked not to list the site (this stays on)
+#   - a "being checked by a lawyer" note shows on law pages ONLY if show_pending_note is true
 # When your lawyer has signed off, set done to true and fill in the other two lines.
 legal_review:
   done: false
+  show_pending_note: false   # true puts a "being checked by a lawyer" note on every law page
   reviewer: ""           # for example "a practising advocate at the Punjab and Haryana High Court"
   date: ""               # for example "2026-12-05"
 

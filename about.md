@@ -19,7 +19,7 @@ Aagaaz means "a beginning". The aim is simple: from awareness to action.
 
 - **This website,** with short, plain-language pages on what to do and what the law says
 - **A navigation toolkit** for Chandigarh, Panchkula and Mohali, which we are finishing now
-- **Workshops** in schools and colleges, run with the school's counsellor in the room
+- **Workshops,** run with a counsellor in the room
 
 ## What we are not
 

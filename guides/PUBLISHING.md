@@ -119,7 +119,7 @@ Click your profile picture → **Settings** → **Pages** → **Add a domain**, 
 
 ## Part C: The QR code
 
-**Do not print a QR code until the lawyer has signed off** and you have set `legal_review: done: true` in `_config.yml`. Until then the law pages carry a "being checked" note and the site hides itself from search engines.
+**Do not print a QR code until the lawyer has signed off** and you have set `legal_review: done: true` in `_config.yml`. Until then the site hides itself from search engines.
 
 1. The QR code should contain your plain address: `https://yourdomain.org`. Nothing else.
 2. **Use a static QR code.** Avoid generators that offer "dynamic" codes, scan tracking or analytics: those send every scan through their servers first, they track the people scanning, and they often stop working when a free trial ends. Ask me and I will make the QR file for you once the domain works.

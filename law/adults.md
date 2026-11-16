@@ -9,7 +9,7 @@ summary: "The main offences, how to report, and your right to a woman officer."
 toolkit_chapter: 18-or-older
 when_chapter_is_live: link
 legal: true
-last_updated: 2026-11-11
+last_updated: 2026-11-16
 ---
 
 **Medical care, a police report and a trial are separate decisions, and each one is yours.** You can get treated without reporting. You can report later. Nobody can make these choices for you.
@@ -52,8 +52,8 @@ An FIR (First Information Report) is the written police record that starts an in
 
 - Your complaint about any of these offences must be written down by a **woman police officer**
 - If you are reporting rape, your statement is recorded **at your home or a place you choose**, by a woman officer as far as possible. A parent, relative or social worker can be with you
-- The police cannot make a woman come to a police station to be questioned. They must come to where she lives
-- A Magistrate will also record your statement, in private, without the accused present
+- The police cannot make a woman come to a police station to be questioned. They must come to where she lives, unless she chooses to go to the station
+- A Magistrate will also record your statement, by a woman Magistrate where possible
 
 ## At the hospital and in court
 
@@ -67,13 +67,13 @@ For lawyers and counsellors checking this page.
 | Point | Source |
 |---|---|
 | Offences | Bharatiya Nyaya Sanhita 2023, ss. 63, 64, 74 to 79 |
-| Not resisting is not consent | BNS s. 63, Explanation 2 |
+| Not resisting is not consent | BNS s. 63, Explanation 2, proviso |
 | FIR at any station, free copy, woman officer records it | Bharatiya Nagarik Suraksha Sanhita 2023, s. 173 |
-| Refusal to record is an offence (for ss. 64 to 71, 74, 76, 77, 79) | BNS s. 199(c) |
+| Refusal to record is an offence (for ss. 64 to 68, 70, 71, 74, 76, 77, 79) | BNS s. 199(c) |
 | Writing to the Superintendent; going to a Magistrate | BNSS ss. 173(4), 175(3) |
-| Statement at home or chosen place | BNSS s. 176(1) |
-| Women not called to the station | BNSS s. 179(1) |
-| Magistrate records statement | BNSS s. 183(6) |
-| No limitation period for serious offences | BNSS s. 514 |
+| Statement at home or chosen place (rape) | BNSS s. 176(1), second proviso |
+| Women not called to the station | BNSS s. 179(1), provisos |
+| Magistrate records statement, woman Magistrate where practicable | BNSS s. 183(6)(a) |
+| No limitation period for offences punishable with more than 3 years | BNSS s. 514(2) |
 
 </details>

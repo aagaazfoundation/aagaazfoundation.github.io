@@ -22,6 +22,7 @@ help_now: "Need help now?"
 help_now_intro: "Tap a number to call."
 help_free: "112 and 1098 are free to call, at any hour."
 call: "Call"
+more_lines: "Other helplines"
 quick_exit: "Quick exit"
 quick_exit_hint: "Leaves this site straight away"
 

@@ -3,6 +3,6 @@
 {%- if site.legal_review.reviewer != "" %}
 <p class="review review--done">{{ t.review_done }} {{ site.legal_review.reviewer }}{% if site.legal_review.date != "" %}, {{ site.legal_review.date | date: "%-d %B %Y" }}{% endif %}.</p>
 {%- endif -%}
-{%- else %}
+{%- elsif site.legal_review.show_pending_note %}
 <p class="review"><strong>{{ t.review_pending_title }}</strong> {{ t.review_pending_text }}</p>
 {%- endif -%}

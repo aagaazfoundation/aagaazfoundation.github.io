@@ -8,7 +8,7 @@ summary: "Six steps for the first hours. Do what you can. None of them has to be
 toolkit_chapter: first-hours
 when_chapter_is_live: link
 legal: true
-last_updated: 2026-11-11
+last_updated: 2026-11-16
 ---
 
 **It is not your fault.** Not what you wore, not where you were, not whether you had been drinking, not whether you knew them, not whether you fought back.
@@ -24,7 +24,7 @@ Go somewhere you feel safe. If you are in danger, call {% include call.html line
 
 ## Tell one person you trust
 
-A parent, a counsellor, a teacher, a friend's parent. If you are under 18 you can call the Child Helpline on {% include call.html line="child" %}. Women can call {% include call.html line="women" %}.
+A parent, a counsellor, a teacher, a friend's parent. If you are under 18 you can call the Child Helpline on {% include call.html line="child" %}. Women can call {% include call.html line="women" %}, or the National Commission for Women on {% include call.html line="ncw" %} (for women 18 and older).
 
 <div class="for-u18" data-tag="Under 18" markdown="1">
 
@@ -57,7 +57,7 @@ Messages, screenshots, call logs, photos, and the names of anyone who saw or hea
 
 ## See a doctor. It is free
 
-Hospitals must treat you free of cost. For the medical examination that can be used as evidence, **a government hospital is best**, because in practice that is what the police and courts rely on.
+After rape, or sexual assault of anyone under 18, every hospital, government or private, must treat you free of cost. For the medical examination that can be used as evidence, **a government hospital is best**. The law says a government doctor should do it where one is available, and that is what the police and courts rely on.
 
 - You can ask for a woman doctor, and someone you trust can be in the room
 - The doctor should explain each step. You can ask questions, take a break or say stop
@@ -84,7 +84,7 @@ You don't need a police report first. The hospital has to inform the police, but
 
 <div class="for-u18" data-tag="Under 18" markdown="1">
 
-You don't have to go to a police station. An officer, usually a woman and not in uniform, comes to your home or a place you choose. A parent or someone you trust can be with you.
+You don't have to go to a police station. An officer comes to your home or a place you choose. The officer should be a woman and should not be in uniform. A parent or someone you trust can be with you.
 
 </div>
 

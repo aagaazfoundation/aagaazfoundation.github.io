@@ -93,14 +93,17 @@ p { margin: 0; }
 .menu li:last-child a { border-bottom: 0; }
 .menu li a[aria-current] { color: var(--primary); }
 .nav-inline { display: none; }
-@media (min-width: 64rem) {
+@media (min-width: 70rem) {
   .menu { display: none; }
   .nav-inline { display: block; order: 2; }
   .langs { order: 3; }
   .nav-inline ul { display: flex; flex-wrap: wrap; gap: 0.1rem 0.2rem; }
-  .nav-inline a { display: block; padding: 0.45rem 0.6rem; color: var(--ink); text-decoration: none; font-size: 0.95rem; border-radius: 6px; }
+  .nav-inline a { display: block; padding: 0.45rem 0.5rem; color: var(--ink); text-decoration: none; font-size: 0.95rem; border-radius: 6px; }
   .nav-inline a:hover { background: var(--page); }
   .nav-inline a[aria-current] { font-weight: 700; color: var(--primary); box-shadow: inset 0 -2px 0 var(--primary); border-radius: 0; }
+}
+@media (min-width: 70rem) and (max-width: 74rem) {
+  .nav-inline a { padding-inline: 0.38rem; font-size: 0.9rem; }
 }
 
 /* ── page header ────────────────────────────────────── */
@@ -133,6 +136,16 @@ p { margin: 0; }
 .line__call { background: var(--primary); color: var(--on-primary); font-weight: 700; font-size: 0.85rem; padding: 0.45rem 0.85rem; border-radius: 999px; }
 .line:hover { background: #fff3c9; }
 .line:hover .line__call { background: var(--primary-dark); }
+.more-lines { margin-top: 1.1rem; }
+.more-lines__title { font-weight: 700; font-size: 0.95rem; color: var(--ink); margin: 0 0 0.45rem; }
+.lines--more { background: var(--bg); border-color: var(--line); }
+.lines--more li + li { border-top-color: var(--line); }
+.lines--more .line { min-height: 0; padding: 0.6rem 0.95rem; }
+.lines--more .line__num { font-size: 1.3rem; }
+.lines--more .line__text { font-size: 0.86rem; }
+.lines--more .line__text strong { font-size: 0.95rem; }
+.lines--more .line__call { background: var(--surface); color: var(--primary); }
+.lines--more .line:hover { background: var(--page); }
 
 .doors-section, .more-section { padding-block: 2rem 0; }
 .doors-section h2, .more-section h2 { font-size: 1.45rem; }
@@ -162,7 +175,7 @@ p { margin: 0; }
 .side { display: none; }
 @media (min-width: 64rem) {
   .layout { display: grid; grid-template-columns: minmax(0, 1fr) 21rem; gap: 4rem; align-items: start; }
-  .side { display: block; position: sticky; top: 1.5rem; margin-block: 1.75rem; }
+  .side { display: block; position: sticky; top: 1.5rem; margin-block: 1.75rem; max-height: calc(100vh - var(--bar-h) - 3rem); overflow-y: auto; overscroll-behavior: contain; }
   .side__title { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; margin-bottom: 0.6rem; }
   .side .line { grid-template-columns: minmax(4.4rem, auto) 1fr; }
   .side .line__call { display: none; }
@@ -300,6 +313,10 @@ a.contents__title { color: var(--primary-dark); }
 .helpbar__exit:hover { background: var(--ink); }
 .sheet { position: absolute; left: 0; right: 0; bottom: 100%; background: var(--bg); border-top: 1px solid var(--line); padding: 1rem max(18px, env(safe-area-inset-right, 0px)) 1rem max(18px, env(safe-area-inset-left, 0px)); box-shadow: 0 -12px 28px rgba(28, 43, 51, 0.16); max-height: calc(100vh - var(--bar-h) - 2rem); overflow-y: auto; }
 .sheet .lines { max-width: 41rem; margin-inline: auto; }
+.sheet .more-lines { max-width: 41rem; margin-inline: auto; margin-top: 0.8rem; }
+.sheet .lines--more .line { padding-block: 0.45rem; }
+.sheet .lines--more .line__text > span { display: none; }
+.sheet .lines--more .line__num { font-size: 1.15rem; }
 .sheet__intro { max-width: 41rem; margin: 0 auto 0.6rem; font-weight: 700; }
 .helpbar :focus-visible { outline-color: var(--ink); outline-offset: 2px; }
 

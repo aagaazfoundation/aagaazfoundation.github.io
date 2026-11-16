@@ -9,7 +9,7 @@ summary: "The POCSO Act protects everyone under 18, whatever their gender."
 toolkit_chapter: under-18
 when_chapter_is_live: link
 legal: true
-last_updated: 2026-11-11
+last_updated: 2026-11-16
 ---
 
 POCSO is short for the Protection of Children from Sexual Offences Act. It covers sexual assault, sexual harassment, and using a child in sexual images or videos. It applies to boys, girls and every child.
@@ -31,7 +31,7 @@ What this means for you:
 ## Your statement, at home
 
 - A police officer comes to **your home or a place you choose**. You don't have to go to a police station
-- The officer is usually a woman, and **should not be in uniform**
+- The officer should be a woman, and **should not be in uniform**
 - A parent or someone you trust can be with you
 - You must **never be kept at a police station overnight**
 - A Magistrate may record your statement too, in private, with someone you trust present
@@ -69,7 +69,7 @@ For counsellors, parents and lawyers checking this page. All sections are from t
 | Police inform the Child Welfare Committee | 19(6) |
 | Child not punished over a complaint | 22(2) |
 | Identity protected | 23 |
-| Statement at home, woman officer, not in uniform, not kept overnight | 24 |
+| Statement at home, woman officer (sub-inspector or above), not in uniform, not kept overnight | 24 |
 | Magistrate records statement | 25 |
 | Trusted person present; interpreter if needed | 26 |
 | Medical exam without an FIR; woman doctor for a girl; trusted person present | 27 |

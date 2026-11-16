@@ -121,7 +121,7 @@ When a chapter is live and you no longer want the short version, open the short 
 2. In `_data/toolkit.yml`, put its file name after `pdf:` and its size after `pdf_size:`.
 
 ### Mark the legal review as done
-Open `_config.yml`. Under `legal_review:` set `done: true`, and fill in `reviewer:` and `date:`. The "being checked by a lawyer" notes disappear, each law page shows who checked it, and search engines are allowed to list the site.
+Open `_config.yml`. Under `legal_review:` set `done: true`, and fill in `reviewer:` and `date:`. Each law page shows who checked it, and search engines are allowed to list the site.
 
 ### The Hindi pages
 Every page has a Hindi version in the `hi` folder, with the same file name (for example `first-steps.md` and `hi/first-steps.md`). A button at the top of each page switches between the two.

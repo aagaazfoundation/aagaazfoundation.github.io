@@ -5,6 +5,7 @@
     <div class="sheet">
       <p class="sheet__intro">{{ t.help_now_intro }}</p>
       {% include helplines.html %}
+      {% include more-lines.html %}
     </div>
   </details>
   <a class="helpbar__exit" href="{{ site.quick_exit_url }}" rel="noreferrer noopener" data-quick-exit title="{{ t.quick_exit_hint }}"><span>{{ t.quick_exit }}</span><svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" d="M5 5l14 14M19 5L5 19"/></svg></a>

@@ -4,6 +4,7 @@
 #  changes the whole site.
 #
 #  show_first: true   → appears in "Need help now?" on every page
+#  show_first: false  → appears under "Other helplines", below the main four
 #  last_checked       → the date YOU last confirmed the number works (YYYY-MM-DD)
 #  hi / pa            → fill in when the Hindi / Punjabi versions are made
 # ─────────────────────────────────────────────────────────────
@@ -53,6 +54,19 @@
     en: "For anything that happened online."
     hi: "इंटरनेट या फ़ोन पर हुई किसी भी घटना के लिए।"
   last_checked: ""
+
+- id: ncw
+  number: "14490"
+  show_first: false
+  name:
+    en: "National Commission for Women (18+)"
+    hi: "राष्ट्रीय महिला आयोग (18+)"
+  note:
+    en: "Free counselling and help with complaints. 24 hours."
+    hi: "मुफ़्त काउंसलिंग और शिकायत करने में मदद। 24 घंटे।"
+  last_checked: ""
+  # Launched November 2025. Free, nationwide, staffed by counsellors. Only for women
+  # 18 or older. Also reachable on its older number 7827170170.
 
 - id: legal-aid
   number: "15100"
