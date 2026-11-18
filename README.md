@@ -12,13 +12,12 @@ What the site does not do, on purpose: no logins, no forms, no cookies, no analy
 
 ## Phase 2: "Find help near you"
 
-Planned, not built. The data file is ready at `_data/directory.yml`.
+Built on 17 November 2026 and switched off (`directory: live: false` in `_config.yml`). It stays off until places have been verified by phone. The guide is `guides/DIRECTORY.md`.
 
-- Someone picks their area (Chandigarh, Panchkula, Mohali) or types a pincode
-- They see the nearest One Stop Centre, government hospitals, legal aid (DLSA), women police station and child rights commission, with the first-steps guide alongside
+- Someone types a sector, area or pincode, taps "Use my location", or picks a district (Chandigarh, Mohali, Panchkula)
+- They see the district's One Stop Centre first, then the nearest hospitals, police, legal aid and child protection offices, with the first-steps guide alongside
 - Each entry shows its "last verified" date
 - **An entry with no `last_verified` date is never shown.** Nothing unchecked can reach a survivor
-- The lookup will run entirely on the visitor's phone. The pincode is never sent anywhere
-- When the toolkit's "Where to go in the Tri-City" chapter is published, it will read from the same file, so there is one list to maintain
-
-Before building it: verify every entry by phone, and fill in the pincode lists from India Post.
+- The lookup runs entirely on the visitor's phone. What they type, and their location, are never sent anywhere
+- When the toolkit's "Where to go in the Tri-City" chapter is published, it can read from the same file, so there is one list to maintain
+- Data licence: `_data/areas.yml` contains OpenStreetMap data (© OpenStreetMap contributors) and is shared under the Open Database License (ODbL). The page credits it

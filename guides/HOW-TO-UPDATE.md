@@ -42,7 +42,9 @@ Always start Claude from the latest version: if you edited anything on GitHub yo
 | A toolkit chapter | the `_toolkit` folder |
 | A workshop | the `_workshops` folder |
 | Menu labels, button text, footer small print | `_data/ui/en.yml` |
-| The phase 2 directory | `_data/directory.yml` |
+| "Find help near you": the places | `_data/directory.yml` (guide: `guides/DIRECTORY.md`) |
+| "Find help near you": districts, pincodes, area names | `_data/areas.yml` |
+| "Find help near you": the page's words | `find-help.md` and `hi/find-help.md` |
 
 Leave `_layouts`, `_includes`, `.github` and `assets/css` alone. Those are the design. The one exception: the site's colours are a short list at the top of `assets/css/site.css`, each with a note saying what it is for. Changing a value there changes it everywhere.
 
@@ -122,6 +124,9 @@ When a chapter is live and you no longer want the short version, open the short 
 
 ### Mark the legal review as done
 Open `_config.yml`. Under `legal_review:` set `done: true`, and fill in `reviewer:` and `date:`. Each law page shows who checked it, and search engines are allowed to list the site.
+
+### Find help near you
+The page is built and switched off. Verifying places, adding map points and switching it on are all in `guides/DIRECTORY.md`.
 
 ### The Hindi pages
 Every page has a Hindi version in the `hi` folder, with the same file name (for example `first-steps.md` and `hi/first-steps.md`). A button at the top of each page switches between the two.

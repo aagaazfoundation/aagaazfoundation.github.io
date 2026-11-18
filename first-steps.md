@@ -98,4 +98,4 @@ You can report at any police station, wherever it happened. Your statement can b
 
 ## What next
 
-{% include page-cards.html refs="law-under-18,law-adults,law-rights" %}
+{% if site.directory.live == true %}{% include page-cards.html refs="find-help,law-under-18,law-adults,law-rights" %}{% else %}{% include page-cards.html refs="law-under-18,law-adults,law-rights" %}{% endif %}

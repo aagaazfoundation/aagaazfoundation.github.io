@@ -1,6 +1,8 @@
 {%- assign t = site.data.ui[page.lang] | default: site.data.ui.en -%}
 {%- for item in site.data.nav -%}
 {%- include find-page.html ref=item.ref -%}
+{%- if item.only_if_directory_live and site.directory.live != true -%}{%- assign found = nil -%}{%- endif -%}
+{%- if include.wide and item.only_if_directory_live -%}{%- assign found = nil -%}{%- endif -%}
 {%- if found %}
 <li><a href="{{ found.url | relative_url }}"{% if found.url == page.url or page.section == item.ref %} aria-current="page"{% endif %}>{{ t.nav[item.ref] }}</a></li>
 {%- endif -%}

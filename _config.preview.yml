@@ -1,0 +1,27 @@
+# ─────────────────────────────────────────────────────────────
+#  TEST VIEW ONLY. The real website never uses this file.
+#  (GitHub builds the site from _config.yml alone.)
+#
+#  Claude uses it to preview "Find help near you" before any place
+#  has been verified:
+#     jekyll build --config _config.yml,_config.preview.yml
+#  It switches the page on, shows unverified places stamped
+#  "NOT VERIFIED", uses unchecked area map points, and adds the
+#  made-up SAMPLE places below so the layout can be judged.
+# ─────────────────────────────────────────────────────────────
+directory:
+  live: true
+  use_my_location: true
+  nearby_km: 20
+  show_unverified: true
+  use_unchecked_centres: true
+
+directory_samples:
+  - { sample: true, type: hospital, sector: government, district: chandigarh, name: "SAMPLE government hospital", address: "Made-up address, Sector 22", phone: "", hours: "Open 24 hours", notes: "", pin: "30.7337, 76.7725", last_verified: "2026-11-17" }
+  - { sample: true, type: hospital, sector: private, district: chandigarh, name: "SAMPLE private hospital", address: "Made-up address, Sector 9", phone: "", hours: "Open 24 hours", notes: "", pin: "30.7479, 76.7928", last_verified: "2026-11-17" }
+  - { sample: true, type: police, sector: government, district: chandigarh, name: "SAMPLE police station", address: "Made-up address, Manimajra", phone: "", hours: "Open 24 hours", notes: "", pin: "30.7136, 76.8438", last_verified: "2026-11-17" }
+  - { sample: true, type: support-group, sector: ngo, district: chandigarh, name: "SAMPLE support organisation", address: "Made-up address, Sector 15", phone: "", hours: "Monday to Friday, 10 am to 5 pm", notes: "Counselling and someone to go with you to the police or hospital.", needs: [support, legal], pin: "30.7519, 76.7745", last_verified: "2026-11-17", ngo_check: { free: true, works_with_survivors: true, spoken_to: "sample", spoken_on: "2026-11-17" } }
+  - { sample: true, type: hospital, sector: government, district: mohali, name: "SAMPLE government hospital", address: "Made-up address, Sohana", phone: "", hours: "Open 24 hours", notes: "", pin: "30.6868, 76.6914", last_verified: "2026-11-17" }
+  - { sample: true, type: shelter, sector: ngo, district: mohali, name: "SAMPLE shelter home", address: "Made-up address, Zirakpur", phone: "", hours: "", notes: "For women and their children.", pin: "30.6540, 76.8210", last_verified: "2026-11-17", ngo_check: { free: false, works_with_survivors: true, spoken_to: "sample", spoken_on: "2026-11-17" } }
+  - { sample: true, type: hospital, sector: government, district: panchkula, name: "SAMPLE government hospital", address: "Made-up address, Sector 20", phone: "", hours: "Open 24 hours", notes: "", pin: "30.6692, 76.8579", last_verified: "2026-11-17" }
+  - { sample: true, type: counselling, sector: private, district: panchkula, name: "SAMPLE counselling centre", address: "Made-up address, Sector 15", phone: "", hours: "By appointment", notes: "", pin: "30.6853, 76.8392", last_verified: "2026-11-17" }

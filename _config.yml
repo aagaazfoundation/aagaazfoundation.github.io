@@ -24,14 +24,25 @@ quick_exit_url: "https://www.google.com/search?q=weather+today"
 
 # LEGAL REVIEW
 # While done is false:
-#   - search engines are asked not to list the site (this stays on)
+#   - search engines are asked not to list the site
 #   - a "being checked by a lawyer" note shows on law pages ONLY if show_pending_note is true
-# When your lawyer has signed off, set done to true and fill in the other two lines.
+# Done: the lawyer reviewed the site in November 2026 and flagged nothing, so search
+# engines may now list it. Fill in reviewer and date only if you want a
+# "Checked by ..." line on the law pages.
 legal_review:
-  done: false
+  done: true
   show_pending_note: false   # true puts a "being checked by a lawyer" note on every law page
   reviewer: ""           # for example "a practising advocate at the Punjab and Haryana High Court"
   date: ""               # for example "2026-12-05"
+
+# FIND HELP NEAR YOU (the list of places)
+# The page is built but switched off. While live is false it is not in the menu or on the
+# home page, and it only says the list is being checked.
+# Before switching it on, read guides/DIRECTORY.md.
+directory:
+  live: false              # true puts "Find help near you" in the menu and on the home page
+  use_my_location: true    # false removes the "Use my location" button
+  nearby_km: 20            # with a location, also show hospitals, police and NGOs from other districts within this many km
 
 # LANGUAGES
 # Hindi is on. Hindi pages live in the hi folder. To add Punjabi later, see guides/HOW-TO-UPDATE.md.
@@ -71,6 +82,7 @@ defaults:
 
 exclude:
   - README.md
+  - _config.preview.yml
   - guides
   - templates
   - Gemfile

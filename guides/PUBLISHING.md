@@ -99,7 +99,7 @@ Do Part A first, so the site already works on its free github.io address.
 
 These values come from [GitHub's own instructions](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site). Type them exactly. Leave TTL at the default.
 
-4. If you later set up `contact@aagaazfoundation.org` forwarding, it adds its own records (type MX and TXT). Those sit alongside these and don't affect the website.
+4. Google Search Console (Part D) adds one record of type TXT, and email forwarding, if you ever set it up, adds records of type MX and TXT. Those sit alongside these and don't affect the website.
 
 ### B4. Wait, then switch on HTTPS
 
@@ -125,6 +125,37 @@ Click your profile picture → **Settings** → **Pages** → **Add a domain**, 
 2. **Use a static QR code.** Avoid generators that offer "dynamic" codes, scan tracking or analytics: those send every scan through their servers first, they track the people scanning, and they often stop working when a free trial ends. Ask me and I will make the QR file for you once the domain works.
 3. Print one test flyer. Scan it with at least two different phones, including an older Android, before printing the rest.
 4. Print the four helpline numbers on the flyer as well, so it helps even if someone never scans it.
+
+---
+
+## Part D: Google Search Console (free)
+
+Search Console shows which Google searches bring people to the site, tells Google about new pages, and warns you about problems. It adds nothing to the site itself, so visitors are not tracked.
+
+**Do this after the newest `site-upload.zip` is on GitHub.** Until then the site still tells Google not to list it, and the list of pages (`sitemap.xml`) doesn't exist yet.
+
+### D1. Add the site
+
+1. Go to [search.google.com/search-console](https://search.google.com/search-console) and sign in with the foundation Gmail.
+2. Choose **Domain** (the left-hand box). Type `aagaazfoundation.org`, with no `https://` and no `www`, and tap **Continue**.
+
+### D2. Prove you own the domain
+
+- **If Search Console names GoDaddy and shows a Start verification button:** tap it, log in to GoDaddy and approve. Search Console then says the domain is verified.
+- **Otherwise:** copy the value it shows (it starts with `google-site-verification=`). In GoDaddy, open the domain's DNS page (as in B3) and add a record: type **TXT**, name `@`, and paste the value. Save. Back in Search Console, tap **Verify**. If it fails, wait an hour and try again. Google says it can take a day or two.
+- **Never delete that TXT record.** Google checks it again from time to time, and the site stops being verified if it's gone.
+
+### D3. Give Google the list of pages
+
+1. In the left menu, open **Sitemaps**.
+2. Under "Add a new sitemap", type `https://aagaazfoundation.org/sitemap.xml` and tap **Submit**. The status should say **Success** (it can say "Couldn't fetch" for the first few hours).
+
+### D4. What to expect
+
+- New sites take a few days to a few weeks to show up in Google. Searching `site:aagaazfoundation.org` on Google shows which pages it has so far.
+- The search numbers start after a few days.
+- Optional, to speed up the home page: paste `https://aagaazfoundation.org` into the search bar at the top of Search Console and tap **Request indexing**.
+- The "Find help near you" page stays out of the list of pages until you switch the finder on. After that, Google finds it on its own.
 
 ---
 

@@ -2,6 +2,8 @@
 # Labels come from _data/ui/en.yml (nav section).
 - ref: home
 - ref: first-steps
+- ref: find-help
+  only_if_directory_live: true     # hidden until directory.live is true in _config.yml
 - ref: law
 - ref: online
 - ref: helping

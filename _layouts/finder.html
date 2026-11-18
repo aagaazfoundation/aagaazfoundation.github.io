@@ -1,0 +1,142 @@
+---
+layout: default
+---
+{%- assign t = site.data.ui[page.lang] | default: site.data.ui.en -%}
+{%- assign f = t.finder -%}
+{%- assign districts = site.data.areas.districts -%}
+{%- assign all = site.data.directory.entries -%}
+{%- if site.directory_samples -%}{%- assign all = all | concat: site.directory_samples -%}{%- endif -%}
+{%- assign shown = 0 -%}
+{%- for e in all -%}{%- include place-visible.html place=e -%}{%- if place_show -%}{%- assign shown = shown | plus: 1 -%}{%- endif -%}{%- endfor -%}
+<div class="band">
+  <div class="wrap">
+    <h1>{{ page.title }}</h1>
+    {%- if page.summary %}
+    <p class="band__sub">{{ page.summary }}</p>
+    {%- endif %}
+  </div>
+</div>
+<div class="wrap layout">
+<div class="finder">
+{%- if site.directory.live != true or shown == 0 %}
+  <div class="prose">
+    <p class="key"><strong>{{ f.empty_title }}.</strong> {{ f.empty_text }}</p>
+    <div class="finder__lines">{% include helplines.html %}</div>
+    {% include page-cards.html refs="first-steps,law" %}
+  </div>
+{%- else %}
+  {%- if site.directory.show_unverified or site.directory_samples %}
+  <p class="finder__test">{{ f.test_banner }}</p>
+  {%- endif %}
+
+  <section class="finder__where" data-finder-where hidden aria-labelledby="finder-where-title">
+    <h2 id="finder-where-title">{{ f.where_title }}</h2>
+    <label class="finder__label" for="finder-q">{{ f.where_label }}</label>
+    <input class="finder__input" id="finder-q" type="text" inputmode="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" enterkeyhint="search" placeholder="{{ f.where_placeholder }}" aria-controls="finder-suggest">
+    <ul class="suggest" id="finder-suggest" aria-label="{{ f.suggestions_label }}" hidden></ul>
+    <p class="finder__small">{{ f.where_private }}</p>
+    {%- if site.directory.use_my_location %}
+    <div class="finder__locate" data-finder-locate-box>
+      <button type="button" class="finder__button" data-finder-locate><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="3.2" fill="currentColor"/><circle cx="12" cy="12" r="7.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 1.5v4M12 18.5v4M1.5 12h4M18.5 12h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>{{ f.locate_button }}</span></button>
+      <p class="finder__small">{{ f.locate_note }}</p>
+    </div>
+    {%- endif %}
+    <p class="finder__msg" data-finder-msg role="status"></p>
+    <div class="finder__districts">
+      <p class="finder__label" id="finder-district-label">{{ f.or_district }}</p>
+      {%- if districts.size <= 6 %}
+      <div class="picks" role="group" aria-labelledby="finder-district-label">
+        {%- for d in districts %}
+        <button type="button" class="pick" data-district="{{ d.id }}">{{ d.name[page.lang] | default: d.name.en }}</button>
+        {%- endfor %}
+      </div>
+      {%- else %}
+      <select class="finder__select" data-finder-select aria-labelledby="finder-district-label">
+        <option value="">{{ f.district_select }}</option>
+        {%- assign by_state = districts | group_by_exp: "d", "d.state.en" %}
+        {%- for g in by_state %}
+        {%- assign first_d = g.items | first %}
+        <optgroup label="{{ first_d.state[page.lang] | default: g.name }}">
+          {%- for d in g.items %}
+          <option value="{{ d.id }}">{{ d.name[page.lang] | default: d.name.en }}</option>
+          {%- endfor %}
+        </optgroup>
+        {%- endfor %}
+      </select>
+      {%- endif %}
+    </div>
+  </section>
+
+  <section class="finder__results" data-finder-results hidden aria-labelledby="finder-results-title">
+    <p class="finder__chosen"><span data-finder-chosen></span> <button type="button" class="finder__change" data-finder-change>{{ f.change }}</button></p>
+    <p class="finder__small" data-finder-shared hidden></p>
+    <div class="finder__needs">
+      <p class="finder__label" id="finder-need-label">{{ f.need_title }}</p>
+      <div class="picks" role="group" aria-labelledby="finder-need-label">
+        <button type="button" class="pick" data-need="" aria-pressed="true">{{ f.need_all }}</button>
+        {%- for n in site.data.directory.needs %}
+        <button type="button" class="pick" data-need="{{ n.id }}" aria-pressed="false">{{ n.label[page.lang] | default: n.label.en }}</button>
+        {%- endfor %}
+      </div>
+    </div>
+    <h2 id="finder-results-title" tabindex="-1">{{ f.results_title }}</h2>
+    <p class="finder__sorted" data-finder-sorted role="status"></p>
+    <ol class="places" data-finder-list></ol>
+    <p class="note" data-finder-none hidden></p>
+    <div data-finder-nearby hidden>
+      <h2 class="finder__nearby-title">{{ f.nearby_title }}</h2>
+      <ol class="places" data-finder-nearby-list></ol>
+    </div>
+  </section>
+
+  {%- comment -%} Without JavaScript, everything is simply listed district by district. {%- endcomment -%}
+  <div class="finder__static" data-finder-static>
+    <p class="finder__label">{{ f.static_intro }}</p>
+    <ul class="finder__jump">
+      {%- for d in districts %}
+      <li><a href="#district-{{ d.id }}">{{ d.name[page.lang] | default: d.name.en }}</a></li>
+      {%- endfor %}
+    </ul>
+    {%- for d in districts %}
+    <section id="district-{{ d.id }}">
+      <h2>{{ d.name[page.lang] | default: d.name.en }}</h2>
+      {%- assign n_here = 0 %}
+      <ul class="places">
+      {%- for e in all -%}
+        {%- if e.district == d.id -%}
+          {%- include place-visible.html place=e -%}
+          {%- if place_show -%}
+            {%- assign n_here = n_here | plus: 1 %}
+      {% include place-card.html place=e flag=place_flag %}
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor %}
+      </ul>
+      {%- if n_here == 0 %}
+      <p class="note">{{ f.none_here | replace: "%DISTRICT%", d.name[page.lang] }}</p>
+      {%- endif %}
+    </section>
+    {%- endfor %}
+  </div>
+
+  <div class="prose finder__know">
+{{ content }}
+    {%- if page.last_updated %}
+    <p class="updated">{{ t.last_updated }}: <time datetime="{{ page.last_updated | date: '%Y-%m-%d' }}">{{ page.last_updated | date: "%-d %B %Y" }}</time></p>
+    {%- endif %}
+    <p class="finder__small finder__credit">{{ f.credits }}</p>
+  </div>
+
+  <script type="application/json" id="finder-data">
+{"lang": {{ page.lang | jsonify }},
+"cfg": {"nearbyKm": {{ site.directory.nearby_km | default: 20 }}, "useUnchecked": {% if site.directory.use_unchecked_centres == true %}true{% else %}false{% endif %}},
+"t": {{ f | jsonify }},
+"types": {{ site.data.directory.types | map: "id" | jsonify }},
+"districts": [{% for d in districts %}{"id": {{ d.id | jsonify }}, "name": {{ d.name[page.lang] | default: d.name.en | jsonify }}, "short": {{ d.short[page.lang] | default: d.short.en | jsonify }}, "names": [{{ d.name.en | jsonify }}, {{ d.name.hi | jsonify }}, {{ d.short.en | jsonify }}, {{ d.short.hi | jsonify }}{% for x in d.also_called %}, {{ x | jsonify }}{% endfor %}], "near": {{ d.near | jsonify }}, "pins": {{ d.pincodes | jsonify }}, "shared": {{ d.pincodes_shared | jsonify }}}{% unless forloop.last %},{% endunless %}{% endfor %}],
+"areas": [{% for a in site.data.areas.areas %}[{{ a.name | jsonify }},{{ a.name_hi | default: "" | jsonify }},{{ a.district | jsonify }},{{ a.pincode | default: "" | jsonify }},{{ a.centre | default: "" | jsonify }},{% if a.checked == true %}1{% else %}0{% endif %},{{ a.also | default: "" | jsonify }},{{ a.also_hi | default: "" | jsonify }}]{% unless forloop.last %},{% endunless %}{% endfor %}]}
+  </script>
+  <script src="{{ '/assets/js/finder.js' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}" defer></script>
+{%- endif %}
+</div>
+{% include side-help.html %}
+</div>

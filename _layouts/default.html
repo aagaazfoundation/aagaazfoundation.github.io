@@ -23,6 +23,7 @@
 <body>
 <a class="skip" href="#main">{{ t.skip }}</a>
 {% include header.html %}
+{% include find-strip.html %}
 <main id="main" class="page page--{{ page.colour | default: 'blue' }}">
 {{ content }}
 </main>

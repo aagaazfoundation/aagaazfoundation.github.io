@@ -1,0 +1,18 @@
+{%- comment -%}
+  Decides whether a place may be shown. Sets: place_show (true/false) and place_flag ("", "unverified" or "sample").
+  A place shows only with a last_verified date and an address. An NGO also needs its ngo_check filled in.
+  Usage: {% include place-visible.html place=e %}
+{%- endcomment -%}
+{%- assign _p = include.place -%}
+{%- assign place_show = false -%}
+{%- assign place_flag = "" -%}
+{%- if _p.last_verified and _p.last_verified != "" and _p.name != "" and _p.address != "" -%}{%- assign place_show = true -%}{%- endif -%}
+{%- if _p.sector == "ngo" -%}
+  {%- assign _c = _p.ngo_check -%}
+  {%- if _c.works_with_survivors != true or _c.spoken_on == nil or _c.spoken_on == "" or _c.spoken_to == nil or _c.spoken_to == "" or _c.free == nil -%}{%- assign place_show = false -%}{%- endif -%}
+{%- endif -%}
+{%- if _p.sample -%}
+  {%- assign place_flag = "sample" -%}
+{%- elsif place_show == false and site.directory.show_unverified == true -%}
+  {%- assign place_show = true -%}{%- assign place_flag = "unverified" -%}
+{%- endif -%}

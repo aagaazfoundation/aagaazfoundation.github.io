@@ -12,7 +12,7 @@
       {%- endfor %}
     </p>
     {%- endif %}
-    <nav class="nav-inline" aria-label="{{ t.menu }}"><ul>{% include nav-items.html %}</ul></nav>
+    <nav class="nav-inline" aria-label="{{ t.menu }}"><ul>{% include nav-items.html wide=true %}</ul></nav>
     <details class="menu">
       <summary>{{ t.menu }}</summary>
       <nav aria-label="{{ t.menu }}"><ul>{% include nav-items.html %}</ul></nav>

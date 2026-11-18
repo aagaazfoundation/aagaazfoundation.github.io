@@ -1,0 +1,61 @@
+{%- comment -%} One place. Usage: {% include place-card.html place=e flag=place_flag %} {%- endcomment -%}
+{%- assign t = site.data.ui[page.lang] | default: site.data.ui.en -%}
+{%- assign f = t.finder -%}
+{%- assign p = include.place -%}
+{%- assign ptype = site.data.directory.types | where: "id", p.type | first -%}
+{%- assign pdistrict = site.data.areas.districts | where: "id", p.district | first -%}
+{%- assign pneeds = p.needs | default: ptype.needs -%}
+{%- if p.needs == nil or p.needs.size == 0 -%}{%- assign pneeds = ptype.needs -%}{%- endif -%}
+{%- assign pin_text = p.pin | default: "" -%}
+{%- comment -%} Test view only: an unverified place may use its suggested map point. The real site never does. {%- endcomment -%}
+{%- if pin_text == "" and site.directory.show_unverified == true -%}{%- assign pin_text = p.pin_suggested | default: "" -%}{%- endif -%}
+{%- assign pin = pin_text | split: "," -%}
+{%- assign hi = false -%}{%- if page.lang == "hi" -%}{%- assign hi = true -%}{%- endif -%}
+{%- assign pname = p.name -%}{%- if hi and p.name_hi and p.name_hi != "" -%}{%- assign pname = p.name_hi -%}{%- endif -%}
+{%- assign paddress = p.address -%}{%- if hi and p.address_hi and p.address_hi != "" -%}{%- assign paddress = p.address_hi -%}{%- endif -%}
+{%- assign phours = p.hours -%}{%- if hi and p.hours_hi and p.hours_hi != "" -%}{%- assign phours = p.hours_hi -%}{%- endif -%}
+{%- assign pnotes = p.notes -%}{%- if hi and p.notes_hi and p.notes_hi != "" -%}{%- assign pnotes = p.notes_hi -%}{%- endif -%}
+<li class="place{% if ptype.start_here %} place--start{% endif %}{% if include.flag != '' %} place--test{% endif %}" data-place data-district="{{ p.district }}" data-type="{{ p.type }}" data-needs="{{ pneeds | join: ' ' }}" data-scope="{% if ptype.whole_district %}district{% else %}any{% endif %}"{% if ptype.start_here %} data-start{% endif %}{% if pin.size == 2 %} data-lat="{{ pin[0] | strip }}" data-lng="{{ pin[1] | strip }}"{% endif %}>
+  {%- if include.flag == "unverified" %}
+  <p class="place__test">{{ f.unverified_tag }}</p>
+  {%- elsif include.flag == "sample" %}
+  <p class="place__test">{{ f.sample_tag }}</p>
+  {%- endif %}
+  <div class="place__top">
+    <h3 class="place__name">{{ pname }}</h3>
+    <span class="place__dist" data-dist hidden></span>
+  </div>
+  <p class="place__tags">
+    {%- if ptype.start_here %}<span class="tag tag--start">{{ f.start_here }}</span>{% endif -%}
+    <span class="tag">{{ ptype.label[page.lang] | default: ptype.label.en }}</span>
+    {%- if p.sector == "government" %}<span class="tag">{{ f.sector_government }}</span>{% elsif p.sector == "private" %}<span class="tag">{{ f.sector_private }}</span>{% elsif p.sector == "ngo" %}<span class="tag">{{ f.sector_ngo }}</span>{% endif -%}
+    {%- if p.sector == "ngo" and p.ngo_check.free == true %}<span class="tag">{{ f.free }}</span>{% elsif p.sector == "ngo" and p.ngo_check.free == false %}<span class="tag">{{ f.fees }}</span>{% endif -%}
+    <span class="tag tag--where">{{ pdistrict.short[page.lang] | default: pdistrict.short.en }}</span>
+  </p>
+  {%- assign pabout = ptype.about[page.lang] | default: ptype.about.en -%}
+  {%- if pabout %}
+  <p class="place__about">{{ pabout }}</p>
+  {%- endif %}
+  {%- if pnotes and pnotes != "" %}
+  <p class="place__about">{{ pnotes }}</p>
+  {%- endif %}
+  {%- if pneeds.size > 1 %}
+  <p class="place__helps"><strong>{{ f.helps_with }}:</strong> {% for n in pneeds %}{% assign need = site.data.directory.needs | where: "id", n | first %}{{ need.label[page.lang] | default: need.label.en }}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
+  {%- endif %}
+  <dl class="place__facts">
+    {%- if paddress and paddress != "" %}
+    <div><dt>{{ f.address }}</dt><dd>{{ paddress }}</dd></div>
+    {%- endif %}
+    {%- if phours and phours != "" %}
+    <div><dt>{{ f.hours }}</dt><dd>{{ phours }}</dd></div>
+    {%- endif %}
+  </dl>
+  {%- if p.phone and p.phone != "" %}
+  <p class="place__call"><a class="place__phone" href="tel:{{ p.phone | remove: ' ' | remove: '-' }}"><span aria-hidden="true">{{ t.call }}</span> <span class="place__num">{{ p.phone }}</span></a>
+    {%- if p.phone2 and p.phone2 != "" %} <a class="place__phone place__phone--second" href="tel:{{ p.phone2 | remove: ' ' | remove: '-' }}"><span aria-hidden="true">{{ t.call }}</span> <span class="place__num">{{ p.phone2 }}</span></a>{% endif -%}
+  </p>
+  {%- endif %}
+  {%- if include.flag == "" and p.last_verified %}
+  <p class="place__checked">{{ f.last_checked }}: <time datetime="{{ p.last_verified | date: '%Y-%m-%d' }}">{{ p.last_verified | date: "%-d %B %Y" }}</time></p>
+  {%- endif %}
+</li>

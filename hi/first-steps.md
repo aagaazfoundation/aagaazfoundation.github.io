@@ -101,4 +101,4 @@ last_updated: 2026-11-16
 
 ## इसके बाद पढ़ें
 
-{% include page-cards.html refs="law-under-18,law-adults,law-rights" %}
+{% if site.directory.live == true %}{% include page-cards.html refs="find-help,law-under-18,law-adults,law-rights" %}{% else %}{% include page-cards.html refs="law-under-18,law-adults,law-rights" %}{% endif %}

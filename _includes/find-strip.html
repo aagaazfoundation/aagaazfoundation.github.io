@@ -1,0 +1,12 @@
+{%- comment -%} A slim link to "Find help near you" under the header of every page.
+   Shows only when directory.live is true in _config.yml. Not on the home page (which has
+   its own button under the headline) or on the Find help page itself. {%- endcomment -%}
+{%- if site.directory.live == true and page.ref != "find-help" and page.ref != "home" -%}
+{%- assign t = site.data.ui[page.lang] | default: site.data.ui.en -%}
+{%- include find-page.html ref="find-help" -%}
+{%- if found %}
+<div class="find-strip">
+  <a class="wrap" href="{{ found.url | relative_url }}"><span class="find-strip__title">{{ t.find_strip }}</span><span class="find-strip__sub">{{ t.find_strip_sub }}</span><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</div>
+{%- endif -%}
+{%- endif -%}

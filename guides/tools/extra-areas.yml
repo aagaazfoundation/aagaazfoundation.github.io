@@ -1,0 +1,9 @@
+# Areas that India Post's list does not have, taken from Wikidata (open data, CC0).
+# make-areas.py adds these to _data/areas.yml, unchecked, like every other area.
+# Add more by hand in the same shape. Never type a map point you have not taken from a source.
+- { name: "Sector 56", district: mohali, centre: "30.7344, 76.7114", source: "Wikidata Q19896258 (Sector 56, Mohali)" }
+- { name: "Sector 61", district: mohali, centre: "30.7015, 76.7290", source: "Wikidata Q19896261 (Sector 61, Mohali)" }
+- { name: "Sector 62", district: mohali, centre: "30.6966, 76.7311", source: "Wikidata Q19896263 (Sector 62, Mohali)" }
+- { name: "Sector 70", district: mohali, centre: "30.6977, 76.7154", source: "Wikidata Q18356541 (Sector 70, Mohali)" }
+- { name: "Sector 71", district: mohali, centre: "30.7040, 76.7095", source: "Wikidata Q19896270 (Sector 71, Mohali)" }
+- { name: "Phase 9", district: mohali, centre: "30.6928, 76.7370", source: "Wikidata Q19895242 (Phase 9, Mohali)" }

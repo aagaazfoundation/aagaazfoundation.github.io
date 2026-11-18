@@ -1,0 +1,22 @@
+# A blank place for _data/directory.yml. Copy from the line starting "  - type" to the end,
+# paste it under the right city heading, and fill it in. The guide is guides/DIRECTORY.md.
+# A place shows on the site only when last_verified has a date and address is filled in.
+
+  - type: hospital            # one-stop-centre | hospital | police | legal-aid | child-rights | counselling | shelter | support-group | campus
+    sector: government        # government | private | ngo
+    district: chandigarh      # chandigarh | mohali | panchkula
+    name: ""
+    address: ""
+    phone: ""
+    hours: ""
+    notes: ""                 # one short line people will see
+    pin: ""                   # map point "30.74123, 76.77901"; only after checking it on a map
+    todo: ""                  # private reminder, never shown
+    last_verified: ""         # the date you checked, like "2027-01-15"
+    verified_how: ""          # for example "phoned, spoke to the front desk"
+    # Only for sector: ngo. All four must be filled in before it shows:
+    # ngo_check:
+    #   free: true
+    #   works_with_survivors: true
+    #   spoken_to: ""
+    #   spoken_on: ""
