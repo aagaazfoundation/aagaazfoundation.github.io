@@ -143,6 +143,7 @@ Search Console shows which Google searches bring people to the site, tells Googl
 
 - **If Search Console names GoDaddy and shows a Start verification button:** tap it, log in to GoDaddy and approve. Search Console then says the domain is verified.
 - **Otherwise:** copy the value it shows (it starts with `google-site-verification=`). In GoDaddy, open the domain's DNS page (as in B3) and add a record: type **TXT**, name `@`, and paste the value. Save. Back in Search Console, tap **Verify**. If it fails, wait an hour and try again. Google says it can take a day or two.
+- **If GoDaddy gives an error (what happened on 19 Nov):** use a **URL prefix** property for `https://aagaazfoundation.org/` instead, with the **HTML file** method. The file `googlee470a1cbeb5cdc08.html` is already in the site. Never delete it.
 - **Never delete that TXT record.** Google checks it again from time to time, and the site stops being verified if it's gone.
 
 ### D3. Give Google the list of pages
