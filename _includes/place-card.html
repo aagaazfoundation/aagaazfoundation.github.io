@@ -6,10 +6,7 @@
 {%- assign pdistrict = site.data.areas.districts | where: "id", p.district | first -%}
 {%- assign pneeds = p.needs | default: ptype.needs -%}
 {%- if p.needs == nil or p.needs.size == 0 -%}{%- assign pneeds = ptype.needs -%}{%- endif -%}
-{%- assign pin_text = p.pin | default: "" -%}
-{%- comment -%} Test view only: an unverified place may use its suggested map point. The real site never does. {%- endcomment -%}
-{%- if pin_text == "" and site.directory.show_unverified == true -%}{%- assign pin_text = p.pin_suggested | default: "" -%}{%- endif -%}
-{%- assign pin = pin_text | split: "," -%}
+{%- assign pin = p.pin | default: "" | split: "," -%}
 {%- assign hi = false -%}{%- if page.lang == "hi" -%}{%- assign hi = true -%}{%- endif -%}
 {%- assign pname = p.name -%}{%- if hi and p.name_hi and p.name_hi != "" -%}{%- assign pname = p.name_hi -%}{%- endif -%}
 {%- assign paddress = p.address -%}{%- if hi and p.address_hi and p.address_hi != "" -%}{%- assign paddress = p.address_hi -%}{%- endif -%}

@@ -31,8 +31,6 @@
   --on-primary: #ffffff;    /* text on a primary button */
   --exit: #96362a;          /* the Quick exit button */
   --lang-button: #96362a;   /* the "read in Hindi / English" button on the home page */
-  --find: #237a3b;          /* "Find help near you": the home page button and the strip under the header */
-  --find-dark: #1b6330;     /* the same, when pointed at */
   --ok: #2c6b5b;            /* ticks */
   --ok-tint: #ecf4f1;
   --no: #96362a;            /* crosses */
@@ -414,12 +412,11 @@ html.is-leaving body { visibility: hidden; }
 
 /* the "Find help near you" strip under the header (only when the page is switched on) */
 .find-strip { background: var(--highlight); border-bottom: 1px solid var(--highlight-line); }
-.find-strip a { display: flex; align-items: center; gap: 0.75rem; min-height: 2.9rem; padding-block: 0.45rem; color: var(--find); text-decoration: none; font-weight: 700; }
+.find-strip a { display: flex; align-items: center; gap: 0.75rem; min-height: 2.9rem; padding-block: 0.45rem; color: var(--primary-dark); text-decoration: none; font-weight: 700; }
 .find-strip a:hover .find-strip__title { text-decoration: underline; text-underline-offset: 0.18em; }
 .find-strip__sub { display: none; font-weight: 400; color: var(--muted); font-size: 0.95rem; }
 .find-strip svg { margin-left: auto; flex: 0 0 auto; }
 @media (min-width: 40rem) { .find-strip__sub { display: inline; } }
 .hero__find { margin: 1.25rem 0 0; }
-.hero__find .button { gap: 0.6rem; background: var(--find); }
-.hero__find .button:hover { background: var(--find-dark); }
+.hero__find .button { gap: 0.6rem; }
 @media print { .find-strip { display: none; } }

@@ -1,12 +1,10 @@
 # Legal review checklist: Aagaaz Foundation website
 
-For the reviewing advocate. 11 November 2026, updated 18 November 2026.
+For the reviewing advocate. 11 November 2026, updated 16 November 2026.
 
 The website's phase 1 pages make the claims below. Each is written for a general reader, including children, so the wording is deliberately simple. Please mark anything that is wrong, out of date, or simplified to the point of being misleading. Section numbers appear on the site only inside a fold-out "Where this comes from" table at the bottom of each law page.
 
-**Status of this content:** drafted from the Aagaaz toolkit drafts and the bare Acts, and checked against the Acts online on 16 November 2026. **Reviewed by the advocate in November 2026: she flagged nothing and corrected nothing** (as reported by Ayesha on 18 November 2026). The site was then opened to search engines.
-
-**Added after that review, so not yet seen by the advocate:** the section "If it is your husband" on the Adults page (A14 below). Worth sending her that one section.
+**Status of this content:** drafted from the Aagaaz toolkit drafts and the bare Acts, and checked against the Acts online on 16 November 2026. Not yet reviewed by a lawyer. The site is not listed on search engines until this review is done.
 
 ---
 
@@ -26,10 +24,10 @@ On 16 November 2026 each point below was checked against the text of the Acts an
 | A8 | Under 18 | "You must never be kept at a police station overnight" | Confirmed: s. 24(4) "No child shall be detained in the police station in the night for any reason" |
 | A9 | Workplace and campus | "UGC rules ask colleges to act on harassment of students of any gender" | Confirmed: Regulation 3(1)(d) covers employees and students "of all sexes" |
 | A10 | Workplace and campus | POSH covers "students, patients and visitors" | s. 2(a) says "a woman, of any age whether employed or not"; s. 2(o) includes educational institutions and hospitals. Still open: does a school student's complaint go to the IC, or only through POCSO? |
-| A11 | Rights for everyone | Compensation time limit: three years from the crime or from the end of the trial; a late application can sometimes be accepted | Rechecked 17 Nov. NALSA 2018 scheme, Part II cl. 16 (NALSA text): 3 years from the offence or the end of the trial, delay can be condoned. Punjab Victim Compensation Scheme 2017, cl. 14: 3 years from the crime, plus one more year if the authority condones the delay; Punjab's older 2011 scheme said six months, and in 2024 the High Court held that delay should not defeat a claim (X v State of Punjab, 2024 LiveLaw (PH) 20). Haryana has a 2020 scheme in two parts and Chandigarh a 2018 scheme (notified 31 Jul 2019), but their texts could not be found online. The site's wording names only the national scheme. Please confirm the Chandigarh and Haryana limits |
-| A12 | Home and every page | 181 as the women's helpline. 14490 (National Commission for Women, women 18+) added under "Other helplines" on 16 Nov | Confirmed 17 Nov. Haryana and Punjab: their own websites. Chandigarh: the Women Helpline there handled 10,154 calls in 2022-23 (to 31 Dec 2022), per the Ministry's Rajya Sabha reply (PIB, 22 Mar 2023), and the UT Social Welfare Department lists "Women & Child Help Line-181, Sector 19". In Punjab, 181 also covers children and senior citizens (launched 8 Mar 2021) |
+| A11 | Rights for everyone | Compensation time limit: three years from the crime or from the end of the trial; a late application can sometimes be accepted | NALSA 2018 scheme, Part II cl. 16 (seen in a state's adoption of it): 3 years, delay can be condoned. Not confirmed that Chandigarh, Haryana and Punjab use the same clause. Punjab's older 2011 general scheme says six months |
+| A12 | Home and every page | 181 as the women's helpline. 14490 (National Commission for Women, women 18+) added under "Other helplines" on 16 Nov | Haryana and Punjab confirmed. Chandigarh's Social Welfare department website lists "Women & Child Help Line-181 Chandigarh, Sector 19", but the page would not open. Ring it once to confirm |
 | A13 | What to do first; Rights | Government hospital for the evidence examination | Now backed by BNSS s. 184(1): the examination is done by a doctor at a government or local authority hospital, and by another registered doctor only if none is available. The site now says so |
-| A14 | Adults | The offences table says sex without consent is rape | **Added 18 November 2026 at Ayesha's request, after the advocate's review.** New section "If it is your husband": the exception for a wife aged 18 or older (BNS s. 63, Exception 2); the Supreme Court challenge (listed for final hearing on 9 September 2026, no ruling found as of 18 November); a wife under 18 is covered; living apart, BNS s. 67 (2 to 7 years); sexual abuse is domestic violence (DV Act 2005, s. 3 Explanation I(ii); orders under ss. 18 to 20, applied for under s. 12); cruelty, BNS ss. 85 and 86. Same in Hindi. Please check this section. |
+| A14 | Adults | The offences table says sex without consent is rape | **New point, not yet on the site.** BNS s. 63, Exception 2 still says sex by a man with his own wife, if she is 18 or older, is not rape. The Supreme Court began final hearings on this in late 2026 and has not ruled. Should the page say so, and point married women to other remedies? |
 
 ---
 
@@ -127,8 +125,8 @@ Any change to the English wording after this review must be made in the Hindi pa
 
 These matter for the toolkit and for the phase 2 directory, not for the phase 1 pages.
 
-- Panchkula One Stop Centre: the Ministry's list of One Stop Centres gives Room 27, 2nd Floor, New Mini Secretariat. Your booklet also mentions Civil Hospital, Sector 6. Confirm by phone
-- Every phone number and address in the "Where to go" table: looked up online on 17 Nov 2026, with sources, in `_data/directory.yml`. None verified by phone yet. Several numbers differ from the booklet (Chandigarh and Mohali One Stop Centres)
+- Panchkula One Stop Centre: two sources give different addresses
+- Every phone number and address in the "Where to go" table
 - Which Tri-City government hospitals conduct medico-legal examinations for POCSO cases
 - Whether cybercrime.gov.in still offers anonymous reporting for material involving children
 - Limitation period for sexual harassment under POCSO s. 12

@@ -29,10 +29,8 @@
     return (isFinite(lat) && isFinite(lng)) ? [lat, lng] : null;
   }
   var areas = data.areas.map(function (a) {
-    /* a[6], a[7]: another name for the same area, such as a Mohali phase, in English and Hindi */
     return { name: a[0], hi: a[1], district: a[2], pin: a[3], centre: point(a[4]), checked: a[5] === 1,
-             also: a[6] || "", alsoHi: a[7] || "",
-             key: norm(a[0] + " " + a[1] + " " + (a[6] || "") + " " + (a[7] || "")) };
+             key: norm(a[0] + " " + a[1]) };
   });
   var cards = Array.prototype.map.call(document.querySelectorAll("[data-place]"), function (el, i) {
     var lat = parseFloat(el.getAttribute("data-lat")), lng = parseFloat(el.getAttribute("data-lng"));
@@ -67,10 +65,7 @@
   function fill(text, map) {
     return String(text).replace(/%([A-Z]+)%/g, function (m, k) { return (k in map) ? map[k] : m; });
   }
-  function areaLabel(a) {
-    var also = (hindi && a.alsoHi) ? a.alsoHi : a.also;
-    return ((hindi && a.hi) ? a.hi : a.name) + (also ? " (" + also + ")" : "") + ", " + districts[a.district].short;
-  }
+  function areaLabel(a) { return ((hindi && a.hi) ? a.hi : a.name) + ", " + districts[a.district].short; }
   function say(text) { msg.textContent = text || ""; }
   function el(tag, cls, text) {
     var n = document.createElement(tag);
@@ -104,10 +99,8 @@
       var words = own.concat(norm(districts[a.district].names.join(" ")).split(" "));
       var score = 0, ownHit = false;
       var ok = tokens.every(function (tk) {
-        /* a single letter, as in "12a", must belong to the area itself, not to its district's name */
-        var pool = tk.length === 1 ? own : words;
-        var exact = pool.indexOf(tk) !== -1;
-        var starts = !exact && pool.some(function (w) { return w.indexOf(tk) === 0; });
+        var exact = words.indexOf(tk) !== -1;
+        var starts = !exact && words.some(function (w) { return w.indexOf(tk) === 0; });
         if (exact) { score += 2; } else if (starts) { score += 1; }
         if (own.some(function (w) { return w.indexOf(tk) === 0; })) { ownHit = true; }
         return exact || starts;
@@ -123,12 +116,7 @@
     /* An area we don't have (or a sector number that exists in more than one city):
        ask which district it is in. We never guess. */
     var hasExact = {};
-    found.forEach(function (x) {
-      /* "Sector 17 (GPO)" counts as an exact match for "sector 17", and so does each of its phases */
-      var names = [x.a.name, x.a.hi].concat(String(x.a.also).split(","), String(x.a.alsoHi).split(","))
-        .map(function (n) { return norm(String(n || "").replace(/\(.*?\)/g, " ")); });
-      if (names.indexOf(q) !== -1) { hasExact[x.a.district] = true; }
-    });
+    found.forEach(function (x) { if (norm(x.a.name) === q || (x.a.hi && norm(x.a.hi) === q)) { hasExact[x.a.district] = true; } });
     var isDistrict = out.some(function (o) { return o.kind === "district" || o.kind === "pincode"; });
     var numbered = /[a-z\u0900-\u097f] \d+$/.test(q);          /* "sector 9", "phase 7" */
     if (!isDistrict && !/^\d+$/.test(q) && q.length >= 3 && order.length <= 6 && (numbered || !found.length)) {
@@ -194,11 +182,6 @@
     var trusted = nearestCentres(p, true).slice(0, 3);
     var sure = trusted.length === 3 && trusted[2].d <= 6 &&
                trusted.every(function (x) { return x.a.district === trusted[0].a.district; });
-    /* Near a district border we ask instead of guessing: any listed area of another district
-       within 1.5 km, checked or not, is enough to ask. */
-    if (sure) {
-      sure = !areas.some(function (a) { return a.centre && a.district !== trusted[0].a.district && km(p, a.centre) <= 1.5; });
-    }
     if (sure) {
       choose({ district: trusted[0].a.district, point: p, source: "gps", label: T.your_location });
       return;

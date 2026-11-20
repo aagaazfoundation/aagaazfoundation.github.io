@@ -30,11 +30,8 @@
     en: "For women facing violence or harassment. 24 hours."
     hi: "हिंसा या उत्पीड़न झेल रही महिलाओं के लिए। 24 घंटे।"
   last_checked: ""
-  # 181 works in all three places. Haryana and Punjab: confirmed on their websites.
-  # Chandigarh: the Women Helpline handled 10,154 calls in 2022-23 (to 31 Dec 2022) according to
-  # the Ministry of Women and Child Development's reply in the Rajya Sabha, PIB 22 Mar 2023
-  # (https://www.pib.gov.in/PressReleasePage.aspx?PRID=1910101), and the UT Social Welfare
-  # Department lists "Women & Child Help Line-181 Chandigarh, Sector 19". Ring it once anyway.
+  # TO CONFIRM: 181 is confirmed for Haryana and Punjab. For Chandigarh it is listed
+  # by the Social Welfare Department (Sector 19) but confirm with your CCPCR contact.
 
 - id: child
   number: "1098"

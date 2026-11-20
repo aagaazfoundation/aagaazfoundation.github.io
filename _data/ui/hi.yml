@@ -131,4 +131,3 @@ finder:
   empty_title: "हम यह सूची अभी जाँच रहे हैं"
   empty_text: "यहाँ कोई भी जगह तब तक नहीं दिखाई जाती, जब तक हम फ़ोन करके उसकी जानकारी जाँच न लें। तब तक हेल्पलाइन पर कॉल करके पूछें कि कहाँ जाना है।"
   static_intro: "अपना ज़िला चुनें:"
-  credits: 'इलाक़ों के नाम और उनकी मोटी-मोटी लोकेशन इंडिया पोस्ट, OpenStreetMap (<a href="https://www.openstreetmap.org/copyright">© OpenStreetMap योगदानकर्ता</a>, ODbL), GeoNames (geonames.org, CC BY 4.0) और Wikidata से ली गई है।'

@@ -9,7 +9,7 @@ summary: "The main offences, how to report, and your right to a woman officer."
 toolkit_chapter: 18-or-older
 when_chapter_is_live: link
 legal: true
-last_updated: 2026-11-18
+last_updated: 2026-11-16
 ---
 
 **Medical care, a police report and a trial are separate decisions, and each one is yours.** You can get treated without reporting. You can report later. Nobody can make these choices for you.
@@ -38,19 +38,6 @@ If you are under 18, the law is different and it protects everyone equally. [Rea
 </div>
 
 **Consent** means clearly and freely agreeing. The law says that not fighting back is not consent. Consent cannot be given by someone who is asleep, unconscious, too drunk to understand, or threatened.
-
-## If it is your husband
-
-**There is a gap in the law here.** Indian law still says that if a husband forces sex or sexual acts on his wife, it is not rape, as long as she is 18 or older. Cases challenging this rule are in the Supreme Court, which has not decided yet.
-
-You still have protection:
-
-- **If you are under 18, it is rape,** even though he is your husband
-- **If you are living apart from him,** whether or not a court has ordered it, sex without your consent is a crime. It is punished with two to seven years in prison
-- **Sexual abuse by a husband is domestic violence.** Under the Domestic Violence Act, a Magistrate can order him to stop, let you keep living in your home, and make him pay you money to live on. A Protection Officer, the One Stop Centre or a free lawyer can help you apply
-- **Cruelty by a husband is a crime,** and that includes treating you in a way that could seriously harm your body or your mental health
-
-Call the women's helpline on {% include call.html line="women" %} or the legal aid helpline on {% include call.html line="legal-aid" %}.
 
 ## Reporting to the police: FIR and Zero FIR
 
@@ -81,11 +68,6 @@ For lawyers and counsellors checking this page.
 |---|---|
 | Offences | Bharatiya Nyaya Sanhita 2023, ss. 63, 64, 74 to 79 |
 | Not resisting is not consent | BNS s. 63, Explanation 2, proviso |
-| A husband and his wife aged 18 or older: not rape | BNS s. 63, Exception 2 |
-| The challenge in the Supreme Court | Listed for final hearing on 9 September 2026 (bench of Chief Justice Surya Kant); no ruling yet |
-| Living apart: sex without consent is an offence, 2 to 7 years | BNS s. 67 |
-| Sexual abuse is domestic violence; protection, residence and money orders | Protection of Women from Domestic Violence Act 2005, s. 3 (Explanation I(ii)), ss. 12, 18 to 20 |
-| Cruelty by a husband | BNS ss. 85, 86 |
 | FIR at any station, free copy, woman officer records it | Bharatiya Nagarik Suraksha Sanhita 2023, s. 173 |
 | Refusal to record is an offence (for ss. 64 to 68, 70, 71, 74, 76, 77, 79) | BNS s. 199(c) |
 | Writing to the Superintendent; going to a Magistrate | BNSS ss. 173(4), 175(3) |

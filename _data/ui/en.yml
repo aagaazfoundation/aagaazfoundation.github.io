@@ -127,4 +127,3 @@ finder:
   empty_title: "We are still checking this list"
   empty_text: "Every place is checked by phone before it appears here, so that nothing on this page is out of date. Until then, the helplines can tell you where to go."
   static_intro: "Choose your district:"
-  credits: 'Area names and rough locations come from India Post, OpenStreetMap (<a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>, ODbL), GeoNames (geonames.org, CC BY 4.0) and Wikidata.'
