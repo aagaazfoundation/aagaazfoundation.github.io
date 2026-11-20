@@ -9,4 +9,6 @@
 - ref: helping
 - ref: toolkit
 - ref: workshops
+- ref: unsafe-places
+  phone_only: true                 # in the phone menu only; the wide menu is full
 - ref: about

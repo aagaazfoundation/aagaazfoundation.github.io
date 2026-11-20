@@ -13,8 +13,13 @@
 
 # When the finished PDF is ready, put it in assets/downloads/ and write its
 # file name here, for example "aagaaz-toolkit.pdf". The download button then appears.
-pdf: ""
-pdf_size: ""        # for example "1.1 MB", shown next to the button
+pdf: "aagaaz-toolkit.pdf"   # the booklet, in English (added 19 Nov 2026)
+pdf_size: "700 KB"        # shown next to the button
+
+# The printable A5 flyers. Leave a line empty ("") to hide that button.
+flyer:
+  en: "aagaaz-flyer-en.pdf"
+  hi: "aagaaz-flyer-hi.pdf"
 
 chapters:
   - slug: quick-card

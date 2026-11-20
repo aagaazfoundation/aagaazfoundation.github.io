@@ -124,6 +124,7 @@ layout: default
     {%- if page.last_updated %}
     <p class="updated">{{ t.last_updated }}: <time datetime="{{ page.last_updated | date: '%Y-%m-%d' }}">{{ page.last_updated | date: "%-d %B %Y" }}</time></p>
     {%- endif %}
+    <p class="finder__small finder__credit">{{ f.credits }}</p>
   </div>
 
   <script type="application/json" id="finder-data">
@@ -132,7 +133,7 @@ layout: default
 "t": {{ f | jsonify }},
 "types": {{ site.data.directory.types | map: "id" | jsonify }},
 "districts": [{% for d in districts %}{"id": {{ d.id | jsonify }}, "name": {{ d.name[page.lang] | default: d.name.en | jsonify }}, "short": {{ d.short[page.lang] | default: d.short.en | jsonify }}, "names": [{{ d.name.en | jsonify }}, {{ d.name.hi | jsonify }}, {{ d.short.en | jsonify }}, {{ d.short.hi | jsonify }}{% for x in d.also_called %}, {{ x | jsonify }}{% endfor %}], "near": {{ d.near | jsonify }}, "pins": {{ d.pincodes | jsonify }}, "shared": {{ d.pincodes_shared | jsonify }}}{% unless forloop.last %},{% endunless %}{% endfor %}],
-"areas": [{% for a in site.data.areas.areas %}[{{ a.name | jsonify }},{{ a.name_hi | default: "" | jsonify }},{{ a.district | jsonify }},{{ a.pincode | default: "" | jsonify }},{{ a.centre | default: "" | jsonify }},{% if a.checked == true %}1{% else %}0{% endif %}]{% unless forloop.last %},{% endunless %}{% endfor %}]}
+"areas": [{% for a in site.data.areas.areas %}[{{ a.name | jsonify }},{{ a.name_hi | default: "" | jsonify }},{{ a.district | jsonify }},{{ a.pincode | default: "" | jsonify }},{{ a.centre | default: "" | jsonify }},{% if a.checked == true %}1{% else %}0{% endif %},{{ a.also | default: "" | jsonify }},{{ a.also_hi | default: "" | jsonify }}]{% unless forloop.last %},{% endunless %}{% endfor %}]}
   </script>
   <script src="{{ '/assets/js/finder.js' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}" defer></script>
 {%- endif %}

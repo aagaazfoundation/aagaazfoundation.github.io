@@ -1,7 +1,14 @@
 {%- assign t = site.data.ui[page.lang] | default: site.data.ui.en -%}
-{%- if site.data.toolkit.pdf and site.data.toolkit.pdf != "" %}
+{%- if include.part != "flyers" and site.data.toolkit.pdf and site.data.toolkit.pdf != "" %}
 <p><a class="button" href="{{ '/assets/downloads/' | append: site.data.toolkit.pdf | relative_url }}">{{ t.download_pdf }}{% if site.data.toolkit.pdf_size != "" %} · {{ site.data.toolkit.pdf_size }}{% endif %}</a></p>
 {%- endif %}
+{%- if include.part == "flyers" %}
+{%- assign fl = site.data.toolkit.flyer %}
+<p class="flyer-links">
+{%- if fl.en and fl.en != "" %}<a class="button button--quiet" href="{{ '/assets/downloads/' | append: fl.en | relative_url }}">{{ t.flyer_en }}</a> {% endif %}
+{%- if fl.hi and fl.hi != "" %}<a class="button button--quiet" href="{{ '/assets/downloads/' | append: fl.hi | relative_url }}">{{ t.flyer_hi }}</a>{% endif %}
+</p>
+{%- else %}
 <ol class="contents">
 {%- for ch in site.data.toolkit.chapters -%}
   {%- assign doc = site.toolkit | where: "slug", ch.slug | where: "lang", page.lang | first -%}
@@ -20,3 +27,4 @@
   </li>
 {%- endfor %}
 </ol>
+{%- endif %}

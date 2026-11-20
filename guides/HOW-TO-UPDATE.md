@@ -30,7 +30,7 @@ Always start Claude from the latest version: if you edited anything on GitHub yo
 | To change this | Open this file |
 |---|---|
 | A helpline number or its description | `_data/helplines.yml` |
-| Your contact email, Instagram, Quick exit destination, legal review status | `_config.yml` |
+| Your contact email, Instagram, the unsafe-places form links, legal review status | `_config.yml` |
 | Home page words and the three big buttons | `index.md` |
 | What to do first | `first-steps.md` |
 | Know the law pages | the `law` folder |

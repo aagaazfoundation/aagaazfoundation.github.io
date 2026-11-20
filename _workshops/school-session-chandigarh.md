@@ -1,4 +1,5 @@
 ---
+published: false        # hidden for now (18 Nov 2026). Change to true, or delete this line, to show it again.
 # One file = one session. Copy templates/workshop-template.md to make a new one.
 title: "School session, Chandigarh"
 status: upcoming            # upcoming or past

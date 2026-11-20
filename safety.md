@@ -3,19 +3,15 @@ title: "Staying safe on this site"
 ref: safety
 permalink: /safety/
 colour: red
-summary: "What the Quick exit button does, and how to keep your visit private."
-last_updated: 2026-11-11
+summary: "How to leave this site quickly, and how to keep your visit private."
+last_updated: 2026-11-20
 ---
 
-## The Quick exit button
+## If you need to leave quickly
 
-The red **Quick exit** button is at the bottom of every page. Tap it and this site is replaced straight away by a weather search. On a computer, pressing the **Esc** key twice does the same thing.
-
-What it does not do:
-
-- **It does not clear your browser history.** Someone who checks your history can still see that you visited
-- The Back button may still lead to pages you opened earlier. Close the tab after you exit
-{: .dont}
+- **Close the tab,** or switch to another app
+- Closing the tab does not clear your history. The sections below explain how
+- If you only switch apps, this page may still be open when someone picks up your phone
 
 ## Keep your visit out of your history
 

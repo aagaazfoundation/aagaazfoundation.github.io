@@ -24,6 +24,7 @@ more_title: "Also on this site"
 more:
   - online
   - toolkit
+  - unsafe-places
   - workshops
   - about
 ---
@@ -32,4 +33,4 @@ more:
 
 Aagaaz means "a beginning". We are a student-led project in the Tri-City. We explain, in plain language, what to do, where to go and what you are entitled to after sexual harassment or abuse.
 
-The help already exists: free medical care, a free lawyer, the right to give a statement at home instead of at a police station. Most people are never told. We run workshops, and we are writing a toolkit that puts it all in one place.
+The help already exists: free medical care, a free lawyer, the right to give a statement at home instead of at a police station. Most people are never told. We run workshops, and we have written a toolkit that puts it all in one place.

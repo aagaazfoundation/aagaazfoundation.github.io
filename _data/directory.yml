@@ -26,8 +26,14 @@
 #    pin       the map point, "latitude, longitude". OPTIONAL. Fill it only after
 #              you have checked it on a map. Without it the place still shows,
 #              just without a distance.
+#    pin_suggested  a map point found online, usually from OpenStreetMap. The real
+#              site NEVER uses it. Check it on Google Maps (paste the two numbers
+#              into the search box); if it lands on the right building, copy it into pin.
 #    needs     OPTIONAL. Leave out to use the type's usual list.
 #    todo      a private reminder for you. Never shown on the site.
+#    source    where an address or number was found online, and when. Never shown.
+#              Finding something online is NOT verifying it: phone before you fill
+#              in last_verified.
 #    ngo_check ONLY for sector: ngo. All four lines must be filled in:
 #                free: true or false
 #                works_with_survivors: true
@@ -103,8 +109,11 @@ types:
 
 # ─────────────────────────────────────────────────────────────
 #  THE PLACES
-#  The entries below come from your booklet draft (Part 8). None has
-#  been verified yet, so none shows on the site.
+#  Addresses and numbers below were looked up online on 17 November 2026,
+#  and the "source" line says where. Suggested map points, and a few numbers,
+#  come from OpenStreetMap, which copied many hospitals from the government's
+#  own hospital directory. NONE has been verified by phone yet,
+#  so none shows on the site. Where sources disagreed, the "todo" line says so.
 # ─────────────────────────────────────────────────────────────
 entries:
 
@@ -114,92 +123,180 @@ entries:
     sector: government
     district: chandigarh
     name: "One Stop Centre (Sakhi)"
-    address: "Nari Niketan, Sector 26"
-    phone: "0172-2793026"
+    address: "Nari Niketan Building, Sector 26, Chandigarh"
+    phone: "85590 19191"
+    phone2: "0172-2793026"
     hours: ""
     notes: ""
     pin: ""
-    todo: "Address and phone are from the booklet draft, not verified."
-    last_verified: ""
-    verified_how: ""
+    todo: "Verified by phone on 20 Nov 2026. Ring again every few months, and when something changes."
+    source: "Ministry of Women and Child Development, list of functional One Stop Centres (undated PDF, row 112): https://wcd.nic.in/sites/default/files/Details%20of%20704%20functional%20One%20Stop%20Centres%28OSCs%29_1.pdf (seen 17 Nov 2026). Same address as your booklet."
+    last_verified: "2026-11-20"
+    verified_how: "Phoned by Ayesha on 20 Nov 2026; she confirmed the details are correct."
 
   - type: hospital
     sector: government
     district: chandigarh
     name: "Government Multi Specialty Hospital (GMSH)"
-    address: "Sector 16"
-    phone: ""
+    address: "Sector 16, Chandigarh"
+    phone: "0172-2768119"
     hours: ""
     notes: ""
-    pin: ""
-    todo: "TO CONFIRM: does this hospital conduct medico-legal examinations for sexual assault and POCSO cases? Address from the booklet draft, not verified."
-    last_verified: ""
-    verified_how: ""
+    pin: "30.7508, 76.7809"
+    pin_suggested: "30.7508, 76.7809"
+    todo: "Verified by phone on 20 Nov 2026. Ring again every few months, and when something changes."
+    source: "Phone and map point: OpenStreetMap way/129782458, which copied it from the government's hospital directory (\"OpenGovernmentData\") (seen 17 Nov 2026). No number on an official site. A hospital-listing site gives 99888 83601 but does not say where it got it, so it is not used."
+    last_verified: "2026-11-20"
+    verified_how: "Phoned by Ayesha on 20 Nov 2026; she confirmed the details are correct."
 
   - type: hospital
     sector: government
     district: chandigarh
     name: "Government Medical College and Hospital (GMCH)"
-    address: "Sector 32"
-    phone: ""
+    address: "Sector 32, Chandigarh"
+    phone: "0172-2665253"
     hours: ""
     notes: ""
-    pin: ""
-    todo: "TO CONFIRM: medico-legal examinations? Address from the booklet draft, not verified."
-    last_verified: ""
-    verified_how: ""
+    pin: "30.7091, 76.7807"
+    pin_suggested: "30.7091, 76.7807"
+    todo: "Verified by phone on 20 Nov 2026. Ring again every few months, and when something changes."
+    source: "GMCH Citizens Charter (2025): https://gmch.gov.in/sites/default/files/2025-01/CITIZENS_CHARTER.pdf (seen 17 Nov 2026). It says casualty and emergency run round the clock and there is a police post inside the hospital. Map point and the second number: OpenStreetMap way/129453616, which copied it from the government's hospital directory (\"OpenGovernmentData\") (seen 17 Nov 2026)."
+    last_verified: "2026-11-20"
+    verified_how: "Phoned by Ayesha on 20 Nov 2026; she confirmed the details are correct."
 
   - type: hospital
     sector: government
     district: chandigarh
     name: "PGIMER"
-    address: "Sector 12"
-    phone: ""
+    address: "Sector 12, Chandigarh"
+    phone: "0172-2755220"
     hours: ""
     notes: ""
-    pin: ""
-    todo: "TO CONFIRM: medico-legal examinations? Address from the booklet draft, not verified."
-    last_verified: ""
-    verified_how: ""
+    pin: "30.7611, 76.7762"
+    pin_suggested: "30.7611, 76.7762"
+    todo: "Verified by phone on 20 Nov 2026. Ring again every few months, and when something changes."
+    source: "Phone: OpenStreetMap node/6908111185, which copied it from the government's hospital directory (\"OpenGovernmentData\") (seen 17 Nov 2026). Map point: OpenStreetMap node/441046459, \"PGI Emergency\" (seen 17 Nov 2026). No number on an official site."
+    last_verified: "2026-11-20"
+    verified_how: "Phoned by Ayesha on 20 Nov 2026; she confirmed the details are correct."
 
   - type: police
     sector: government
     district: chandigarh
-    name: "Women police station"
-    address: "Sector 17"
+    name: "Women Police Station"
+    address: "Sector 17, Chandigarh"
     phone: ""
     hours: ""
     notes: ""
     pin: ""
-    todo: "Address from the booklet draft, not verified."
-    last_verified: ""
-    verified_how: ""
+    todo: "Verified by phone on 20 Nov 2026. Ring again every few months, and when something changes."
+    source: "The Tribune, 1 Feb 2019, \"Sec 17 women police station child-friendly\": https://www.tribuneindia.com/news/archive/chandigarh/sec-17-women-police-station-child-friendly-721997 (seen 17 Nov 2026). No phone number found online."
+    last_verified: "2026-11-20"
+    verified_how: "Phoned by Ayesha on 20 Nov 2026; she confirmed the details are correct."
 
   - type: legal-aid
     sector: government
     district: chandigarh
     name: "District Legal Services Authority (DLSA)"
-    address: "District Courts, Sector 43"
+    address: "ADR Building, District Courts, Sector 43, Chandigarh"
     phone: ""
     hours: ""
     notes: ""
+    pin: "30.7194, 76.7437"
+    pin_suggested: "30.7194, 76.7437"
+    todo: "Verified by phone on 20 Nov 2026. Ring again every few months, and when something changes."
+    source: "State Legal Services Authority, UT Chandigarh website: https://chandigarh.nalsa.gov.in/?p=6494 (seen 17 Nov 2026). No DLSA phone number listed. Map point: OpenStreetMap way/355486029, \"Judicial Court Complex Sector 43\" (seen 17 Nov 2026)."
+    last_verified: "2026-11-20"
+    verified_how: "Phoned by Ayesha on 20 Nov 2026; she confirmed the details are correct."
+
+  - type: legal-aid
+    sector: government
+    district: chandigarh
+    name: "State Legal Services Authority, UT Chandigarh"
+    address: "Additional Deluxe Building, Ground Floor, Sector 9-D, Chandigarh"
+    phone: "70871 12348"
+    phone2: "0172-2742999"
+    hours: ""
+    notes: "Free legal advice by phone at any hour on the first number."
     pin: ""
-    todo: "Booklet draft says District Courts, Sector 43 [verify]."
-    last_verified: ""
-    verified_how: ""
+    todo: "Verified by phone on 20 Nov 2026. Ring again every few months, and when something changes."
+    source: "SLSA Chandigarh contact page: https://chandigarh.nalsa.gov.in/contact-us/ (seen 17 Nov 2026). Lists office 0172-2742999 and \"Mobile (24x7 Free Legal Advice)\" 70871 12348."
+    last_verified: "2026-11-20"
+    verified_how: "Phoned by Ayesha on 20 Nov 2026; she confirmed the details are correct."
+
+  - type: child-rights
+    sector: government
+    district: chandigarh
+    name: "Child Welfare Committee (CWC)"
+    name_hi: "बाल कल्याण समिति (CWC)"
+    address: "Snehalaya Building, Near Water Works, Maloya, Chandigarh"
+    phone: "0172-2617033"
+    hours: ""
+    notes: "Decides on the care and protection of a child who needs it. The police must inform it about every child sexual abuse case."
+    notes_hi: "जिस बच्चे को देखभाल और सुरक्षा की ज़रूरत हो, उसके बारे में फ़ैसला यही समिति करती है। बच्चे के यौन शोषण के हर मामले की ख़बर पुलिस को इसे देनी होती है।"
+    pin: ""
+    todo: "Verified by phone on 20 Nov 2026. Ring again every few months, and when something changes."
+    source: "Juvenile Justice Monitoring Committee, Punjab and Haryana High Court, Chandigarh district information \"as on 03.02.2023\": https://highcourtchd.gov.in/jjmc/sub_pages/left_menu/chandigarh/Chandigarh.pdf (seen 17 Nov 2026)."
+    last_verified: "2026-11-20"
+    verified_how: "Phoned by Ayesha on 20 Nov 2026; she confirmed the details are correct."
+
+  - type: child-rights
+    sector: government
+    district: chandigarh
+    name: "District Child Protection Unit (DCPU)"
+    address: "Snehalaya Building, Near Water Works, Maloya, Chandigarh"
+    phone: "0172-2643654"
+    hours: ""
+    notes: ""
+    pin: ""
+    todo: "Verified by phone on 20 Nov 2026. Ring again every few months, and when something changes."
+    source: "Same High Court JJMC document \"as on 03.02.2023\": https://highcourtchd.gov.in/jjmc/sub_pages/left_menu/chandigarh/Chandigarh.pdf (seen 17 Nov 2026)."
+    last_verified: "2026-11-20"
+    verified_how: "Phoned by Ayesha on 20 Nov 2026; she confirmed the details are correct."
 
   - type: child-rights
     sector: government
     district: chandigarh
     name: "Chandigarh Commission for Protection of Child Rights (CCPCR)"
-    address: ""
-    phone: ""
+    address: "1st Floor, Administrative Block, Snehalaya, Maloya, Chandigarh 160025"
+    phone: "0172-2617031"
+    phone2: "0172-2617032"
     hours: ""
     notes: ""
     pin: ""
-    todo: "Address and phone still to find."
-    last_verified: ""
-    verified_how: ""
+    todo: "Verified by phone on 20 Nov 2026. Ring again every few months, and when something changes."
+    source: "CCPCR official website, Contact Us: https://ccpcr.in/Home/ContactUs (seen 17 Nov 2026). Also lists chairpersonccpcr@gmail.com and ccpcr.chd@nic.in."
+    last_verified: "2026-11-20"
+    verified_how: "Phoned by Ayesha on 20 Nov 2026; she confirmed the details are correct."
+
+  - type: hospital
+    sector: private
+    district: chandigarh
+    name: "Santokh Hospital"
+    address: "846, Sector 38A, Chandigarh"
+    phone: "85588 66846"
+    hours: ""
+    notes: ""
+    pin: "30.7479, 76.7490"
+    pin_suggested: "30.7479, 76.7490"
+    todo: "Verified by phone on 20 Nov 2026. Ring again every few months, and when something changes."
+    source: "Hospital's website, which lists \"24/7 Emergency and Trauma Care\": https://www.santokhhospital.com/ (seen 18 Nov 2026). Map point: OpenStreetMap node/3404982354."
+    last_verified: "2026-11-20"
+    verified_how: "Phoned by Ayesha on 20 Nov 2026; she confirmed the details are correct."
+
+  - type: hospital
+    sector: private
+    district: chandigarh
+    name: "Mukat Hospital and Heart Institute"
+    address: "SCO 47-49, Dakshin Marg, Sector 34A, Chandigarh 160022"
+    phone: ""
+    hours: ""
+    notes: ""
+    pin: "30.7228, 76.7703"
+    pin_suggested: "30.7228, 76.7703"
+    todo: "Verified by phone on 20 Nov 2026. Ring again every few months, and when something changes."
+    source: "Address and \"24/7 emergency services\": HexaHealth listing, https://www.hexahealth.com/chandigarh/hospital/mukat-hospital (seen 18 Nov 2026); the same address is in OpenStreetMap (node/6908065247, from the government hospital directory). No hospital phone number found."
+    last_verified: "2026-11-20"
+    verified_how: "Phoned by Ayesha on 20 Nov 2026; she confirmed the details are correct."
 
   # ── PANCHKULA ─────────────────────────────────────────────
 
@@ -207,53 +304,76 @@ entries:
     sector: government
     district: panchkula
     name: "One Stop Centre (Sakhi)"
-    address: ""
-    phone: ""
+    address: "Room No. 27, 2nd Floor, New Mini Secretariat Building, Panchkula"
+    phone: "98155 87684"
+    phone2: "0172-2586600"
     hours: ""
     notes: ""
     pin: ""
-    todo: "TWO SOURCES DISAGREE on the address: Civil Hospital, Sector 6, or Room 27, New Mini Secretariat. Verify by phone."
-    last_verified: ""
-    verified_how: ""
+    todo: "Verified by phone on 20 Nov 2026. Ring again every few months, and when something changes."
+    source: "Ministry of Women and Child Development, list of functional One Stop Centres (undated PDF, row 207): https://wcd.nic.in/sites/default/files/Details%20of%20704%20functional%20One%20Stop%20Centres%28OSCs%29_1.pdf (seen 17 Nov 2026). Email oscsakhipkl@gmail.com."
+    last_verified: "2026-11-20"
+    verified_how: "Phoned by Ayesha on 20 Nov 2026; she confirmed the details are correct."
 
   - type: hospital
     sector: government
     district: panchkula
-    name: "Civil Hospital"
-    address: "Sector 6"
-    phone: ""
+    name: "Civil Hospital (General Hospital)"
+    address: "Sector 6, Panchkula"
+    phone: "0172-2562199"
     hours: ""
     notes: ""
-    pin: ""
-    todo: "TO CONFIRM: medico-legal examinations? Address from the booklet draft, not verified."
-    last_verified: ""
-    verified_how: ""
+    pin: "30.7048, 76.8557"
+    pin_suggested: "30.7048, 76.8557"
+    todo: "Verified by phone on 20 Nov 2026. Ring again every few months, and when something changes."
+    source: "Panchkula district website, Public Utilities, listed as \"General Hospital, Sector-6\": https://panchkula.nic.in/?p=2784 (seen 17 Nov 2026). Map point: OpenStreetMap way/129877132 (seen 17 Nov 2026)."
+    last_verified: "2026-11-20"
+    verified_how: "Phoned by Ayesha on 20 Nov 2026; she confirmed the details are correct."
 
   - type: police
     sector: government
     district: panchkula
-    name: "Women police station"
-    address: ""
-    phone: ""
+    name: "Women Police Station"
+    address: "Sector 5, Panchkula"
+    phone: "0172-2571100"
     hours: ""
     notes: ""
-    pin: ""
-    todo: "Address and phone still to find."
-    last_verified: ""
-    verified_how: ""
+    pin: "30.6937, 76.8522"
+    pin_suggested: "30.6937, 76.8522"
+    todo: "Verified by phone on 20 Nov 2026. Ring again every few months, and when something changes."
+    source: "Haryana Police Panchkula contact list, row \"SHO PS WOMEN PKL\" (phone 0172-2571100, email showomenpnk-hry@nic.in), undated: https://panchkula.haryanapolice.gov.in/senority_list_pdf/NEW_LIST_OF_CONTACT_NUMBER.pdf (screenshot sent by you, 19 Nov 2026). Haryana Police Panchkula, Women Cell page (\"Sector 5, Panchkula\"): https://panchkula.haryanapolice.gov.in/women-cell_htm ; The Tribune 29 Aug 2015: https://www.tribuneindia.com/news/archive/features/bjp-biggies-roll-out-women-police-stations-on-rakhi-eve-125762 ; findeasy.in (seen 17 Nov 2026). Map point: OpenStreetMap way/1066672506 (seen 17 Nov 2026)."
+    last_verified: "2026-11-20"
+    verified_how: "Phoned by Ayesha on 20 Nov 2026; she confirmed the details are correct."
 
   - type: legal-aid
     sector: government
     district: panchkula
     name: "District Legal Services Authority (DLSA)"
-    address: ""
-    phone: ""
+    address: "ADR Centre, District Court, Panchkula"
+    phone: "0172-2585566"
     hours: ""
     notes: ""
     pin: ""
-    todo: "Address and phone still to find."
-    last_verified: ""
-    verified_how: ""
+    todo: "Verified by phone on 20 Nov 2026. Ring again every few months, and when something changes."
+    source: "Haryana State Legal Services Authority, Panchkula page: https://hslsa.gov.in/panchkula/ (seen 17 Nov 2026). Email dlsapkl@yahoo.co.in."
+    last_verified: "2026-11-20"
+    verified_how: "Phoned by Ayesha on 20 Nov 2026; she confirmed the details are correct."
+
+  - type: child-rights
+    sector: government
+    district: panchkula
+    name: "Child Welfare Committee (CWC)"
+    name_hi: "बाल कल्याण समिति (CWC)"
+    address: "HSLRDC Building, Bays 1-2, Top Floor, Sector 4, Panchkula"
+    phone: ""
+    hours: ""
+    notes: "Decides on the care and protection of a child who needs it. The police must inform it about every child sexual abuse case."
+    notes_hi: "जिस बच्चे को देखभाल और सुरक्षा की ज़रूरत हो, उसके बारे में फ़ैसला यही समिति करती है। बच्चे के यौन शोषण के हर मामले की ख़बर पुलिस को इसे देनी होती है।"
+    pin: ""
+    todo: "Verified by phone on 20 Nov 2026. Ring again every few months, and when something changes."
+    source: "Women and Child Development Department, Haryana, child protection contact list (\"Child Welfare Committee, Panchkula\" and \"District Child Protection Unit, Panchkula\"), file dated 22 Aug 2024: https://cdnbbsr.s3waas.gov.in/s34c144c47ecba6f8318128703ca9e2601/uploads/2024/08/2024082223453275.pdf (seen 19 Nov 2026)."
+    last_verified: "2026-11-20"
+    verified_how: "Phoned by Ayesha on 20 Nov 2026; she confirmed the details are correct."
 
   - type: child-rights
     sector: government
@@ -264,9 +384,40 @@ entries:
     hours: ""
     notes: ""
     pin: ""
-    todo: "Address and phone still to find."
+    todo: "Current office and number not found. A 2015 recruitment notice gives \"Bays No 15-20, Sector 4, Panchkula\", but that is the Women and Child Development department's office. The Panchkula Child Welfare Committee above matters more for a survivor, so you could drop this entry if the commission's office can't be found."
+    source: "punjabjobportal.com copy of the 2015 HSCPCR recruitment notice (seen 17 Nov 2026)."
     last_verified: ""
     verified_how: ""
+
+  - type: hospital
+    sector: private
+    district: panchkula
+    name: "Alchemist Hospital"
+    address: "Sector 21, Panchkula"
+    phone: "0172-4500000"
+    hours: ""
+    notes: ""
+    pin: "30.6745, 76.8648"
+    pin_suggested: "30.6745, 76.8648"
+    todo: "Verified by phone on 20 Nov 2026. Ring again every few months, and when something changes."
+    source: "Hospital group's website, which lists \"24x7 Emergency Services\" and an ambulance line, 97808 87055: https://www.alchemisthospitals.com/ (seen 18 Nov 2026). Map point: OpenStreetMap way/130282368."
+    last_verified: "2026-11-20"
+    verified_how: "Phoned by Ayesha on 20 Nov 2026; she confirmed the details are correct."
+
+  - type: hospital
+    sector: private
+    district: panchkula
+    name: "Paras Hospitals"
+    address: "Near Nada Sahib Gurudwara, Sector 22, Panchkula 134109"
+    phone: "90917 90917"
+    hours: ""
+    notes: ""
+    pin: "30.6933, 76.8832"
+    pin_suggested: "30.6933, 76.8832"
+    todo: "Verified by phone on 20 Nov 2026. Ring again every few months, and when something changes."
+    source: "Hospital's website, Panchkula page: emergency 9091790917, other enquiries 8080808069, \"there for patients 24x7\": https://parashospitals.com/panchkula (seen 18 Nov 2026). Map point: OpenStreetMap way/1099801803."
+    last_verified: "2026-11-20"
+    verified_how: "Phoned by Ayesha on 20 Nov 2026; she confirmed the details are correct."
 
   # ── MOHALI (SAS NAGAR) ─────────────────────────────────────────────
 
@@ -274,27 +425,32 @@ entries:
     sector: government
     district: mohali
     name: "One Stop Centre (Sakhi)"
-    address: "Civil Hospital, Phase 6, near Jan Aushadhi Kendra"
-    phone: "99144-00406"
+    address: "Civil Hospital, Phase 6, Mohali"
+    phone: "98558 94850"
+    phone2: "99144 00406"
     hours: ""
     notes: ""
-    pin: ""
-    todo: "Address and phone are from the booklet draft, not verified."
-    last_verified: ""
-    verified_how: ""
+    pin: "30.7393, 76.7139"
+    pin_suggested: "30.7393, 76.7139"
+    todo: "Verified by phone on 20 Nov 2026. Ring again every few months, and when something changes."
+    source: "Punjab government list reported in The Pioneer, 18 Aug 2022: https://dailypioneer.com/2022/state-editions/district-wise-contact-numbers-of-sakhi-one-stop-centers-for-women-in-distress-released.html ; lifeinchandigarh.com, 26 Jan 2019 (seen 17 Nov 2026). Not in the national list, which skips Punjab."
+    last_verified: "2026-11-20"
+    verified_how: "Phoned by Ayesha on 20 Nov 2026; she confirmed the details are correct."
 
   - type: hospital
     sector: government
     district: mohali
-    name: "Civil Hospital"
-    address: "Phase 6"
-    phone: ""
+    name: "District Hospital (Civil Hospital)"
+    address: "Phase 6, Sector 56, SAS Nagar 160055"
+    phone: "0172-2271295"
     hours: ""
     notes: ""
-    pin: ""
-    todo: "TO CONFIRM: medico-legal examinations? Address from the booklet draft, not verified."
-    last_verified: ""
-    verified_how: ""
+    pin: "30.7393, 76.7139"
+    pin_suggested: "30.7393, 76.7139"
+    todo: "Verified by phone on 20 Nov 2026. Ring again every few months, and when something changes."
+    source: "SAS Nagar district website, Public Utilities: https://sasnagar.nic.in/?p=2784 (seen 17 Nov 2026). No phone listed there. Phone, landmarks and map point: OpenStreetMap node/7153345512, which copied them from the government's hospital directory (\"OpenGovernmentData\") (seen 17 Nov 2026)."
+    last_verified: "2026-11-20"
+    verified_how: "Phoned by Ayesha on 20 Nov 2026; she confirmed the details are correct."
 
   - type: police
     sector: government
@@ -305,7 +461,8 @@ entries:
     hours: ""
     notes: ""
     pin: ""
-    todo: "Address and phone still to find."
+    todo: "No women police station for Mohali was found in official lists. Punjab Police have women help desks at police stations, and a Saanjh Shakti desk for women at the Saanjh Kendra. Ask the district police which station or desk a woman should go to, then rename this entry. District police control room: 0172-2219211. The High Court's list names a DSP for crimes against women and children as Mohali's officer for child cases: that office would know (number in your call list, not here)."
+    source: "sasnagar.punjabpolice.gov.in (control room numbers); sasnagar.nic.in Saanjh Kendra list; The Tribune 13 Mar 2021 on the Saanjh Shakti help desk (seen 17 Nov 2026)."
     last_verified: ""
     verified_how: ""
 
@@ -313,12 +470,29 @@ entries:
     sector: government
     district: mohali
     name: "District Legal Services Authority (DLSA)"
-    address: ""
+    address: "Ground Floor, ADR Centre, Judicial Courts Complex, Sector 76, SAS Nagar"
     phone: ""
     hours: ""
     notes: ""
     pin: ""
-    todo: "Address and phone still to find."
+    todo: "Verified by phone on 20 Nov 2026. Ring again every few months, and when something changes."
+    source: "DLSA SAS Nagar notice dated 20 Feb 2026: https://cdnbbsr.s3waas.gov.in/s3ec0288e1ce84f9feef5a08d0df0334c5/uploads/2026/02/2026022091.pdf (seen 17 Nov 2026)."
+    last_verified: "2026-11-20"
+    verified_how: "Phoned by Ayesha on 20 Nov 2026; she confirmed the details are correct."
+
+  - type: child-rights
+    sector: government
+    district: mohali
+    name: "Child Welfare Committee (CWC)"
+    name_hi: "बाल कल्याण समिति (CWC)"
+    address: ""
+    phone: ""
+    hours: ""
+    notes: "Decides on the care and protection of a child who needs it. The police must inform it about every child sexual abuse case."
+    notes_hi: "जिस बच्चे को देखभाल और सुरक्षा की ज़रूरत हो, उसके बारे में फ़ैसला यही समिति करती है। बच्चे के यौन शोषण के हर मामले की ख़बर पुलिस को इसे देनी होती है।"
+    pin: ""
+    todo: "Address and an office number still needed. The High Court list gives neither, only the members' own mobile numbers. Those are in your call list, not here, because this file is public: never publish a personal number. Ring the District Child Protection Officer or the chairperson and ask for the office address, the days and hours the committee sits, and a number you may publish. The list is undated and members serve three-year terms, so check it is current."
+    source: "Juvenile Justice Monitoring Committee, Punjab and Haryana High Court, SAS Nagar district information (undated): https://highcourtchd.gov.in/jjmc/sub_pages/left_menu/districts_punjab/SAS%20Nagar.pdf (screenshot sent by you, 17 Nov 2026)."
     last_verified: ""
     verified_how: ""
 
@@ -326,11 +500,58 @@ entries:
     sector: government
     district: mohali
     name: "Punjab State Commission for Protection of Child Rights"
-    address: ""
+    address: "Room No. 404, 4th Floor, Punjab Civil Secretariat-1, Sector 1, Chandigarh 160001"
     phone: ""
     hours: ""
     notes: ""
     pin: ""
-    todo: "Address and phone still to find."
-    last_verified: ""
-    verified_how: ""
+    todo: "Verified by phone on 20 Nov 2026. Ring again every few months, and when something changes."
+    source: "PSCPCR official website, Contact: https://pscpcr.punjab.gov.in/contact/ (seen 17 Nov 2026)."
+    last_verified: "2026-11-20"
+    verified_how: "Phoned by Ayesha on 20 Nov 2026; she confirmed the details are correct."
+
+  - type: hospital
+    sector: private
+    district: mohali
+    name: "Fortis Hospital"
+    address: "Sector 62, Phase 8, Mohali 160062"
+    phone: "0172-4692200"
+    hours: ""
+    notes: ""
+    pin: "30.6948, 76.7311"
+    pin_suggested: "30.6948, 76.7311"
+    todo: "Verified by phone on 20 Nov 2026. Ring again every few months, and when something changes."
+    source: "Fortis website, Mohali page: \"Emergency: 0172-4692200\", ambulance 9815396700: https://www.fortishealthcare.com/lp/fortis-hospital-mohali-evening-opd (seen 18 Nov 2026). Map point: OpenStreetMap way/410543291."
+    last_verified: "2026-11-20"
+    verified_how: "Phoned by Ayesha on 20 Nov 2026; she confirmed the details are correct."
+
+  - type: hospital
+    sector: private
+    district: mohali
+    name: "Max Super Speciality Hospital"
+    address: "Chandigarh Road, Phase 6, Mohali"
+    phone: "92688 80303"
+    phone2: "0172-5212000"
+    hours: ""
+    notes: ""
+    pin: "30.7400, 76.7142"
+    pin_suggested: "30.7400, 76.7142"
+    todo: "Verified by phone on 20 Nov 2026. Ring again every few months, and when something changes."
+    source: "Max Healthcare website, Mohali page (\"Open 24/7\", emergency services; +91 92688 80303 is the group's number): https://maxhealthcare.in/hospital-network/max-super-speciality-hospital-mohali (seen 18 Nov 2026). Local number 0172 521 2000 and map point: OpenStreetMap node/7103863139, from the government hospital directory."
+    last_verified: "2026-11-20"
+    verified_how: "Phoned by Ayesha on 20 Nov 2026; she confirmed the details are correct."
+
+  - type: hospital
+    sector: private
+    district: mohali
+    name: "Livasa Hospital (formerly Ivy Hospital)"
+    address: "Sector 71, Mohali 160071"
+    phone: "0172-7170000"
+    hours: ""
+    notes: ""
+    pin: "30.7066, 76.7083"
+    pin_suggested: "30.7066, 76.7083"
+    todo: "Verified by phone on 20 Nov 2026. Ring again every few months, and when something changes."
+    source: "Address: Livasa Hospitals website, https://livasahospitals.com/hospital/livasa-hospital-mohali (seen 18 Nov 2026). It does not list a phone number or say whether emergency is 24 hours. Phone and map point: OpenStreetMap way/129023343 (\"Ivy Health and Life Sciences\", from the government hospital directory). A NEET institute list names it \"Livasa Hospital Mohali, a unit of Ivy Health and Life Sciences, formerly Ivy Hospital Mohali, Sector 71\"."
+    last_verified: "2026-11-20"
+    verified_how: "Phoned by Ayesha on 20 Nov 2026; she confirmed the details are correct."

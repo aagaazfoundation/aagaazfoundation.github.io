@@ -3,7 +3,7 @@
    (text on the left, helpline numbers on the right). Soft off-white page
    background with white boxes; one quiet navy for links, buttons and numbers;
    a very light yellow behind the helplines, key boxes and table headings.
-   The two urgent actions (call for help, quick exit) sit in a bar fixed to the
+   Two actions (call for help, report an unsafe place) sit in a bar fixed to the
    bottom of the screen, in thumb reach.
    TO CHANGE THE COLOURS: edit the values in the :root block just below. */
 
@@ -29,8 +29,9 @@
   --primary: #223d63;       /* buttons, links, numbers */
   --primary-dark: #172c49;  /* hover and link text */
   --on-primary: #ffffff;    /* text on a primary button */
-  --exit: #96362a;          /* the Quick exit button */
   --lang-button: #96362a;   /* the "read in Hindi / English" button on the home page */
+  --find: #237a3b;          /* "Find help near you": the home page button and the strip under the header */
+  --find-dark: #1b6330;     /* the same, when pointed at */
   --ok: #2c6b5b;            /* ticks */
   --ok-tint: #ecf4f1;
   --no: #96362a;            /* crosses */
@@ -261,6 +262,9 @@ details.refs > * + * { margin-top: 0.75rem; }
 
 .button { display: inline-flex; align-items: center; min-height: 3rem; padding: 0.6rem 1.2rem; border-radius: 999px; background: var(--primary); color: var(--on-primary); font-weight: 700; text-decoration: none; }
 .button:hover { background: var(--primary-dark); }
+.button--quiet { background: #fff; color: var(--primary); border: 2px solid var(--primary); }
+.button--quiet:hover { background: var(--primary); color: var(--on-primary); }
+.flyer-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
 .tel { font-weight: 700; white-space: nowrap; }
 
 .chapter-link { background: var(--bg); border: 1px solid var(--line); border-radius: 12px; padding: 1.1rem; margin-top: 2rem; }
@@ -304,14 +308,17 @@ a.contents__title { color: var(--primary-dark); }
 .site-footer__links { list-style: none; margin: 0.3rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem 1.25rem; font-weight: 700; }
 .site-footer__small { font-size: 0.88rem; }
 
-/* ── fixed bottom bar: help + quick exit ────────────── */
+/* ── fixed bottom bar: help + report an unsafe place ── */
 .helpbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; display: flex; gap: 0.5rem; align-items: center; background: var(--bg); border-top: 1px solid var(--line); box-shadow: 0 -4px 16px rgba(28, 43, 51, 0.08); padding: 0.5rem max(12px, env(safe-area-inset-right, 0px)) calc(0.5rem + env(safe-area-inset-bottom, 0px)) max(12px, env(safe-area-inset-left, 0px)); }
 .helpbar__help { flex: 1 1 auto; min-width: 0; }
 .helpbar__help summary { list-style: none; cursor: pointer; height: 2.9rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; background: var(--primary); color: var(--on-primary); font-weight: 700; border-radius: 10px; padding-inline: 0.9rem; }
 .helpbar__help summary::-webkit-details-marker { display: none; }
 .helpbar__help[open] summary { background: var(--primary-dark); }
-.helpbar__exit { flex: 0 0 auto; height: 2.9rem; display: flex; align-items: center; gap: 0.5rem; background: var(--exit); color: var(--on-primary); font-weight: 700; text-decoration: none; border-radius: 10px; padding-inline: 1rem; }
-.helpbar__exit:hover { background: var(--ink); }
+.helpbar__report { flex: 0 0 auto; height: 2.9rem; display: flex; align-items: center; background: #fff; color: var(--primary); border: 2px solid var(--primary); font-weight: 700; text-decoration: none; border-radius: 10px; padding-inline: 0.9rem; max-width: 46%; text-align: center; line-height: 1.15; justify-content: center; }
+.helpbar__report:hover, .helpbar__report[aria-current] { background: var(--primary); color: var(--on-primary); }
+.helpbar__help summary span { white-space: nowrap; }
+.helpbar__help summary svg { flex: none; }
+@media (max-width: 380px) { .helpbar { gap: 0.4rem; } .helpbar__help summary, .helpbar__report { font-size: 0.94rem; padding-inline: 0.6rem; } .helpbar__help summary { gap: 0.35rem; } }
 .sheet { position: absolute; left: 0; right: 0; bottom: 100%; background: var(--bg); border-top: 1px solid var(--line); padding: 1rem max(18px, env(safe-area-inset-right, 0px)) 1rem max(18px, env(safe-area-inset-left, 0px)); box-shadow: 0 -12px 28px rgba(28, 43, 51, 0.16); max-height: calc(100vh - var(--bar-h) - 2rem); overflow-y: auto; }
 .sheet .lines { max-width: 41rem; margin-inline: auto; }
 .sheet .more-lines { max-width: 41rem; margin-inline: auto; margin-top: 0.8rem; }
@@ -332,7 +339,6 @@ a.contents__title { color: var(--primary-dark); }
 :root:lang(hi) .eyebrow, :root:lang(hi) .hero__tag, :root:lang(hi) .session__when, :root:lang(hi) .for-u18::before, :root:lang(hi) .for-adult::before { letter-spacing: 0; text-transform: none; font-size: 0.88rem; }
 :root:lang(hi) .door__say, :root:lang(hi) .card__title, :root:lang(hi) .line__text strong { line-height: 1.4; }
 
-html.is-leaving body { visibility: hidden; }
 
 @media (prefers-reduced-motion: no-preference) { .door__then svg { transition: transform 0.15s; } }
 @media print { .helpbar, .site-header nav, .menu { display: none; } body { padding-bottom: 0; } }
@@ -412,11 +418,12 @@ html.is-leaving body { visibility: hidden; }
 
 /* the "Find help near you" strip under the header (only when the page is switched on) */
 .find-strip { background: var(--highlight); border-bottom: 1px solid var(--highlight-line); }
-.find-strip a { display: flex; align-items: center; gap: 0.75rem; min-height: 2.9rem; padding-block: 0.45rem; color: var(--primary-dark); text-decoration: none; font-weight: 700; }
+.find-strip a { display: flex; align-items: center; gap: 0.75rem; min-height: 2.9rem; padding-block: 0.45rem; color: var(--find); text-decoration: none; font-weight: 700; }
 .find-strip a:hover .find-strip__title { text-decoration: underline; text-underline-offset: 0.18em; }
 .find-strip__sub { display: none; font-weight: 400; color: var(--muted); font-size: 0.95rem; }
 .find-strip svg { margin-left: auto; flex: 0 0 auto; }
 @media (min-width: 40rem) { .find-strip__sub { display: inline; } }
 .hero__find { margin: 1.25rem 0 0; }
-.hero__find .button { gap: 0.6rem; }
+.hero__find .button { gap: 0.6rem; background: var(--find); }
+.hero__find .button:hover { background: var(--find-dark); }
 @media print { .find-strip { display: none; } }

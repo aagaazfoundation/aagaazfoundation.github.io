@@ -1,15 +1,29 @@
 # ─────────────────────────────────────────────────────────────
 #  AREAS: what people can type on "Find help near you"
 #
-#  Made by guides/tools/make-areas.py from India Post's pincode directory
-#  (data dated February 2026). Area names are post office names, tidied up.
+#  Made by guides/tools/make-areas.py. Area names and districts come from India Post's
+#  pincode directory (February 2026), plus sectors from OpenStreetMap and a few areas
+#  from Wikidata. Map points also come from GeoNames.
 #
-#  centre  = a rough map point for the area: "latitude, longitude".
-#  checked = false means NOBODY HAS CHECKED THAT POINT. India Post's points are
-#            often wrong. While checked is false, the website uses the area only
-#            to work out the district, and never shows a distance from it.
-#            To check one: see "Checking an area's map point" in guides/DIRECTORY.md,
-#            correct the two numbers if needed, then change false to true.
+#  LICENCE: this file contains data from OpenStreetMap, (c) OpenStreetMap contributors,
+#  and is available under the Open Database License (ODbL 1.0):
+#  https://opendatacommons.org/licenses/odbl/1-0/  It also uses India Post's directory
+#  (Open Government Data Licence, India), GeoNames (CC BY 4.0) and Wikidata (CC0).
+#
+#  centre  = a rough map point for the middle of the area: "latitude, longitude".
+#  from    = where that point came from, if not India Post.
+#  second  = other sources' points for the same place, and how far each is from "centre".
+#            Points within about 1 km (sectors) or 2 km (villages and towns) of each other
+#            are probably right. Far apart means one of them is wrong.
+#  also    = another name for the same area, shown in brackets: Mohali's phases.
+#  note    = this area's district may be wrong: check it.
+#  checked = true when someone checked the point on a map, OR two sources agree on it
+#            (within 1 km for a sector, 2 km for anything else: Ayesha's decision,
+#            18 Nov 2026). Only checked points are used for distances.
+#            checked: false means NOBODY HAS CHECKED THAT POINT. The website then uses the
+#            area only to work out the district. To check one: see "Check an area's map
+#            point" in guides/DIRECTORY.md, correct the two numbers if needed, then change
+#            false to true.
 #
 #  You can add an area by hand: copy a line, change it, and keep the same shape.
 #  A missing area is not a problem: people can still type a pincode or pick a district.
@@ -43,200 +57,563 @@ districts:
 
 areas:
   # ── CHANDIGARH ──
-  - { name: "High Court", name_hi: "हाई कोर्ट", district: chandigarh, pincode: "160001", centre: "30.7573, 76.8066", checked: false }
-  - { name: "New Secretariat", name_hi: "", district: chandigarh, pincode: "160001", centre: "30.7333, 76.7794", checked: false }
-  - { name: "Industrial Area", name_hi: "इंडस्ट्रियल एरिया", district: chandigarh, pincode: "160002", centre: "30.6904, 76.7942", checked: false }
-  - { name: "Ram Darbar", name_hi: "राम दरबार", district: chandigarh, pincode: "160002", centre: "30.6924, 76.7909", checked: false }
+  - { name: "Sector 1", name_hi: "सेक्टर 1", district: chandigarh, pincode: "", centre: "30.7617, 76.8011", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 2", name_hi: "सेक्टर 2", district: chandigarh, pincode: "", centre: "30.7635, 76.7914", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 3", name_hi: "सेक्टर 3", district: chandigarh, pincode: "", centre: "30.7579, 76.7961", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 4", name_hi: "सेक्टर 4", district: chandigarh, pincode: "", centre: "30.7517, 76.8013", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 5", name_hi: "सेक्टर 5", district: chandigarh, pincode: "", centre: "30.7456, 76.8064", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 6", name_hi: "सेक्टर 6", district: chandigarh, pincode: "", centre: "30.7387, 76.8121", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 7", name_hi: "सेक्टर 7", district: chandigarh, pincode: "", centre: "30.7353, 76.8040", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 8", name_hi: "सेक्टर 8", district: chandigarh, pincode: "160009", centre: "30.7411, 76.7990", from: "OpenStreetMap", second: "India Post 30.7407, 76.7973 (0.2 km away)", checked: true }
+  - { name: "Sector 9", name_hi: "सेक्टर 9", district: chandigarh, pincode: "160009", centre: "30.7471, 76.7939", from: "OpenStreetMap", second: "India Post 30.7479, 76.7928 (0.1 km away)", checked: true }
+  - { name: "Sector 10", name_hi: "सेक्टर 10", district: chandigarh, pincode: "160011", centre: "30.7533, 76.7887", from: "OpenStreetMap", second: "India Post 30.7535, 76.7876 (0.1 km away)", checked: true }
+  - { name: "Sector 11", name_hi: "सेक्टर 11", district: chandigarh, pincode: "160011", centre: "30.7590, 76.7838", from: "OpenStreetMap", second: "India Post 30.7599, 76.7839 (0.1 km away)", checked: true }
+  - { name: "Sector 12", name_hi: "सेक्टर 12", district: chandigarh, pincode: "160012", centre: "30.7648, 76.7802", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 14", name_hi: "सेक्टर 14", district: chandigarh, pincode: "160014", centre: "30.7600, 76.7665", from: "OpenStreetMap", second: "India Post 30.7577, 76.7686 (0.3 km away)", checked: true }
+  - { name: "Sector 15", name_hi: "सेक्टर 15", district: chandigarh, pincode: "160015", centre: "30.7524, 76.7725", from: "OpenStreetMap", second: "India Post 30.7519, 76.7745 (0.2 km away)", checked: true }
+  - { name: "Sector 16", name_hi: "सेक्टर 16", district: chandigarh, pincode: "160015", centre: "30.7463, 76.7775", from: "OpenStreetMap", second: "India Post 30.7473, 76.7754 (0.2 km away)", checked: true }
+  - { name: "Sector 17 (GPO)", name_hi: "सेक्टर 17 (जीपीओ)", district: chandigarh, pincode: "160017", centre: "30.7400, 76.7826", from: "OpenStreetMap", second: "India Post 30.7423, 76.7833 (0.3 km away)", checked: true }
+  - { name: "Sector 18", name_hi: "सेक्टर 18", district: chandigarh, pincode: "160018", centre: "30.7341, 76.7879", from: "OpenStreetMap", second: "India Post 30.7355, 76.7874 (0.2 km away)", checked: true }
+  - { name: "Sector 19", name_hi: "सेक्टर 19", district: chandigarh, pincode: "160019", centre: "30.7283, 76.7931", from: "OpenStreetMap", second: "India Post 30.7264, 76.7962 (0.4 km away)", checked: true }
+  - { name: "Sector 20", name_hi: "सेक्टर 20", district: chandigarh, pincode: "160020", centre: "30.7212, 76.7817", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 21", name_hi: "सेक्टर 21", district: chandigarh, pincode: "160022", centre: "30.7270, 76.7766", from: "OpenStreetMap", second: "India Post 30.7248, 76.7796 (0.4 km away)", checked: true }
+  - { name: "Sector 22", name_hi: "सेक्टर 22", district: chandigarh, pincode: "160022", centre: "30.7330, 76.7713", from: "OpenStreetMap", second: "India Post 30.7337, 76.7725 (0.1 km away)", checked: true }
+  - { name: "Sector 23", name_hi: "सेक्टर 23", district: chandigarh, pincode: "160023", centre: "30.7394, 76.7662", from: "OpenStreetMap", second: "India Post 30.7396, 76.7670 (0.1 km away)", checked: true }
+  - { name: "Sector 24", name_hi: "सेक्टर 24", district: chandigarh, pincode: "", centre: "30.7454, 76.7615", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 25", name_hi: "सेक्टर 25", district: chandigarh, pincode: "", centre: "30.7515, 76.7569", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 25 West", name_hi: "सेक्टर 25 वेस्ट", district: chandigarh, pincode: "", centre: "30.7565, 76.7535", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 26", name_hi: "सेक्टर 26", district: chandigarh, pincode: "160019", centre: "30.7296, 76.8083", from: "OpenStreetMap", second: "India Post 30.7237, 76.8103 (0.7 km away)", checked: true }
+  - { name: "Sector 26E", name_hi: "सेक्टर 26ई", district: chandigarh, pincode: "", centre: "30.7203, 76.8134", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 27", name_hi: "सेक्टर 27", district: chandigarh, pincode: "160019", centre: "30.7227, 76.7984", from: "OpenStreetMap", second: "India Post 30.7227, 76.7982 (0.0 km away)", checked: true }
+  - { name: "Sector 28", name_hi: "सेक्टर 28", district: chandigarh, pincode: "", centre: "30.7171, 76.8039", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 29", name_hi: "सेक्टर 29", district: chandigarh, pincode: "160030", centre: "30.7102, 76.7924", from: "OpenStreetMap", second: "India Post 30.7114, 76.7906 (0.2 km away)", checked: true }
+  - { name: "Sector 30", name_hi: "सेक्टर 30", district: chandigarh, pincode: "160030", centre: "30.7155, 76.7870", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 31", name_hi: "सेक्टर 31", district: chandigarh, pincode: "160030", centre: "30.7028, 76.7812", from: "OpenStreetMap", second: "India Post 30.7259, 76.7579 (3.4 km away)", checked: false }
+  - { name: "Sector 32", name_hi: "सेक्टर 32", district: chandigarh, pincode: "", centre: "30.7084, 76.7755", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 33", name_hi: "सेक्टर 33", district: chandigarh, pincode: "", centre: "30.7141, 76.7703", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 34", name_hi: "सेक्टर 34", district: chandigarh, pincode: "160022", centre: "30.7199, 76.7652", from: "OpenStreetMap", second: "India Post 30.7170, 76.7670 (0.4 km away)", checked: true }
+  - { name: "Sector 35", name_hi: "सेक्टर 35", district: chandigarh, pincode: "160022", centre: "30.7262, 76.7600", from: "OpenStreetMap", second: "India Post 30.7248, 76.7592 (0.2 km away)", checked: true }
+  - { name: "Sector 36", name_hi: "सेक्टर 36", district: chandigarh, pincode: "160036", centre: "30.7324, 76.7550", from: "OpenStreetMap", second: "India Post 30.7045, 76.7264 (4.1 km away)", checked: false }
+  - { name: "Sector 37", name_hi: "सेक्टर 37", district: chandigarh, pincode: "", centre: "30.7385, 76.7503", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 38", name_hi: "सेक्टर 38", district: chandigarh, pincode: "", centre: "30.7447, 76.7458", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 38 West", name_hi: "सेक्टर 38 वेस्ट", district: chandigarh, pincode: "", centre: "30.7490, 76.7382", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 39", name_hi: "सेक्टर 39", district: chandigarh, pincode: "", centre: "30.7438, 76.7301", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 40", name_hi: "सेक्टर 40", district: chandigarh, pincode: "160036", centre: "30.7375, 76.7345", from: "OpenStreetMap", second: "India Post 30.7346, 76.7524 (1.7 km away)", checked: false }
+  - { name: "Sector 41", name_hi: "सेक्टर 41", district: chandigarh, pincode: "", centre: "30.7327, 76.7391", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 42", name_hi: "सेक्टर 42", district: chandigarh, pincode: "", centre: "30.7254, 76.7427", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 43", name_hi: "सेक्टर 43", district: chandigarh, pincode: "160043", centre: "30.7191, 76.7488", from: "OpenStreetMap", second: "India Post 30.7203, 76.7436 (0.5 km away)", checked: true }
+  - { name: "Sector 44", name_hi: "सेक्टर 44", district: chandigarh, pincode: "160047", centre: "30.7129, 76.7540", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 45", name_hi: "सेक्टर 45", district: chandigarh, pincode: "", centre: "30.7071, 76.7591", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 46", name_hi: "सेक्टर 46", district: chandigarh, pincode: "", centre: "30.7014, 76.7642", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 47", name_hi: "सेक्टर 47", district: chandigarh, pincode: "160047", centre: "30.6956, 76.7694", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 48", name_hi: "सेक्टर 48", district: chandigarh, pincode: "160047", centre: "30.6897, 76.7580", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 49", name_hi: "सेक्टर 49", district: chandigarh, pincode: "", centre: "30.6941, 76.7529", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 50", name_hi: "सेक्टर 50", district: chandigarh, pincode: "", centre: "30.7000, 76.7478", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 51", name_hi: "सेक्टर 51", district: chandigarh, pincode: "", centre: "30.7058, 76.7433", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 52", name_hi: "सेक्टर 52", district: chandigarh, pincode: "", centre: "30.7124, 76.7376", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 53", name_hi: "सेक्टर 53", district: chandigarh, pincode: "", centre: "30.7202, 76.7346", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 54", name_hi: "सेक्टर 54", district: chandigarh, pincode: "", centre: "30.7263, 76.7295", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 55", name_hi: "सेक्टर 55", district: chandigarh, pincode: "", centre: "30.7322, 76.7251", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 56", name_hi: "सेक्टर 56", district: chandigarh, pincode: "", centre: "30.7379, 76.7206", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 61", name_hi: "सेक्टर 61", district: chandigarh, pincode: "", centre: "30.7090, 76.7314", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 63", name_hi: "सेक्टर 63", district: chandigarh, pincode: "", centre: "30.6964, 76.7403", from: "OpenStreetMap", checked: false }
   - { name: "Air Force Station, High Grounds", name_hi: "", district: chandigarh, pincode: "160004", centre: "30.6473, 76.7890", checked: false }
-  - { name: "Sector 8", name_hi: "सेक्टर 8", district: chandigarh, pincode: "160009", centre: "30.7407, 76.7973", checked: false }
-  - { name: "Sector 9", name_hi: "सेक्टर 9", district: chandigarh, pincode: "160009", centre: "30.7479, 76.7928", checked: false }
-  - { name: "Sector 10", name_hi: "सेक्टर 10", district: chandigarh, pincode: "160011", centre: "30.7535, 76.7876", checked: false }
-  - { name: "Sector 11", name_hi: "सेक्टर 11", district: chandigarh, pincode: "160011", centre: "30.7599, 76.7839", checked: false }
-  - { name: "Sector 12", name_hi: "सेक्टर 12", district: chandigarh, pincode: "160012", centre: "", checked: false }
-  - { name: "Dadu Majra", name_hi: "डड्डूमाजरा", district: chandigarh, pincode: "160014", centre: "30.7545, 76.7390", checked: false }
-  - { name: "Sector 14", name_hi: "सेक्टर 14", district: chandigarh, pincode: "160014", centre: "30.7577, 76.7686", checked: false }
-  - { name: "Sector 15", name_hi: "सेक्टर 15", district: chandigarh, pincode: "160015", centre: "30.7519, 76.7745", checked: false }
-  - { name: "Sector 16", name_hi: "सेक्टर 16", district: chandigarh, pincode: "160015", centre: "30.7473, 76.7754", checked: false }
-  - { name: "Sector 17 (GPO)", name_hi: "सेक्टर 17 (जीपीओ)", district: chandigarh, pincode: "160017", centre: "30.7423, 76.7833", checked: false }
-  - { name: "Sector 18", name_hi: "सेक्टर 18", district: chandigarh, pincode: "160018", centre: "30.7355, 76.7874", checked: false }
-  - { name: "Sector 19", name_hi: "सेक्टर 19", district: chandigarh, pincode: "160019", centre: "30.7264, 76.7962", checked: false }
-  - { name: "Sector 26", name_hi: "सेक्टर 26", district: chandigarh, pincode: "160019", centre: "30.7237, 76.8103", checked: false }
-  - { name: "Sector 27", name_hi: "सेक्टर 27", district: chandigarh, pincode: "160019", centre: "30.7227, 76.7982", checked: false }
-  - { name: "Sector 20", name_hi: "सेक्टर 20", district: chandigarh, pincode: "160020", centre: "", checked: false }
-  - { name: "Sector 21", name_hi: "सेक्टर 21", district: chandigarh, pincode: "160022", centre: "30.7248, 76.7796", checked: false }
-  - { name: "Sector 22", name_hi: "सेक्टर 22", district: chandigarh, pincode: "160022", centre: "30.7337, 76.7725", checked: false }
-  - { name: "Sector 34", name_hi: "सेक्टर 34", district: chandigarh, pincode: "160022", centre: "30.7170, 76.7670", checked: false }
-  - { name: "Sector 35", name_hi: "सेक्टर 35", district: chandigarh, pincode: "160022", centre: "30.7248, 76.7592", checked: false }
-  - { name: "Sector 23", name_hi: "सेक्टर 23", district: chandigarh, pincode: "160023", centre: "30.7396, 76.7670", checked: false }
-  - { name: "Maloya", name_hi: "मलोया", district: chandigarh, pincode: "160025", centre: "", checked: false }
-  - { name: "Sector 29", name_hi: "सेक्टर 29", district: chandigarh, pincode: "160030", centre: "30.7114, 76.7906", checked: false }
-  - { name: "Sector 30", name_hi: "सेक्टर 30", district: chandigarh, pincode: "160030", centre: "", checked: false }
-  - { name: "Sector 31", name_hi: "सेक्टर 31", district: chandigarh, pincode: "160030", centre: "30.7259, 76.7579", checked: false }
-  - { name: "Sector 36", name_hi: "सेक्टर 36", district: chandigarh, pincode: "160036", centre: "30.7045, 76.7264", checked: false }
-  - { name: "Sector 40", name_hi: "सेक्टर 40", district: chandigarh, pincode: "160036", centre: "30.7346, 76.7524", checked: false }
-  - { name: "Sector 43", name_hi: "सेक्टर 43", district: chandigarh, pincode: "160043", centre: "30.7203, 76.7436", checked: false }
-  - { name: "Sector 44", name_hi: "सेक्टर 44", district: chandigarh, pincode: "160047", centre: "", checked: false }
-  - { name: "Sector 47", name_hi: "सेक्टर 47", district: chandigarh, pincode: "160047", centre: "", checked: false }
-  - { name: "Sector 48", name_hi: "सेक्टर 48", district: chandigarh, pincode: "160047", centre: "", checked: false }
-  - { name: "Manimajra", name_hi: "मनीमाजरा", district: chandigarh, pincode: "160101", centre: "30.7136, 76.8438", checked: false }
-  - { name: "Modern Housing Complex, Manimajra", name_hi: "", district: chandigarh, pincode: "160101", centre: "30.7160, 76.8318", checked: false }
-  - { name: "Mauli Jagran", name_hi: "मौली जागरां", district: chandigarh, pincode: "160102", centre: "30.6923, 76.8096", checked: false }
-  - { name: "Kaimbwala", name_hi: "", district: chandigarh, pincode: "160001", centre: "", checked: false }
-  - { name: "Hallomajra", name_hi: "हल्लोमाजरा", district: chandigarh, pincode: "160002", centre: "", checked: false }
-  - { name: "Behlana", name_hi: "", district: chandigarh, pincode: "160003", centre: "", checked: false }
+  - { name: "Atawa", name_hi: "", district: chandigarh, pincode: "", centre: "30.7275, 76.7511", from: "GeoNames", second: "OpenStreetMap 30.7266, 76.7503 (0.1 km away)", checked: true }
+  - { name: "Badheri", name_hi: "", district: chandigarh, pincode: "", centre: "30.7325, 76.7341", from: "GeoNames", second: "OpenStreetMap 30.7320, 76.7349 (0.1 km away)", checked: true }
+  - { name: "Behlana", name_hi: "", district: chandigarh, pincode: "160003", centre: "30.6781, 76.8006", from: "GeoNames", second: "OpenStreetMap 30.6779, 76.7994 (0.1 km away)", checked: true }
   - { name: "Behlolpur", name_hi: "", district: chandigarh, pincode: "160014", centre: "", checked: false }
-  - { name: "Dhanas", name_hi: "धनास", district: chandigarh, pincode: "160014", centre: "", checked: false }
-  - { name: "Tira", name_hi: "", district: chandigarh, pincode: "160014", centre: "", checked: false }
-  - { name: "Burail", name_hi: "बुड़ैल", district: chandigarh, pincode: "160047", centre: "", checked: false }
-  - { name: "Daria", name_hi: "", district: chandigarh, pincode: "160101", centre: "", checked: false }
-  - { name: "Kishangarh", name_hi: "किशनगढ़", district: chandigarh, pincode: "160101", centre: "", checked: false }
+  - { name: "Burail", name_hi: "बुड़ैल", district: chandigarh, pincode: "160047", centre: "30.7080, 76.7621", from: "GeoNames", second: "OpenStreetMap 30.7080, 76.7609 (0.1 km away)", checked: true }
+  - { name: "Buterla", name_hi: "", district: chandigarh, pincode: "", centre: "30.7334, 76.7390", from: "GeoNames", second: "OpenStreetMap 30.7322, 76.7398 (0.2 km away)", checked: true }
+  - { name: "Dadu Majra", name_hi: "डड्डूमाजरा", district: chandigarh, pincode: "160014", centre: "30.7545, 76.7390", second: "GeoNames 30.7570, 76.7331 (0.6 km away)", checked: true }
+  - { name: "Daria", name_hi: "", district: chandigarh, pincode: "160101", centre: "30.6986, 76.8176", from: "GeoNames", second: "OpenStreetMap 30.6984, 76.8143 (0.3 km away)", checked: true }
+  - { name: "Dhanas", name_hi: "धनास", district: chandigarh, pincode: "160014", centre: "30.7695, 76.7567", from: "GeoNames", second: "OpenStreetMap 30.7690, 76.7552 (0.2 km away)", checked: true }
+  - { name: "Hallomajra", name_hi: "हल्लोमाजरा", district: chandigarh, pincode: "160002", centre: "", checked: false }
+  - { name: "High Court", name_hi: "हाई कोर्ट", district: chandigarh, pincode: "160001", centre: "30.7573, 76.8066", checked: false }
+  - { name: "Industrial Area", name_hi: "इंडस्ट्रियल एरिया", district: chandigarh, pincode: "160002", centre: "30.6904, 76.7942", checked: false }
+  - { name: "Kaimbwala", name_hi: "", district: chandigarh, pincode: "160001", centre: "30.7586, 76.8257", from: "GeoNames", second: "OpenStreetMap 30.7585, 76.8261 (0.0 km away)", checked: true }
+  - { name: "Kishangarh", name_hi: "किशनगढ़", district: chandigarh, pincode: "160101", centre: "30.7344, 76.8282", from: "OpenStreetMap", checked: false }
+  - { name: "Maloya", name_hi: "मलोया", district: chandigarh, pincode: "160025", centre: "30.7531, 76.7171", from: "OpenStreetMap", checked: false }
+  - { name: "Manimajra", name_hi: "मनीमाजरा", district: chandigarh, pincode: "160101", centre: "30.7136, 76.8438", checked: false }
+  - { name: "Mauli Jagran", name_hi: "मौली जागरां", district: chandigarh, pincode: "160102", centre: "30.6923, 76.8096", second: "GeoNames 30.6919, 76.8259 (1.6 km away)", checked: true }
+  - { name: "Modern Housing Complex, Manimajra", name_hi: "", district: chandigarh, pincode: "160101", centre: "30.7160, 76.8318", checked: false }
+  - { name: "New Secretariat", name_hi: "", district: chandigarh, pincode: "160001", centre: "30.7333, 76.7794", checked: false }
   - { name: "Raipur Kalan", name_hi: "", district: chandigarh, pincode: "160102", centre: "", checked: false }
+  - { name: "Ram Darbar", name_hi: "राम दरबार", district: chandigarh, pincode: "160002", centre: "30.6924, 76.7909", checked: false }
+  - { name: "Tira", name_hi: "", district: chandigarh, pincode: "160014", centre: "30.7759, 76.7127", from: "OpenStreetMap", note: "GeoNames puts a place called Tira 0.1 km from here in Mohali. Check which district it is in.", checked: false }
   # ── MOHALI (SAS NAGAR) ──
-  - { name: "Kurali", name_hi: "कुराली", district: mohali, pincode: "140103", centre: "30.8297, 76.5796", checked: false }
-  - { name: "Khizrabad", name_hi: "", district: mohali, pincode: "140109", centre: "30.8802, 76.6579", checked: false }
-  - { name: "Sialba Majri", name_hi: "", district: mohali, pincode: "140110", centre: "30.8445, 76.6624", checked: false }
-  - { name: "Mubarakpur", name_hi: "", district: mohali, pincode: "140201", centre: "", checked: false }
-  - { name: "Kharar", name_hi: "खरड़", district: mohali, pincode: "140301", centre: "30.9666, 76.5230", checked: false }
+  - { name: "Sector 53", name_hi: "सेक्टर 53", district: mohali, pincode: "", centre: "30.7192, 76.7321", also: "Phase 3A", also_hi: "फेज़ 3ए", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 54", name_hi: "सेक्टर 54", district: mohali, pincode: "", centre: "30.7244, 76.7263", also: "Phase 2", also_hi: "फेज़ 2", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 55", name_hi: "सेक्टर 55", district: mohali, pincode: "160055", centre: "30.7301, 76.7228", also: "Phase 1", also_hi: "फेज़ 1", from: "OpenStreetMap", second: "India Post 30.7326, 76.7208 (0.3 km away)", checked: true }
+  - { name: "Sector 56", name_hi: "सेक्टर 56", district: mohali, pincode: "", centre: "30.7366, 76.7189", also: "Phase 6", also_hi: "फेज़ 6", from: "OpenStreetMap", second: "Wikidata Q19896258 (Sector 56, Mohali) 30.7344, 76.7114 (0.8 km away)", checked: true }
+  - { name: "Sector 57", name_hi: "सेक्टर 57", district: mohali, pincode: "", centre: "30.7298, 76.7061", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 58", name_hi: "सेक्टर 58", district: mohali, pincode: "", centre: "30.7230, 76.7114", also: "Shahi Majra", also_hi: "", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 59", name_hi: "सेक्टर 59", district: mohali, pincode: "160059", centre: "30.7172, 76.7159", also: "Phase 4, Phase 5", also_hi: "फेज़ 4, फेज़ 5", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 60", name_hi: "सेक्टर 60", district: mohali, pincode: "160059", centre: "30.7111, 76.7212", also: "Phase 3B-1, Phase 3B-2", also_hi: "फेज़ 3बी-1, फेज़ 3बी-2", from: "OpenStreetMap", second: "India Post 30.7345, 76.7862 (6.7 km away)", checked: false }
+  - { name: "Sector 61", name_hi: "सेक्टर 61", district: mohali, pincode: "", centre: "30.7050, 76.7260", also: "Phase 7", also_hi: "फेज़ 7", from: "OpenStreetMap", second: "Wikidata Q19896261 (Sector 61, Mohali) 30.7015, 76.7290 (0.5 km away)", checked: true }
+  - { name: "Sector 62", name_hi: "सेक्टर 62", district: mohali, pincode: "160062", centre: "30.6987, 76.7302", also: "Phase 8", also_hi: "फेज़ 8", from: "OpenStreetMap", second: "Wikidata Q19896263 (Sector 62, Mohali) 30.6966, 76.7311 (0.2 km away)", checked: true }
+  - { name: "Sector 63", name_hi: "सेक्टर 63", district: mohali, pincode: "", centre: "30.6930, 76.7365", also: "Phase 9", also_hi: "फेज़ 9", from: "OpenStreetMap", second: "Wikidata Q19895242 (Phase 9, Mohali) (as Phase 9) 30.6928, 76.7370 (0.1 km away)", checked: true }
+  - { name: "Sector 64", name_hi: "सेक्टर 64", district: mohali, pincode: "", centre: "30.6867, 76.7409", also: "Phase 10", also_hi: "फेज़ 10", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 65", name_hi: "सेक्टर 65", district: mohali, pincode: "", centre: "30.6811, 76.7462", also: "Phase 11", also_hi: "फेज़ 11", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 66A", name_hi: "सेक्टर 66ए", district: mohali, pincode: "", centre: "30.6610, 76.7462", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 66B", name_hi: "सेक्टर 66बी", district: mohali, pincode: "", centre: "30.6518, 76.7552", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 67", name_hi: "सेक्टर 67", district: mohali, pincode: "160062", centre: "30.6802, 76.7294", from: "OpenStreetMap", second: "India Post 30.6834, 76.7356 (0.7 km away)", checked: true }
+  - { name: "Sector 68", name_hi: "सेक्टर 68", district: mohali, pincode: "", centre: "30.6857, 76.7241", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 69", name_hi: "सेक्टर 69", district: mohali, pincode: "", centre: "30.6916, 76.7199", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 70", name_hi: "सेक्टर 70", district: mohali, pincode: "", centre: "30.6976, 76.7149", from: "OpenStreetMap", second: "Wikidata Q18356541 (Sector 70, Mohali) 30.6977, 76.7154 (0.0 km away)", checked: true }
+  - { name: "Sector 71", name_hi: "सेक्टर 71", district: mohali, pincode: "160071", centre: "30.7040, 76.7094", from: "OpenStreetMap", second: "Wikidata Q19896270 (Sector 71, Mohali) 30.7040, 76.7095 (0.0 km away)", checked: true }
+  - { name: "Sector 72", name_hi: "सेक्टर 72", district: mohali, pincode: "", centre: "30.7098, 76.7045", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 73", name_hi: "सेक्टर 73", district: mohali, pincode: "", centre: "30.7177, 76.6986", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 74", name_hi: "सेक्टर 74", district: mohali, pincode: "", centre: "30.7089, 76.6875", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 74A", name_hi: "सेक्टर 74ए", district: mohali, pincode: "", centre: "30.7156, 76.6815", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 75", name_hi: "सेक्टर 75", district: mohali, pincode: "", centre: "30.7026, 76.6927", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 76", name_hi: "सेक्टर 76", district: mohali, pincode: "", centre: "30.6969, 76.6969", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 77", name_hi: "सेक्टर 77", district: mohali, pincode: "", centre: "30.6913, 76.7027", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 78", name_hi: "सेक्टर 78", district: mohali, pincode: "", centre: "30.6847, 76.7090", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 79", name_hi: "सेक्टर 79", district: mohali, pincode: "", centre: "30.6781, 76.7131", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 80", name_hi: "सेक्टर 80", district: mohali, pincode: "", centre: "30.6722, 76.7180", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 81", name_hi: "सेक्टर 81", district: mohali, pincode: "", centre: "30.6645, 76.7251", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 82", name_hi: "सेक्टर 82", district: mohali, pincode: "", centre: "30.6550, 76.7330", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 82A", name_hi: "सेक्टर 82ए", district: mohali, pincode: "", centre: "30.6444, 76.7421", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 83", name_hi: "सेक्टर 83", district: mohali, pincode: "", centre: "30.6497, 76.7215", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 83A", name_hi: "सेक्टर 83ए", district: mohali, pincode: "", centre: "30.6372, 76.7316", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 84", name_hi: "सेक्टर 84", district: mohali, pincode: "", centre: "30.6574, 76.7120", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 85", name_hi: "सेक्टर 85", district: mohali, pincode: "", centre: "30.6650, 76.7062", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 86", name_hi: "सेक्टर 86", district: mohali, pincode: "", centre: "30.6709, 76.7016", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 87", name_hi: "सेक्टर 87", district: mohali, pincode: "", centre: "30.6767, 76.6969", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 88", name_hi: "सेक्टर 88", district: mohali, pincode: "", centre: "30.6832, 76.6914", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 89", name_hi: "सेक्टर 89", district: mohali, pincode: "", centre: "30.6889, 76.6864", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 90", name_hi: "सेक्टर 90", district: mohali, pincode: "", centre: "30.6966, 76.6797", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 91", name_hi: "सेक्टर 91", district: mohali, pincode: "", centre: "30.7035, 76.6730", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 92", name_hi: "सेक्टर 92", district: mohali, pincode: "", centre: "30.7107, 76.6675", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 92A", name_hi: "सेक्टर 92ए", district: mohali, pincode: "", centre: "30.7087, 76.6616", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 93", name_hi: "सेक्टर 93", district: mohali, pincode: "", centre: "30.6982, 76.6660", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 94", name_hi: "सेक्टर 94", district: mohali, pincode: "", centre: "30.6904, 76.6697", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 95", name_hi: "सेक्टर 95", district: mohali, pincode: "", centre: "30.6829, 76.6746", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 96", name_hi: "सेक्टर 96", district: mohali, pincode: "", centre: "30.6771, 76.6804", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 97", name_hi: "सेक्टर 97", district: mohali, pincode: "", centre: "30.6704, 76.6861", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 98", name_hi: "सेक्टर 98", district: mohali, pincode: "", centre: "30.6638, 76.6905", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 99", name_hi: "सेक्टर 99", district: mohali, pincode: "", centre: "30.6574, 76.6951", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 100", name_hi: "सेक्टर 100", district: mohali, pincode: "", centre: "30.6519, 76.7004", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 101", name_hi: "सेक्टर 101", district: mohali, pincode: "", centre: "30.6432, 76.7080", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 101A", name_hi: "सेक्टर 101ए", district: mohali, pincode: "", centre: "30.6319, 76.7158", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 102", name_hi: "सेक्टर 102", district: mohali, pincode: "", centre: "30.6276, 76.6992", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 103", name_hi: "सेक्टर 103", district: mohali, pincode: "", centre: "30.6378, 76.6945", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 104", name_hi: "सेक्टर 104", district: mohali, pincode: "", centre: "30.6506, 76.6865", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 105", name_hi: "सेक्टर 105", district: mohali, pincode: "", centre: "30.6587, 76.6812", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 106", name_hi: "सेक्टर 106", district: mohali, pincode: "", centre: "30.6665, 76.6762", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 107", name_hi: "सेक्टर 107", district: mohali, pincode: "", centre: "30.6742, 76.6747", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 108", name_hi: "सेक्टर 108", district: mohali, pincode: "", centre: "30.6499, 76.6787", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 109", name_hi: "सेक्टर 109", district: mohali, pincode: "", centre: "30.6574, 76.6724", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 110", name_hi: "सेक्टर 110", district: mohali, pincode: "", centre: "30.6703, 76.6658", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 111", name_hi: "सेक्टर 111", district: mohali, pincode: "", centre: "30.6786, 76.6628", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 112", name_hi: "सेक्टर 112", district: mohali, pincode: "", centre: "30.6845, 76.6612", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 113", name_hi: "सेक्टर 113", district: mohali, pincode: "", centre: "30.6928, 76.6568", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 114", name_hi: "सेक्टर 114", district: mohali, pincode: "", centre: "30.7012, 76.6533", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 115", name_hi: "सेक्टर 115", district: mohali, pincode: "", centre: "30.7104, 76.6533", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 116", name_hi: "सेक्टर 116", district: mohali, pincode: "", centre: "30.7142, 76.6582", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 117", name_hi: "सेक्टर 117", district: mohali, pincode: "", centre: "30.7233, 76.6773", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 118", name_hi: "सेक्टर 118", district: mohali, pincode: "", centre: "30.7332, 76.6835", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 119", name_hi: "सेक्टर 119", district: mohali, pincode: "", centre: "30.7242, 76.6942", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 120", name_hi: "सेक्टर 120", district: mohali, pincode: "", centre: "30.7400, 76.6917", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 121", name_hi: "सेक्टर 121", district: mohali, pincode: "", centre: "30.7365, 76.7020", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 126", name_hi: "सेक्टर 126", district: mohali, pincode: "", centre: "30.7297, 76.6714", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 127", name_hi: "सेक्टर 127", district: mohali, pincode: "", centre: "30.7241, 76.6550", from: "OpenStreetMap", checked: false }
+  - { name: "Abhepur", name_hi: "", district: mohali, pincode: "", centre: "30.7863, 76.6451", from: "GeoNames", second: "OpenStreetMap 30.7862, 76.6444 (0.1 km away)", checked: true }
+  - { name: "Abhipur", name_hi: "", district: mohali, pincode: "", centre: "30.8849, 76.6851", from: "GeoNames", second: "OpenStreetMap 30.8848, 76.6845 (0.1 km away)", checked: true }
   - { name: "Aerocity", name_hi: "एरोसिटी", district: mohali, pincode: "140306", centre: "30.6500, 76.7300", checked: false }
-  - { name: "Manauli", name_hi: "", district: mohali, pincode: "140306", centre: "", checked: false }
-  - { name: "Landran", name_hi: "लांडरां", district: mohali, pincode: "140307", centre: "30.6951, 76.6648", checked: false }
-  - { name: "Sohana", name_hi: "सोहाना", district: mohali, pincode: "140308", centre: "30.6867, 76.6914", checked: false }
-  - { name: "Gharuan", name_hi: "", district: mohali, pincode: "140413", centre: "30.7743, 76.5606", checked: false }
-  - { name: "Lalru", name_hi: "लालड़ू", district: mohali, pincode: "140501", centre: "30.4900, 76.8009", checked: false }
-  - { name: "Dera Bassi", name_hi: "डेराबस्सी", district: mohali, pincode: "140507", centre: "30.4602, 76.8763", checked: false }
-  - { name: "Banur", name_hi: "बनूड़", district: mohali, pincode: "140601", centre: "30.5540, 76.7167", checked: false }
-  - { name: "Zirakpur", name_hi: "ज़ीरकपुर", district: mohali, pincode: "140603", centre: "30.6540, 76.8210", checked: false }
-  - { name: "Baltana", name_hi: "बलटाना", district: mohali, pincode: "140604", centre: "30.6703, 76.8321", checked: false }
-  - { name: "Mullanpur", name_hi: "मुल्लांपुर", district: mohali, pincode: "140901", centre: "30.8010, 76.7429", checked: false }
-  - { name: "Sector 55", name_hi: "सेक्टर 55", district: mohali, pincode: "160055", centre: "30.7326, 76.7208", checked: false }
-  - { name: "Sunny Enclave", name_hi: "", district: mohali, pincode: "160055", centre: "", checked: false }
-  - { name: "Sector 59", name_hi: "सेक्टर 59", district: mohali, pincode: "160059", centre: "", checked: false }
-  - { name: "Sector 60", name_hi: "सेक्टर 60", district: mohali, pincode: "160059", centre: "30.7345, 76.7862", checked: false }
-  - { name: "Sector 62", name_hi: "सेक्टर 62", district: mohali, pincode: "160062", centre: "", checked: false }
-  - { name: "Sector 67", name_hi: "सेक्टर 67", district: mohali, pincode: "160062", centre: "30.6834, 76.7356", checked: false }
-  - { name: "Sector 71", name_hi: "सेक्टर 71", district: mohali, pincode: "160071", centre: "", checked: false }
-  - { name: "Naya Gaon", name_hi: "नयागांव", district: mohali, pincode: "160103", centre: "", checked: false }
-  - { name: "Dhakoli", name_hi: "ढकोली", district: mohali, pincode: "160104", centre: "", checked: false }
-  - { name: "Allahpur", name_hi: "", district: mohali, pincode: "140103", centre: "", checked: false }
-  - { name: "Burmajra", name_hi: "", district: mohali, pincode: "140103", centre: "", checked: false }
-  - { name: "Chintgarh", name_hi: "", district: mohali, pincode: "140103", centre: "", checked: false }
-  - { name: "Dhanauri", name_hi: "", district: mohali, pincode: "140103", centre: "", checked: false }
-  - { name: "Jhingran Kalan", name_hi: "", district: mohali, pincode: "140103", centre: "30.7573, 76.4225", checked: false }
-  - { name: "Kaishanpura", name_hi: "", district: mohali, pincode: "140103", centre: "", checked: false }
-  - { name: "Kalewal", name_hi: "", district: mohali, pincode: "140103", centre: "", checked: false }
-  - { name: "Mundhon Kalan", name_hi: "", district: mohali, pincode: "140103", centre: "", checked: false }
-  - { name: "Sahauran", name_hi: "", district: mohali, pincode: "140103", centre: "", checked: false }
-  - { name: "Sihon Majra", name_hi: "", district: mohali, pincode: "140103", centre: "", checked: false }
-  - { name: "Singhpura", name_hi: "", district: mohali, pincode: "140103", centre: "", checked: false }
-  - { name: "Sotal", name_hi: "", district: mohali, pincode: "140103", centre: "", checked: false }
-  - { name: "Kubaheri", name_hi: "", district: mohali, pincode: "140109", centre: "", checked: false }
-  - { name: "Baraudi", name_hi: "", district: mohali, pincode: "140110", centre: "", checked: false }
-  - { name: "Hoshiarpur Taqipur", name_hi: "", district: mohali, pincode: "140110", centre: "", checked: false }
-  - { name: "Manakpur Sharif", name_hi: "", district: mohali, pincode: "140110", centre: "", checked: false }
-  - { name: "Phatwan", name_hi: "", district: mohali, pincode: "140110", centre: "", checked: false }
-  - { name: "Siswan", name_hi: "", district: mohali, pincode: "140110", centre: "", checked: false }
-  - { name: "Bhankarpur", name_hi: "", district: mohali, pincode: "140201", centre: "", checked: false }
-  - { name: "Cholta Khurd", name_hi: "", district: mohali, pincode: "140301", centre: "", checked: false }
-  - { name: "Daun Majra", name_hi: "", district: mohali, pincode: "140301", centre: "", checked: false }
-  - { name: "Jandpur", name_hi: "", district: mohali, pincode: "140301", centre: "", checked: false }
-  - { name: "Naya Shehar", name_hi: "", district: mohali, pincode: "140301", centre: "", checked: false }
-  - { name: "Palheri", name_hi: "", district: mohali, pincode: "140301", centre: "", checked: false }
-  - { name: "Radiala", name_hi: "", district: mohali, pincode: "140301", centre: "", checked: false }
-  - { name: "Roorkee Pukhta", name_hi: "", district: mohali, pincode: "140301", centre: "", checked: false }
-  - { name: "Tewar", name_hi: "", district: mohali, pincode: "140301", centre: "", checked: false }
-  - { name: "Dharamgarh", name_hi: "", district: mohali, pincode: "140306", centre: "", checked: false }
-  - { name: "Dhurali", name_hi: "", district: mohali, pincode: "140306", centre: "", checked: false }
-  - { name: "Mote Majra", name_hi: "", district: mohali, pincode: "140306", centre: "", checked: false }
-  - { name: "Raipur Kalan", name_hi: "", district: mohali, pincode: "140306", centre: "", checked: false }
-  - { name: "Bhago Majra", name_hi: "", district: mohali, pincode: "140307", centre: "", checked: false }
-  - { name: "Chudiala Sudan", name_hi: "", district: mohali, pincode: "140307", centre: "", checked: false }
-  - { name: "Geega Majra", name_hi: "", district: mohali, pincode: "140307", centre: "", checked: false }
-  - { name: "Jhanjeri", name_hi: "", district: mohali, pincode: "140307", centre: "", checked: false }
-  - { name: "Machhlikalan", name_hi: "", district: mohali, pincode: "140307", centre: "", checked: false }
-  - { name: "Majatri", name_hi: "", district: mohali, pincode: "140307", centre: "", checked: false }
-  - { name: "Rasanheri", name_hi: "", district: mohali, pincode: "140307", centre: "", checked: false }
-  - { name: "Kumbra", name_hi: "", district: mohali, pincode: "140308", centre: "", checked: false }
-  - { name: "Mauli Baidwan", name_hi: "", district: mohali, pincode: "140308", centre: "", checked: false }
+  - { name: "Aghanpur", name_hi: "", district: mohali, pincode: "", centre: "30.5186, 76.8402", from: "GeoNames", second: "OpenStreetMap 30.5186, 76.8389 (0.1 km away)", checked: true }
+  - { name: "Alamgir", name_hi: "", district: mohali, pincode: "", centre: "30.4718, 76.7786", from: "GeoNames", second: "OpenStreetMap 30.4718, 76.7775 (0.1 km away)", checked: true }
+  - { name: "Alipur", name_hi: "", district: mohali, pincode: "", centre: "30.6574, 76.7852", from: "GeoNames", second: "OpenStreetMap 30.6574, 76.7836 (0.2 km away)", checked: true }
+  - { name: "Allahpur", name_hi: "", district: mohali, pincode: "140103", centre: "30.7973, 76.6293", from: "GeoNames", second: "OpenStreetMap 30.7979, 76.6279 (0.1 km away)", checked: true }
+  - { name: "Amb Chhaba", name_hi: "", district: mohali, pincode: "", centre: "30.4987, 76.8852", from: "GeoNames", second: "OpenStreetMap 30.4988, 76.8834 (0.2 km away)", checked: true }
+  - { name: "Amblala", name_hi: "", district: mohali, pincode: "", centre: "30.5564, 76.7867", from: "GeoNames", second: "OpenStreetMap 30.5566, 76.7855 (0.1 km away)", checked: true }
+  - { name: "Andheri", name_hi: "", district: mohali, pincode: "", centre: "30.8303, 76.6374", from: "GeoNames", second: "OpenStreetMap 30.8306, 76.6360 (0.1 km away)", checked: true }
+  - { name: "Badala", name_hi: "", district: mohali, pincode: "", centre: "30.7275, 76.6278", from: "GeoNames", second: "OpenStreetMap 30.7273, 76.6280 (0.0 km away)", checked: true }
+  - { name: "Badali", name_hi: "", district: mohali, pincode: "", centre: "30.7308, 76.6191", from: "GeoNames", second: "OpenStreetMap 30.7302, 76.6193 (0.1 km away)", checked: true }
+  - { name: "Bahalpur Taprian", name_hi: "", district: mohali, pincode: "", centre: "30.8063, 76.6905", from: "GeoNames", second: "OpenStreetMap 30.8063, 76.6893 (0.1 km away)", checked: true }
+  - { name: "Bahora", name_hi: "", district: mohali, pincode: "", centre: "30.5882, 76.7867", from: "GeoNames", second: "OpenStreetMap 30.5883, 76.7852 (0.1 km away)", checked: true }
+  - { name: "Bahori", name_hi: "", district: mohali, pincode: "", centre: "30.5809, 76.7834", from: "GeoNames", second: "OpenStreetMap 30.5807, 76.7819 (0.1 km away)", checked: true }
+  - { name: "Bair Mazra", name_hi: "", district: mohali, pincode: "", centre: "30.5304, 76.8048", from: "GeoNames", second: "OpenStreetMap 30.5303, 76.8031 (0.2 km away)", checked: true }
   - { name: "Bajheri", name_hi: "", district: mohali, pincode: "140413", centre: "", checked: false }
-  - { name: "Bassian Brahman", name_hi: "", district: mohali, pincode: "140413", centre: "", checked: false }
-  - { name: "Garangan", name_hi: "", district: mohali, pincode: "140413", centre: "", checked: false }
-  - { name: "Marauli Kalan", name_hi: "", district: mohali, pincode: "140413", centre: "", checked: false }
-  - { name: "Sakrulapur", name_hi: "", district: mohali, pincode: "140413", centre: "", checked: false }
-  - { name: "Handesera", name_hi: "", district: mohali, pincode: "140501", centre: "", checked: false }
-  - { name: "Jarut", name_hi: "", district: mohali, pincode: "140501", centre: "", checked: false }
-  - { name: "Jauli", name_hi: "", district: mohali, pincode: "140501", centre: "", checked: false }
-  - { name: "Jharmarhi", name_hi: "", district: mohali, pincode: "140501", centre: "", checked: false }
-  - { name: "Joula Kalan", name_hi: "", district: mohali, pincode: "140501", centre: "30.7421, 76.6984", checked: false }
-  - { name: "Khelan", name_hi: "", district: mohali, pincode: "140501", centre: "", checked: false }
-  - { name: "Rani Majra", name_hi: "", district: mohali, pincode: "140501", centre: "", checked: false }
-  - { name: "Samgoli", name_hi: "", district: mohali, pincode: "140501", centre: "", checked: false }
-  - { name: "Sirsihni", name_hi: "", district: mohali, pincode: "140501", centre: "", checked: false }
-  - { name: "Tassimbli", name_hi: "", district: mohali, pincode: "140501", centre: "", checked: false }
-  - { name: "Tiwana", name_hi: "", district: mohali, pincode: "140501", centre: "", checked: false }
-  - { name: "Dappar", name_hi: "", district: mohali, pincode: "140506", centre: "", checked: false }
-  - { name: "Gholumajra", name_hi: "", district: mohali, pincode: "140506", centre: "", checked: false }
-  - { name: "Jalalpur", name_hi: "", district: mohali, pincode: "140506", centre: "", checked: false }
-  - { name: "Jangipur", name_hi: "", district: mohali, pincode: "140506", centre: "", checked: false }
+  - { name: "Bajholi", name_hi: "", district: mohali, pincode: "", centre: "30.7891, 76.6407", from: "GeoNames", second: "OpenStreetMap 30.7894, 76.6388 (0.2 km away)", checked: true }
+  - { name: "Baliali", name_hi: "", district: mohali, pincode: "160055", centre: "30.7207, 76.6789", from: "GeoNames", checked: false }
+  - { name: "Ballopur", name_hi: "", district: mohali, pincode: "", centre: "30.4853, 76.8383", from: "GeoNames", second: "OpenStreetMap 30.4855, 76.8377 (0.1 km away)", checked: true }
+  - { name: "Balongi", name_hi: "बलौंगी", district: mohali, pincode: "160055", centre: "30.7306, 76.6937", from: "GeoNames", checked: false }
+  - { name: "Baltana", name_hi: "बलटाना", district: mohali, pincode: "140604", centre: "30.6703, 76.8321", checked: false }
+  - { name: "Banur", name_hi: "बनूड़", district: mohali, pincode: "140601", centre: "30.5540, 76.7167", second: "GeoNames 30.5541, 76.7195 (0.3 km away); OpenStreetMap 30.5559, 76.7173 (0.2 km away)", checked: true }
+  - { name: "Baqarpura", name_hi: "", district: mohali, pincode: "", centre: "30.5737, 76.8311", from: "GeoNames", second: "OpenStreetMap 30.5736, 76.8298 (0.1 km away)", checked: true }
+  - { name: "Bara Jaula", name_hi: "", district: mohali, pincode: "", centre: "30.4822, 76.8753", from: "GeoNames", second: "OpenStreetMap 30.4820, 76.8739 (0.1 km away)", checked: true }
+  - { name: "Baragaon", name_hi: "", district: mohali, pincode: "", centre: "30.7274, 76.5851", from: "GeoNames", second: "OpenStreetMap 30.7267, 76.5841 (0.1 km away)", checked: true }
+  - { name: "Baraudi", name_hi: "", district: mohali, pincode: "140110", centre: "", checked: false }
+  - { name: "Bari", name_hi: "", district: mohali, pincode: "", centre: "30.6258, 76.7574", from: "GeoNames", second: "OpenStreetMap 30.6251, 76.7566 (0.1 km away)", checked: true }
+  - { name: "Bari Nagal", name_hi: "", district: mohali, pincode: "", centre: "30.8536, 76.7649", from: "GeoNames", second: "OpenStreetMap 30.8526, 76.7650 (0.1 km away)", checked: true }
+  - { name: "Bari Paroh", name_hi: "", district: mohali, pincode: "", centre: "30.8017, 76.7870", from: "GeoNames", second: "OpenStreetMap 30.8013, 76.7862 (0.1 km away)", checked: true }
+  - { name: "Bari Sunk", name_hi: "", district: mohali, pincode: "", centre: "30.8071, 76.7790", from: "GeoNames", second: "OpenStreetMap 30.8074, 76.7779 (0.1 km away)", checked: true }
+  - { name: "Barodi", name_hi: "", district: mohali, pincode: "", centre: "30.8362, 76.6347", from: "GeoNames", second: "OpenStreetMap 30.8357, 76.6343 (0.1 km away)", checked: true }
   - { name: "Baroli", name_hi: "", district: mohali, pincode: "140507", centre: "", checked: false }
-  - { name: "Devinagar", name_hi: "", district: mohali, pincode: "140507", centre: "", checked: false }
-  - { name: "Kuranwala", name_hi: "", district: mohali, pincode: "140507", centre: "", checked: false }
-  - { name: "Rampur Sainia", name_hi: "", district: mohali, pincode: "140507", centre: "", checked: false }
-  - { name: "Nagal Charbar", name_hi: "", district: mohali, pincode: "140601", centre: "30.5500, 76.6900", checked: false }
+  - { name: "Baronjian", name_hi: "", district: mohali, pincode: "", centre: "30.8192, 76.7334", from: "GeoNames", second: "OpenStreetMap 30.8189, 76.7319 (0.1 km away)", checked: true }
+  - { name: "Barsalpur", name_hi: "", district: mohali, pincode: "", centre: "30.8765, 76.6311", from: "GeoNames", second: "OpenStreetMap 30.8759, 76.6311 (0.1 km away)", checked: true }
+  - { name: "Basauli", name_hi: "", district: mohali, pincode: "", centre: "30.4472, 76.8632", from: "GeoNames", second: "OpenStreetMap 30.4475, 76.8621 (0.1 km away)", checked: true }
+  - { name: "Basi Banda", name_hi: "", district: mohali, pincode: "", centre: "30.5602, 76.7132", from: "GeoNames", second: "OpenStreetMap 30.5599, 76.7129 (0.0 km away)", checked: true }
+  - { name: "Bassian Brahman", name_hi: "", district: mohali, pincode: "140413", centre: "", checked: false }
+  - { name: "Bata", name_hi: "", district: mohali, pincode: "", centre: "30.7391, 76.5464", from: "GeoNames", second: "OpenStreetMap 30.7384, 76.5460 (0.1 km away)", checked: true }
+  - { name: "Bazidpur", name_hi: "", district: mohali, pincode: "", centre: "30.8281, 76.6736", from: "GeoNames", second: "OpenStreetMap 30.8280, 76.6730 (0.1 km away)", checked: true }
+  - { name: "Bhabat", name_hi: "", district: mohali, pincode: "", centre: "30.6580, 76.8065", from: "GeoNames", second: "OpenStreetMap 30.6580, 76.8060 (0.0 km away)", checked: true }
+  - { name: "Bhago Majra", name_hi: "", district: mohali, pincode: "140307", centre: "", checked: false }
+  - { name: "Bhagot Majra", name_hi: "", district: mohali, pincode: "", centre: "30.8004, 76.6993", from: "GeoNames", second: "OpenStreetMap 30.8002, 76.6983 (0.1 km away)", checked: true }
+  - { name: "Bhagwasi", name_hi: "", district: mohali, pincode: "", centre: "30.5209, 76.8430", from: "GeoNames", second: "OpenStreetMap 30.5210, 76.8417 (0.1 km away)", checked: true }
+  - { name: "Bhankarpur", name_hi: "", district: mohali, pincode: "140201", centre: "30.6062, 76.8363", from: "GeoNames", checked: false }
+  - { name: "Bibipur", name_hi: "", district: mohali, pincode: "", centre: "30.7440, 76.5582", from: "GeoNames", second: "OpenStreetMap 30.7431, 76.5577 (0.1 km away)", checked: true }
+  - { name: "Bijanpur", name_hi: "", district: mohali, pincode: "", centre: "30.5301, 76.8596", from: "GeoNames", second: "OpenStreetMap 30.5299, 76.8589 (0.1 km away)", checked: true }
+  - { name: "Bujheri", name_hi: "", district: mohali, pincode: "", centre: "30.7407, 76.5882", from: "GeoNames", second: "OpenStreetMap 30.7396, 76.5880 (0.1 km away)", checked: true }
+  - { name: "Burmajra", name_hi: "", district: mohali, pincode: "140103", centre: "", checked: false }
+  - { name: "Buthgarh", name_hi: "", district: mohali, pincode: "", centre: "30.8341, 76.6863", from: "GeoNames", second: "OpenStreetMap 30.8334, 76.6849 (0.2 km away)", checked: true }
+  - { name: "Chadiala", name_hi: "", district: mohali, pincode: "", centre: "30.5469, 76.7780", from: "GeoNames", second: "OpenStreetMap 30.5467, 76.7761 (0.2 km away)", checked: true }
+  - { name: "Chanalon", name_hi: "", district: mohali, pincode: "", centre: "30.8203, 76.5883", from: "GeoNames", second: "OpenStreetMap 30.8202, 76.5879 (0.0 km away)", checked: true }
+  - { name: "Chando Govindgarh", name_hi: "", district: mohali, pincode: "", centre: "30.7790, 76.6675", from: "GeoNames", second: "OpenStreetMap 30.7786, 76.6659 (0.2 km away)", checked: true }
+  - { name: "Chandpur", name_hi: "", district: mohali, pincode: "", centre: "30.8295, 76.6510", from: "GeoNames", second: "OpenStreetMap 30.8298, 76.6502 (0.1 km away)", checked: true }
+  - { name: "Chaundheri", name_hi: "", district: mohali, pincode: "", centre: "30.5120, 76.8174", from: "GeoNames", second: "OpenStreetMap 30.5116, 76.8162 (0.1 km away)", checked: true }
+  - { name: "Chharauli", name_hi: "", district: mohali, pincode: "", centre: "30.4890, 76.8798", from: "GeoNames", second: "OpenStreetMap 30.4891, 76.8789 (0.1 km away)", checked: true }
   - { name: "Chhatt", name_hi: "", district: mohali, pincode: "140603", centre: "", checked: false }
+  - { name: "Chhota Jasdhana", name_hi: "", district: mohali, pincode: "", centre: "30.4671, 76.8402", from: "GeoNames", second: "OpenStreetMap 30.4679, 76.8385 (0.2 km away)", checked: true }
+  - { name: "Chhota Jaula", name_hi: "", district: mohali, pincode: "", centre: "30.4609, 76.8709", from: "GeoNames", second: "OpenStreetMap 30.4614, 76.8698 (0.1 km away)", checked: true }
+  - { name: "Chhota Salempur", name_hi: "", district: mohali, pincode: "", centre: "30.8839, 76.6159", from: "GeoNames", second: "OpenStreetMap 30.8837, 76.6151 (0.1 km away)", checked: true }
+  - { name: "Chhoti Paroh", name_hi: "", district: mohali, pincode: "", centre: "30.8081, 76.7950", from: "GeoNames", second: "OpenStreetMap 30.8066, 76.7944 (0.2 km away)", checked: true }
+  - { name: "Chilla", name_hi: "", district: mohali, pincode: "", centre: "30.6616, 76.7231", from: "GeoNames", second: "OpenStreetMap 30.6606, 76.7241 (0.1 km away)", checked: true }
+  - { name: "Chintgarh", name_hi: "", district: mohali, pincode: "140103", centre: "", checked: false }
+  - { name: "Cholta Khurd", name_hi: "", district: mohali, pincode: "140301", centre: "", checked: false }
+  - { name: "Chudiala Sudan", name_hi: "", district: mohali, pincode: "140307", centre: "", checked: false }
+  - { name: "Dadrala", name_hi: "", district: mohali, pincode: "", centre: "30.5620, 76.8523", from: "GeoNames", second: "OpenStreetMap 30.5620, 76.8509 (0.1 km away)", checked: true }
+  - { name: "Dalhar", name_hi: "", district: mohali, pincode: "", centre: "30.4770, 76.7813", from: "GeoNames", second: "OpenStreetMap 30.4766, 76.7804 (0.1 km away)", checked: true }
+  - { name: "Dao Majra", name_hi: "", district: mohali, pincode: "", centre: "30.7724, 76.6215", from: "GeoNames", second: "OpenStreetMap 30.7724, 76.6196 (0.2 km away)", checked: true }
+  - { name: "Dappar", name_hi: "", district: mohali, pincode: "140506", centre: "30.5207, 76.8161", from: "GeoNames", second: "OpenStreetMap 30.5208, 76.8145 (0.2 km away)", checked: true }
+  - { name: "Daun", name_hi: "", district: mohali, pincode: "160055", centre: "30.7418, 76.6833", from: "GeoNames", checked: false }
+  - { name: "Daun Majra", name_hi: "", district: mohali, pincode: "140301", centre: "", checked: false }
   - { name: "Dayalpur Sodhian", name_hi: "", district: mohali, pincode: "140603", centre: "", checked: false }
-  - { name: "Pabhat", name_hi: "", district: mohali, pincode: "140603", centre: "", checked: false }
+  - { name: "Dera Bassi", name_hi: "डेराबस्सी", district: mohali, pincode: "140507", centre: "30.5882, 76.8439", from: "OpenStreetMap", second: "India Post 30.4602, 76.8763 (14.6 km away); GeoNames 30.5881, 76.8450 (0.1 km away)", checked: false }
+  - { name: "Devinagar", name_hi: "", district: mohali, pincode: "140507", centre: "30.5631, 76.8376", from: "GeoNames", second: "OpenStreetMap 30.5627, 76.8361 (0.2 km away)", checked: true }
+  - { name: "Dhakoli", name_hi: "ढकोली", district: mohali, pincode: "160104", centre: "", checked: false }
+  - { name: "Dhakoran Kalan", name_hi: "", district: mohali, pincode: "", centre: "30.8182, 76.6839", from: "GeoNames", second: "OpenStreetMap 30.8183, 76.6829 (0.1 km away)", checked: true }
+  - { name: "Dhanauni", name_hi: "", district: mohali, pincode: "", centre: "30.5835, 76.8228", from: "GeoNames", second: "OpenStreetMap 30.5836, 76.8213 (0.1 km away)", checked: true }
+  - { name: "Dhanauri", name_hi: "", district: mohali, pincode: "140103", centre: "", checked: false }
+  - { name: "Dharamgarh", name_hi: "", district: mohali, pincode: "140306", centre: "30.4622, 76.8107", from: "GeoNames", second: "OpenStreetMap 30.4622, 76.8089 (0.2 km away)", checked: true }
+  - { name: "Dharmgarh", name_hi: "", district: mohali, pincode: "", centre: "30.6678, 76.7629", from: "GeoNames", second: "OpenStreetMap 30.6674, 76.7618 (0.1 km away)", checked: true }
+  - { name: "Dhiro Majra", name_hi: "", district: mohali, pincode: "", centre: "30.4386, 76.8336", from: "GeoNames", second: "OpenStreetMap 30.4384, 76.8325 (0.1 km away)", checked: true }
+  - { name: "Dhode Majra", name_hi: "", district: mohali, pincode: "", centre: "30.8111, 76.7169", from: "GeoNames", second: "OpenStreetMap 30.8111, 76.7163 (0.1 km away)", checked: true }
+  - { name: "Dhogtana", name_hi: "", district: mohali, pincode: "", centre: "30.8639, 76.6070", from: "GeoNames", second: "OpenStreetMap 30.8638, 76.6065 (0.0 km away)", checked: true }
+  - { name: "Dhurali", name_hi: "", district: mohali, pincode: "140306", centre: "30.6432, 76.7032", from: "GeoNames", second: "OpenStreetMap 30.6423, 76.7036 (0.1 km away)", checked: true }
+  - { name: "Dialpura", name_hi: "", district: mohali, pincode: "", centre: "30.6395, 76.7867", from: "GeoNames", second: "OpenStreetMap 30.6397, 76.7856 (0.1 km away)", checked: true }
+  - { name: "Dosarna", name_hi: "", district: mohali, pincode: "", centre: "30.8368, 76.6047", from: "GeoNames", second: "OpenStreetMap 30.8366, 76.6044 (0.0 km away)", checked: true }
+  - { name: "Dulwan", name_hi: "", district: mohali, pincode: "", centre: "30.8668, 76.7050", from: "GeoNames", second: "OpenStreetMap 30.8672, 76.7037 (0.1 km away)", checked: true }
+  - { name: "Fatehgarh", name_hi: "", district: mohali, pincode: "", centre: "30.8291, 76.6138", from: "GeoNames", second: "OpenStreetMap 30.8291, 76.6130 (0.1 km away)", checked: true }
+  - { name: "Fatehpur Theri", name_hi: "", district: mohali, pincode: "", centre: "30.7531, 76.5375", from: "GeoNames", second: "OpenStreetMap 30.7531, 76.5360 (0.1 km away)", checked: true }
+  - { name: "Firozpur", name_hi: "", district: mohali, pincode: "", centre: "30.8170, 76.7402", from: "GeoNames", second: "OpenStreetMap 30.8172, 76.7400 (0.0 km away)", checked: true }
+  - { name: "Gaba Mazra", name_hi: "", district: mohali, pincode: "", centre: "30.7005, 76.6208", from: "GeoNames", second: "OpenStreetMap 30.6998, 76.6205 (0.1 km away)", checked: true }
+  - { name: "Gadarpur", name_hi: "", district: mohali, pincode: "", centre: "30.6569, 76.6420", from: "GeoNames", second: "OpenStreetMap 30.6564, 76.6432 (0.1 km away)", checked: true }
+  - { name: "Garangan", name_hi: "", district: mohali, pincode: "140413", centre: "30.7197, 76.5439", from: "GeoNames", second: "OpenStreetMap 30.7185, 76.5430 (0.2 km away)", checked: true }
+  - { name: "Garhi", name_hi: "", district: mohali, pincode: "", centre: "30.8674, 76.7459", from: "GeoNames", second: "OpenStreetMap 30.8678, 76.7446 (0.1 km away)", checked: true }
+  - { name: "Geega Majra", name_hi: "", district: mohali, pincode: "140307", centre: "", checked: false }
+  - { name: "Gharuan", name_hi: "", district: mohali, pincode: "140413", centre: "30.7743, 76.5606", second: "OpenStreetMap 30.7723, 76.5578 (0.3 km away)", checked: true }
+  - { name: "Ghataur", name_hi: "", district: mohali, pincode: "", centre: "30.7916, 76.6204", from: "GeoNames", second: "OpenStreetMap 30.7913, 76.6197 (0.1 km away)", checked: true }
+  - { name: "Ghoga", name_hi: "", district: mohali, pincode: "", centre: "30.7089, 76.5565", from: "GeoNames", second: "OpenStreetMap 30.7082, 76.5551 (0.2 km away)", checked: true }
+  - { name: "Gholu Mazra", name_hi: "", district: mohali, pincode: "", centre: "30.5339, 76.8241", from: "GeoNames", second: "OpenStreetMap 30.5339, 76.8231 (0.1 km away)", checked: true }
+  - { name: "Gholumajra", name_hi: "", district: mohali, pincode: "140506", centre: "", checked: false }
+  - { name: "Gobindgarh", name_hi: "", district: mohali, pincode: "", centre: "30.6362, 76.6623", from: "GeoNames", second: "OpenStreetMap 30.6360, 76.6625 (0.0 km away)", checked: true }
+  - { name: "Gochar", name_hi: "", district: mohali, pincode: "", centre: "30.8919, 76.7015", from: "GeoNames", second: "OpenStreetMap 30.8918, 76.7001 (0.1 km away)", checked: true }
+  - { name: "Gunun Majra", name_hi: "", district: mohali, pincode: "", centre: "30.8512, 76.6319", from: "GeoNames", second: "OpenStreetMap 30.8507, 76.6317 (0.1 km away)", checked: true }
+  - { name: "Gurha", name_hi: "", district: mohali, pincode: "", centre: "30.8336, 76.7798", from: "GeoNames", second: "OpenStreetMap 30.8336, 76.7793 (0.0 km away)", checked: true }
+  - { name: "Haibatpur", name_hi: "", district: mohali, pincode: "", centre: "30.6033, 76.8715", from: "GeoNames", second: "OpenStreetMap 30.6032, 76.8706 (0.1 km away)", checked: true }
+  - { name: "Handesera", name_hi: "", district: mohali, pincode: "140501", centre: "", checked: false }
+  - { name: "Haripur Hinduan", name_hi: "", district: mohali, pincode: "", centre: "30.5923, 76.8903", from: "GeoNames", second: "OpenStreetMap 30.5914, 76.8897 (0.1 km away)", checked: true }
+  - { name: "Haripur Kora", name_hi: "", district: mohali, pincode: "", centre: "30.5647, 76.8440", from: "GeoNames", second: "OpenStreetMap 30.5647, 76.8423 (0.2 km away)", checked: true }
+  - { name: "Harlalpur", name_hi: "", district: mohali, pincode: "", centre: "30.7686, 76.6583", from: "GeoNames", second: "OpenStreetMap 30.7680, 76.6573 (0.1 km away)", checked: true }
+  - { name: "Harnampur", name_hi: "", district: mohali, pincode: "", centre: "30.8944, 76.6352", from: "GeoNames", second: "OpenStreetMap 30.8946, 76.6348 (0.0 km away)", checked: true }
+  - { name: "Hoshiarpur", name_hi: "", district: mohali, pincode: "", centre: "30.8345, 76.7178", from: "GeoNames", second: "OpenStreetMap 30.8340, 76.7171 (0.1 km away)", checked: true }
+  - { name: "Hoshiarpur Taqipur", name_hi: "", district: mohali, pincode: "140110", centre: "", checked: false }
+  - { name: "Humayunpur", name_hi: "", district: mohali, pincode: "", centre: "30.4237, 76.8732", from: "GeoNames", second: "OpenStreetMap 30.4256, 76.8725 (0.2 km away)", checked: true }
+  - { name: "Humbra", name_hi: "", district: mohali, pincode: "", centre: "30.5358, 76.7676", from: "GeoNames", second: "OpenStreetMap 30.5358, 76.7658 (0.2 km away)", checked: true }
+  - { name: "Ibrahimpura", name_hi: "", district: mohali, pincode: "", centre: "30.5960, 76.8014", from: "GeoNames", second: "OpenStreetMap 30.5958, 76.8005 (0.1 km away)", checked: true }
+  - { name: "Jagadhri", name_hi: "", district: mohali, pincode: "", centre: "30.5896, 76.8276", from: "GeoNames", second: "OpenStreetMap 30.5903, 76.8258 (0.2 km away)", checked: true }
+  - { name: "Jakar Majra", name_hi: "", district: mohali, pincode: "", centre: "30.7808, 76.6512", from: "GeoNames", second: "OpenStreetMap 30.7808, 76.6507 (0.0 km away)", checked: true }
+  - { name: "Jalalpur", name_hi: "", district: mohali, pincode: "140506", centre: "30.5099, 76.7896", from: "GeoNames", second: "OpenStreetMap 30.5098, 76.7877 (0.2 km away)", checked: true }
+  - { name: "Jandli", name_hi: "", district: mohali, pincode: "", centre: "30.4990, 76.8872", from: "GeoNames", second: "OpenStreetMap 30.4988, 76.8866 (0.1 km away)", checked: true }
+  - { name: "Jandpur", name_hi: "", district: mohali, pincode: "140301", centre: "", checked: false }
+  - { name: "Janetpur", name_hi: "", district: mohali, pincode: "", centre: "30.5586, 76.8204", from: "GeoNames", second: "OpenStreetMap 30.5591, 76.8194 (0.1 km away)", checked: true }
+  - { name: "Jangipur", name_hi: "", district: mohali, pincode: "140506", centre: "", checked: false }
+  - { name: "Jaraut", name_hi: "", district: mohali, pincode: "", centre: "30.4235, 76.8201", from: "GeoNames", second: "OpenStreetMap 30.4234, 76.8182 (0.2 km away)", checked: true }
+  - { name: "Jarut", name_hi: "", district: mohali, pincode: "140501", centre: "", checked: false }
+  - { name: "Jasdhana Kalan", name_hi: "", district: mohali, pincode: "", centre: "30.4582, 76.8297", from: "GeoNames", second: "OpenStreetMap 30.4584, 76.8279 (0.2 km away)", checked: true }
+  - { name: "Jauli", name_hi: "", district: mohali, pincode: "140501", centre: "30.4985, 76.8766", from: "GeoNames", second: "OpenStreetMap 30.4996, 76.8759 (0.1 km away)", checked: true }
+  - { name: "Jawaharpur", name_hi: "", district: mohali, pincode: "", centre: "30.5532, 76.8366", from: "GeoNames", second: "OpenStreetMap 30.5537, 76.8347 (0.2 km away)", checked: true }
   - { name: "Jayanti Devi", name_hi: "", district: mohali, pincode: "140901", centre: "", checked: false }
+  - { name: "Jhande Majra", name_hi: "", district: mohali, pincode: "", centre: "30.8540, 76.6517", from: "GeoNames", second: "OpenStreetMap 30.8535, 76.6511 (0.1 km away)", checked: true }
+  - { name: "Jhandpur", name_hi: "", district: mohali, pincode: "", centre: "30.7676, 76.6655", from: "GeoNames", second: "OpenStreetMap 30.7674, 76.6644 (0.1 km away)", checked: true }
+  - { name: "Jhanjeri", name_hi: "", district: mohali, pincode: "140307", centre: "30.6852, 76.6175", from: "GeoNames", second: "OpenStreetMap 30.6845, 76.6175 (0.1 km away)", checked: true }
+  - { name: "Jharmarhi", name_hi: "", district: mohali, pincode: "140501", centre: "", checked: false }
+  - { name: "Jhingran", name_hi: "", district: mohali, pincode: "", centre: "30.8150, 76.6052", from: "GeoNames", second: "OpenStreetMap 30.8152, 76.6044 (0.1 km away)", checked: true }
+  - { name: "Jhingran Kalan", name_hi: "", district: mohali, pincode: "140103", centre: "30.7573, 76.4225", checked: false }
+  - { name: "Jhowansa", name_hi: "", district: mohali, pincode: "", centre: "30.5043, 76.9009", from: "GeoNames", second: "OpenStreetMap 30.5045, 76.8997 (0.1 km away)", checked: true }
+  - { name: "Jodhpur", name_hi: "", district: mohali, pincode: "", centre: "30.3875, 76.9118", from: "GeoNames", second: "OpenStreetMap 30.3884, 76.9114 (0.1 km away)", checked: true }
+  - { name: "Joula Kalan", name_hi: "", district: mohali, pincode: "140501", centre: "30.7421, 76.6984", checked: false }
+  - { name: "Kadi Majra", name_hi: "", district: mohali, pincode: "", centre: "30.8221, 76.6553", from: "GeoNames", second: "OpenStreetMap 30.8213, 76.6538 (0.2 km away)", checked: true }
+  - { name: "Kailon", name_hi: "", district: mohali, pincode: "", centre: "30.6990, 76.6536", from: "GeoNames", second: "OpenStreetMap 30.6982, 76.6547 (0.1 km away)", checked: true }
+  - { name: "Kaishanpura", name_hi: "", district: mohali, pincode: "140103", centre: "", checked: false }
+  - { name: "Kalewal", name_hi: "", district: mohali, pincode: "140103", centre: "30.8054, 76.5727", from: "GeoNames", second: "OpenStreetMap 30.8049, 76.5714 (0.1 km away)", checked: true }
+  - { name: "Kambala", name_hi: "", district: mohali, pincode: "", centre: "30.6668, 76.7444", from: "GeoNames", second: "OpenStreetMap 30.6657, 76.7452 (0.1 km away)", checked: true }
+  - { name: "Kambali", name_hi: "", district: mohali, pincode: "", centre: "30.6740, 76.7466", from: "GeoNames", second: "OpenStreetMap 30.6730, 76.7477 (0.2 km away)", checked: true }
+  - { name: "Kanauran", name_hi: "", district: mohali, pincode: "", centre: "30.8269, 76.6027", from: "GeoNames", second: "OpenStreetMap 30.8270, 76.6019 (0.1 km away)", checked: true }
+  - { name: "Kandalan", name_hi: "", district: mohali, pincode: "", centre: "30.6715, 76.7712", from: "GeoNames", second: "OpenStreetMap 30.6715, 76.7699 (0.1 km away)", checked: true }
+  - { name: "Kandauli", name_hi: "", district: mohali, pincode: "", centre: "30.7994, 76.7047", from: "GeoNames", second: "OpenStreetMap 30.7995, 76.7038 (0.1 km away)", checked: true }
+  - { name: "Kansala", name_hi: "", district: mohali, pincode: "", centre: "30.8241, 76.7025", from: "GeoNames", second: "OpenStreetMap 30.8239, 76.7011 (0.1 km away)", checked: true }
+  - { name: "Karkaur", name_hi: "", district: mohali, pincode: "", centre: "30.5725, 76.8041", from: "GeoNames", second: "OpenStreetMap 30.5726, 76.8028 (0.1 km away)", checked: true }
+  - { name: "Karo Majra", name_hi: "", district: mohali, pincode: "", centre: "30.6744, 76.7580", from: "GeoNames", second: "OpenStreetMap 30.6736, 76.7581 (0.1 km away)", checked: true }
+  - { name: "Kartarpur", name_hi: "", district: mohali, pincode: "", centre: "30.8307, 76.6983", from: "GeoNames", second: "OpenStreetMap 30.8304, 76.6975 (0.1 km away)", checked: true }
+  - { name: "Khairpur", name_hi: "", district: mohali, pincode: "", centre: "30.8193, 76.6443", from: "GeoNames", second: "OpenStreetMap 30.8190, 76.6435 (0.1 km away)", checked: true }
+  - { name: "Khanpur", name_hi: "", district: mohali, pincode: "", centre: "30.7562, 76.6291", from: "GeoNames", second: "OpenStreetMap 30.7569, 76.6288 (0.1 km away)", checked: true }
+  - { name: "Kharar", name_hi: "खरड़", district: mohali, pincode: "140301", centre: "30.7488, 76.6429", from: "OpenStreetMap", second: "India Post 30.9666, 76.5230 (26.8 km away); GeoNames 30.7463, 76.6469 (0.5 km away)", checked: false }
+  - { name: "Khelan", name_hi: "", district: mohali, pincode: "140501", centre: "30.3737, 76.9086", from: "GeoNames", second: "OpenStreetMap 30.3737, 76.9084 (0.0 km away)", checked: true }
+  - { name: "Khera", name_hi: "", district: mohali, pincode: "", centre: "30.8521, 76.6626", from: "GeoNames", second: "OpenStreetMap 30.8518, 76.6611 (0.1 km away)", checked: true }
+  - { name: "Kheri Gujran", name_hi: "", district: mohali, pincode: "", centre: "30.5548, 76.8747", from: "GeoNames", second: "OpenStreetMap 30.5547, 76.8732 (0.1 km away)", checked: true }
+  - { name: "Kheri Jattan", name_hi: "", district: mohali, pincode: "", centre: "30.5134, 76.8796", from: "GeoNames", second: "OpenStreetMap 30.5136, 76.8789 (0.1 km away)", checked: true }
+  - { name: "Kheri Sandran", name_hi: "", district: mohali, pincode: "", centre: "30.6166, 76.8881", from: "GeoNames", second: "OpenStreetMap 30.6165, 76.8870 (0.1 km away)", checked: true }
+  - { name: "Khizrabad", name_hi: "", district: mohali, pincode: "140109", centre: "30.8802, 76.6579", second: "GeoNames 30.8797, 76.6577 (0.1 km away); OpenStreetMap 30.8783, 76.6569 (0.2 km away)", checked: true }
+  - { name: "Khuni Mazra", name_hi: "", district: mohali, pincode: "", centre: "30.7211, 76.6427", from: "GeoNames", second: "OpenStreetMap 30.7205, 76.6426 (0.1 km away)", checked: true }
+  - { name: "Khurhanwala", name_hi: "", district: mohali, pincode: "", centre: "30.5758, 76.8801", from: "GeoNames", second: "OpenStreetMap 30.5754, 76.8788 (0.1 km away)", checked: true }
+  - { name: "Kubaheri", name_hi: "", district: mohali, pincode: "140109", centre: "30.8782, 76.6763", from: "GeoNames", second: "OpenStreetMap 30.8776, 76.6760 (0.1 km away)", checked: true }
   - { name: "Kuda Jassu", name_hi: "", district: mohali, pincode: "140901", centre: "", checked: false }
-  - { name: "Parol", name_hi: "", district: mohali, pincode: "140901", centre: "", checked: false }
-  - { name: "Baliali", name_hi: "", district: mohali, pincode: "160055", centre: "", checked: false }
-  - { name: "Balongi", name_hi: "बलौंगी", district: mohali, pincode: "160055", centre: "", checked: false }
-  - { name: "Daun", name_hi: "", district: mohali, pincode: "160055", centre: "", checked: false }
+  - { name: "Kumbra", name_hi: "", district: mohali, pincode: "140308", centre: "30.6891, 76.7251", from: "GeoNames", second: "OpenStreetMap 30.6882, 76.7257 (0.1 km away)", checked: true }
+  - { name: "Kurali", name_hi: "कुराली", district: mohali, pincode: "140103", centre: "30.8297, 76.5796", second: "GeoNames 30.8342, 76.5768 (0.6 km away); OpenStreetMap 30.8315, 76.5785 (0.2 km away)", checked: true }
+  - { name: "Kuranwala", name_hi: "", district: mohali, pincode: "140507", centre: "", checked: false }
+  - { name: "Kurli", name_hi: "", district: mohali, pincode: "", centre: "30.4412, 76.7968", from: "GeoNames", second: "OpenStreetMap 30.4411, 76.7954 (0.1 km away)", checked: true }
+  - { name: "Kurra", name_hi: "", district: mohali, pincode: "", centre: "30.6010, 76.7269", from: "GeoNames", second: "OpenStreetMap 30.5998, 76.7273 (0.1 km away)", checked: true }
+  - { name: "Kurri", name_hi: "", district: mohali, pincode: "", centre: "30.6044, 76.7430", from: "GeoNames", second: "OpenStreetMap 30.6042, 76.7437 (0.1 km away)", checked: true }
+  - { name: "Labangarh", name_hi: "", district: mohali, pincode: "", centre: "30.8814, 76.6372", from: "GeoNames", second: "OpenStreetMap 30.8813, 76.6369 (0.0 km away)", checked: true }
+  - { name: "Lahli", name_hi: "", district: mohali, pincode: "", centre: "30.5130, 76.8058", from: "GeoNames", second: "OpenStreetMap 30.5125, 76.8037 (0.2 km away)", checked: true }
+  - { name: "Lahra", name_hi: "", district: mohali, pincode: "", centre: "30.7646, 76.5798", from: "GeoNames", second: "OpenStreetMap 30.7641, 76.5791 (0.1 km away)", checked: true }
+  - { name: "Lalru", name_hi: "लालड़ू", district: mohali, pincode: "140501", centre: "30.4900, 76.8009", second: "GeoNames 30.4917, 76.7987 (0.3 km away); OpenStreetMap 30.4916, 76.7984 (0.3 km away)", checked: true }
+  - { name: "Lalru Mandi", name_hi: "", district: mohali, pincode: "", centre: "30.4793, 76.7989", from: "GeoNames", second: "OpenStreetMap 30.4789, 76.7988 (0.0 km away)", checked: true }
+  - { name: "Landial", name_hi: "", district: mohali, pincode: "", centre: "30.6569, 76.7768", from: "GeoNames", second: "OpenStreetMap 30.6566, 76.7749 (0.2 km away)", checked: true }
+  - { name: "Landran", name_hi: "लांडरां", district: mohali, pincode: "140307", centre: "30.6951, 76.6648", second: "GeoNames 30.6945, 76.6651 (0.1 km away); OpenStreetMap 30.6937, 76.6647 (0.2 km away)", checked: true }
+  - { name: "Machhli Bari", name_hi: "", district: mohali, pincode: "", centre: "30.6590, 76.6193", from: "GeoNames", second: "OpenStreetMap 30.6582, 76.6186 (0.1 km away)", checked: true }
+  - { name: "Machhli Chhoti", name_hi: "", district: mohali, pincode: "", centre: "30.6596, 76.6345", from: "GeoNames", second: "OpenStreetMap 30.6589, 76.6347 (0.1 km away)", checked: true }
+  - { name: "Machhlikalan", name_hi: "", district: mohali, pincode: "140307", centre: "", checked: false }
+  - { name: "Magar", name_hi: "", district: mohali, pincode: "", centre: "30.7066, 76.6356", from: "GeoNames", second: "OpenStreetMap 30.7055, 76.6354 (0.1 km away)", checked: true }
+  - { name: "Magra", name_hi: "", district: mohali, pincode: "", centre: "30.4933, 76.7805", from: "GeoNames", second: "OpenStreetMap 30.4929, 76.7794 (0.1 km away)", checked: true }
+  - { name: "Mahiwala", name_hi: "", district: mohali, pincode: "", centre: "30.5711, 76.8636", from: "GeoNames", second: "OpenStreetMap 30.5716, 76.8621 (0.2 km away)", checked: true }
+  - { name: "Mahrampur Taprian", name_hi: "", district: mohali, pincode: "", centre: "30.8567, 76.6335", from: "GeoNames", second: "OpenStreetMap 30.8569, 76.6323 (0.1 km away)", checked: true }
+  - { name: "Majat", name_hi: "", district: mohali, pincode: "", centre: "30.6773, 76.5889", from: "GeoNames", second: "OpenStreetMap 30.6766, 76.5879 (0.1 km away)", checked: true }
+  - { name: "Majatri", name_hi: "", district: mohali, pincode: "140307", centre: "30.6846, 76.5997", from: "GeoNames", second: "OpenStreetMap 30.6838, 76.5984 (0.2 km away)", checked: true }
+  - { name: "Majra", name_hi: "", district: mohali, pincode: "", centre: "30.8440, 76.7152", from: "GeoNames", second: "OpenStreetMap 30.8438, 76.7137 (0.1 km away)", checked: true }
+  - { name: "Majrian", name_hi: "", district: mohali, pincode: "", centre: "30.8208, 76.7800", from: "GeoNames", second: "OpenStreetMap 30.8201, 76.7779 (0.2 km away)", checked: true }
+  - { name: "Makran", name_hi: "", district: mohali, pincode: "", centre: "30.6760, 76.6018", from: "GeoNames", second: "OpenStreetMap 30.6756, 76.6007 (0.1 km away)", checked: true }
+  - { name: "Malakpur Taprian", name_hi: "", district: mohali, pincode: "", centre: "30.8014, 76.6749", from: "GeoNames", second: "OpenStreetMap 30.8008, 76.6739 (0.1 km away)", checked: true }
+  - { name: "Malan", name_hi: "", district: mohali, pincode: "", centre: "30.3905, 76.9140", from: "GeoNames", second: "OpenStreetMap 30.3905, 76.9135 (0.0 km away)", checked: true }
+  - { name: "Manakpur", name_hi: "", district: mohali, pincode: "", centre: "30.6183, 76.7114", from: "GeoNames", second: "OpenStreetMap 30.6176, 76.7109 (0.1 km away)", checked: true }
+  - { name: "Manakpur Sharif", name_hi: "", district: mohali, pincode: "140110", centre: "", checked: false }
+  - { name: "Manakpur Sherif", name_hi: "", district: mohali, pincode: "", centre: "30.8511, 76.6879", from: "GeoNames", second: "OpenStreetMap 30.8507, 76.6870 (0.1 km away)", checked: true }
+  - { name: "Manauli", name_hi: "", district: mohali, pincode: "140306", centre: "30.6444, 76.7218", from: "GeoNames", second: "OpenStreetMap 30.6435, 76.7220 (0.1 km away)", checked: true }
+  - { name: "Mandho Sangtia", name_hi: "", district: mohali, pincode: "", centre: "30.8488, 76.6244", from: "GeoNames", second: "OpenStreetMap 30.8487, 76.6237 (0.1 km away)", checked: true }
+  - { name: "Mandi", name_hi: "", district: mohali, pincode: "", centre: "30.4572, 76.7667", from: "GeoNames", second: "OpenStreetMap 30.4569, 76.7652 (0.1 km away)", checked: true }
+  - { name: "Marauli", name_hi: "", district: mohali, pincode: "", centre: "30.8547, 76.6489", from: "GeoNames", second: "OpenStreetMap 30.8549, 76.6482 (0.1 km away)", checked: true }
+  - { name: "Marauli Kalan", name_hi: "", district: mohali, pincode: "140413", centre: "30.7839, 76.5218", from: "OpenStreetMap", checked: false }
+  - { name: "Math", name_hi: "", district: mohali, pincode: "", centre: "30.5610, 76.7260", from: "GeoNames", second: "OpenStreetMap 30.5617, 76.7260 (0.1 km away)", checked: true }
+  - { name: "Matran", name_hi: "", district: mohali, pincode: "", centre: "30.6329, 76.7552", from: "GeoNames", second: "OpenStreetMap 30.6326, 76.7535 (0.2 km away)", checked: true }
+  - { name: "Mattaur", name_hi: "", district: mohali, pincode: "", centre: "30.7011, 76.7119", from: "GeoNames", second: "OpenStreetMap 30.7003, 76.7124 (0.1 km away)", checked: true }
+  - { name: "Mauli Baidwan", name_hi: "", district: mohali, pincode: "140308", centre: "", checked: false }
+  - { name: "Mirpura", name_hi: "", district: mohali, pincode: "", centre: "30.4384, 76.8247", from: "GeoNames", second: "OpenStreetMap 30.4384, 76.8242 (0.0 km away)", checked: true }
+  - { name: "Mirzapur", name_hi: "", district: mohali, pincode: "", centre: "30.9014, 76.7298", from: "GeoNames", second: "OpenStreetMap 30.9012, 76.7292 (0.1 km away)", checked: true }
+  - { name: "Mota Mazra", name_hi: "", district: mohali, pincode: "", centre: "30.5862, 76.6983", from: "GeoNames", second: "OpenStreetMap 30.5851, 76.6976 (0.1 km away)", checked: true }
+  - { name: "Mote Majra", name_hi: "", district: mohali, pincode: "140306", centre: "", checked: false }
+  - { name: "Mubarakpur", name_hi: "", district: mohali, pincode: "140201", centre: "30.6146, 76.8559", from: "GeoNames", checked: false }
+  - { name: "Muhammadpura", name_hi: "", district: mohali, pincode: "", centre: "30.5770, 76.8167", from: "GeoNames", second: "OpenStreetMap 30.5776, 76.8160 (0.1 km away)", checked: true }
+  - { name: "Mullanpur", name_hi: "मुल्लांपुर", district: mohali, pincode: "140901", centre: "30.8010, 76.7429", second: "OpenStreetMap 30.8000, 76.7434 (0.1 km away)", checked: true }
+  - { name: "Mundhon Kalan", name_hi: "", district: mohali, pincode: "140103", centre: "", checked: false }
+  - { name: "Nabha", name_hi: "", district: mohali, pincode: "", centre: "30.6390, 76.8005", from: "GeoNames", second: "OpenStreetMap 30.6392, 76.7994 (0.1 km away)", checked: true }
+  - { name: "Nada", name_hi: "", district: mohali, pincode: "", centre: "30.7880, 76.7960", from: "GeoNames", second: "OpenStreetMap 30.7878, 76.7943 (0.2 km away)", checked: true }
+  - { name: "Nagal Charbar", name_hi: "", district: mohali, pincode: "140601", centre: "30.5500, 76.6900", checked: false }
+  - { name: "Nagalian", name_hi: "", district: mohali, pincode: "", centre: "30.8150, 76.6529", from: "GeoNames", second: "OpenStreetMap 30.8150, 76.6516 (0.1 km away)", checked: true }
+  - { name: "Nahalka", name_hi: "", district: mohali, pincode: "", centre: "30.8427, 76.5926", from: "GeoNames", second: "OpenStreetMap 30.8426, 76.5922 (0.0 km away)", checked: true }
+  - { name: "Namian", name_hi: "", district: mohali, pincode: "", centre: "30.6975, 76.5863", from: "GeoNames", second: "OpenStreetMap 30.6967, 76.5855 (0.1 km away)", checked: true }
+  - { name: "Nanheri", name_hi: "", district: mohali, pincode: "", centre: "30.8076, 76.6088", from: "GeoNames", second: "OpenStreetMap 30.8078, 76.6072 (0.2 km away)", checked: true }
+  - { name: "Naraingarh", name_hi: "", district: mohali, pincode: "", centre: "30.6275, 76.7800", from: "GeoNames", second: "OpenStreetMap 30.6278, 76.7781 (0.2 km away)", checked: true }
+  - { name: "Naya Gaon", name_hi: "नयागांव", district: mohali, pincode: "160103", centre: "30.7752, 76.7931", from: "GeoNames", second: "OpenStreetMap 30.7739, 76.7903 (0.3 km away)", checked: true }
+  - { name: "Naya Shahr", name_hi: "", district: mohali, pincode: "", centre: "30.7314, 76.6284", from: "GeoNames", second: "OpenStreetMap 30.7313, 76.6280 (0.0 km away)", checked: true }
+  - { name: "Naya Shehar", name_hi: "", district: mohali, pincode: "140301", centre: "", checked: false }
+  - { name: "Pabhat", name_hi: "", district: mohali, pincode: "140603", centre: "", checked: false }
+  - { name: "Padiala", name_hi: "", district: mohali, pincode: "", centre: "30.8020, 76.5930", from: "GeoNames", second: "OpenStreetMap 30.8019, 76.5920 (0.1 km away)", checked: true }
+  - { name: "Paintpur", name_hi: "", district: mohali, pincode: "", centre: "30.7988, 76.7262", from: "GeoNames", second: "OpenStreetMap 30.7983, 76.7250 (0.1 km away)", checked: true }
+  - { name: "Palheri", name_hi: "", district: mohali, pincode: "140301", centre: "30.7917, 76.6926", from: "GeoNames", second: "OpenStreetMap 30.7923, 76.6919 (0.1 km away)", checked: true }
+  - { name: "Pandwala", name_hi: "", district: mohali, pincode: "", centre: "30.6188, 76.8799", from: "GeoNames", second: "OpenStreetMap 30.6182, 76.8787 (0.1 km away)", checked: true }
+  - { name: "Panwan", name_hi: "", district: mohali, pincode: "", centre: "30.7100, 76.5897", from: "GeoNames", second: "OpenStreetMap 30.7090, 76.5889 (0.1 km away)", checked: true }
+  - { name: "Paragpur", name_hi: "", district: mohali, pincode: "", centre: "30.5913, 76.8089", from: "GeoNames", second: "OpenStreetMap 30.5912, 76.8081 (0.1 km away)", checked: true }
+  - { name: "Parol", name_hi: "", district: mohali, pincode: "140901", centre: "30.8318, 76.7403", from: "GeoNames", second: "OpenStreetMap 30.8322, 76.7390 (0.1 km away)", checked: true }
+  - { name: "Paton", name_hi: "", district: mohali, pincode: "", centre: "30.6189, 76.7319", from: "GeoNames", second: "OpenStreetMap 30.6179, 76.7319 (0.1 km away)", checked: true }
+  - { name: "Phallanpur", name_hi: "", district: mohali, pincode: "", centre: "30.8572, 76.7093", from: "GeoNames", second: "OpenStreetMap 30.8576, 76.7073 (0.2 km away)", checked: true }
+  - { name: "Phantwan", name_hi: "", district: mohali, pincode: "", centre: "30.8141, 76.6695", from: "GeoNames", second: "OpenStreetMap 30.8147, 76.6691 (0.1 km away)", checked: true }
+  - { name: "Phatwan", name_hi: "", district: mohali, pincode: "140110", centre: "", checked: false }
+  - { name: "Pir Sohana", name_hi: "", district: mohali, pincode: "", centre: "30.7497, 76.5990", from: "GeoNames", second: "OpenStreetMap 30.7491, 76.5995 (0.1 km away)", checked: true }
+  - { name: "Punsar", name_hi: "", district: mohali, pincode: "", centre: "30.5223, 76.8824", from: "GeoNames", second: "OpenStreetMap 30.5223, 76.8814 (0.1 km away)", checked: true }
+  - { name: "Pupnan", name_hi: "", district: mohali, pincode: "", centre: "30.6966, 76.5982", from: "GeoNames", second: "OpenStreetMap 30.6960, 76.5979 (0.1 km away)", checked: true }
+  - { name: "Radiala", name_hi: "", district: mohali, pincode: "140301", centre: "", checked: false }
+  - { name: "Raipur Kalan", name_hi: "", district: mohali, pincode: "140306", centre: "", checked: false }
+  - { name: "Rakauli", name_hi: "", district: mohali, pincode: "", centre: "30.8099, 76.6180", from: "GeoNames", second: "OpenStreetMap 30.8106, 76.6174 (0.1 km away)", checked: true }
+  - { name: "Rampur", name_hi: "", district: mohali, pincode: "", centre: "30.8522, 76.6015", from: "GeoNames", second: "OpenStreetMap 30.8521, 76.6008 (0.1 km away)", checked: true }
+  - { name: "Rampur Bahal", name_hi: "", district: mohali, pincode: "", centre: "30.5255, 76.8866", from: "GeoNames", second: "OpenStreetMap 30.5252, 76.8855 (0.1 km away)", checked: true }
+  - { name: "Rampur Sainia", name_hi: "", district: mohali, pincode: "140507", centre: "", checked: false }
+  - { name: "Rangian", name_hi: "", district: mohali, pincode: "", centre: "30.7038, 76.6040", from: "GeoNames", second: "OpenStreetMap 30.7031, 76.6036 (0.1 km away)", checked: true }
+  - { name: "Rani Majra", name_hi: "", district: mohali, pincode: "140501", centre: "30.8074, 76.6995", from: "OpenStreetMap", checked: false }
+  - { name: "Rasanheri", name_hi: "", district: mohali, pincode: "140307", centre: "30.6989, 76.6248", from: "GeoNames", second: "OpenStreetMap 30.6987, 76.6247 (0.0 km away)", checked: true }
+  - { name: "Ratwara", name_hi: "", district: mohali, pincode: "", centre: "30.8006, 76.7320", from: "GeoNames", second: "OpenStreetMap 30.7996, 76.7311 (0.1 km away)", checked: true }
+  - { name: "Roorkee Pukhta", name_hi: "", district: mohali, pincode: "140301", centre: "", checked: false }
+  - { name: "Rora", name_hi: "", district: mohali, pincode: "", centre: "30.7350, 76.5696", from: "GeoNames", second: "OpenStreetMap 30.7343, 76.5682 (0.2 km away)", checked: true }
+  - { name: "Rudiala", name_hi: "", district: mohali, pincode: "", centre: "30.7762, 76.6332", from: "GeoNames", second: "OpenStreetMap 30.7765, 76.6326 (0.1 km away)", checked: true }
+  - { name: "Rurka", name_hi: "", district: mohali, pincode: "", centre: "30.6579, 76.7593", from: "GeoNames", second: "OpenStreetMap 30.6581, 76.7568 (0.2 km away)", checked: true }
+  - { name: "Rurki Kham", name_hi: "", district: mohali, pincode: "", centre: "30.7905, 76.6742", from: "GeoNames", second: "OpenStreetMap 30.7905, 76.6735 (0.1 km away)", checked: true }
+  - { name: "Sahali", name_hi: "", district: mohali, pincode: "", centre: "30.8062, 76.6409", from: "GeoNames", second: "OpenStreetMap 30.8066, 76.6392 (0.2 km away)", checked: true }
+  - { name: "Sahauran", name_hi: "", district: mohali, pincode: "140103", centre: "30.7846, 76.6050", from: "GeoNames", second: "OpenStreetMap 30.7854, 76.6042 (0.1 km away)", checked: true }
+  - { name: "Saidpur", name_hi: "", district: mohali, pincode: "", centre: "30.6729, 76.6467", from: "GeoNames", second: "OpenStreetMap 30.6720, 76.6466 (0.1 km away)", checked: true }
+  - { name: "Saidpura", name_hi: "", district: mohali, pincode: "", centre: "30.5896, 76.8714", from: "GeoNames", second: "OpenStreetMap 30.5893, 76.8694 (0.2 km away)", checked: true }
+  - { name: "Saini Majra", name_hi: "", district: mohali, pincode: "", centre: "30.8849, 76.6255", from: "GeoNames", second: "OpenStreetMap 30.8841, 76.6249 (0.1 km away)", checked: true }
+  - { name: "Sakrulapur", name_hi: "", district: mohali, pincode: "140413", centre: "", checked: false }
+  - { name: "Salamatpur", name_hi: "", district: mohali, pincode: "", centre: "30.8114, 76.7216", from: "GeoNames", second: "OpenStreetMap 30.8109, 76.7204 (0.1 km away)", checked: true }
+  - { name: "Salempur Kolan", name_hi: "", district: mohali, pincode: "", centre: "30.8676, 76.6201", from: "GeoNames", second: "OpenStreetMap 30.8671, 76.6192 (0.1 km away)", checked: true }
+  - { name: "Sambal Majra", name_hi: "", district: mohali, pincode: "", centre: "30.7531, 76.5899", from: "GeoNames", second: "OpenStreetMap 30.7530, 76.5880 (0.2 km away)", checked: true }
+  - { name: "Samgoli", name_hi: "", district: mohali, pincode: "140501", centre: "", checked: false }
+  - { name: "Sami Majra", name_hi: "", district: mohali, pincode: "", centre: "30.8032, 76.7096", from: "GeoNames", second: "OpenStreetMap 30.8031, 76.7088 (0.1 km away)", checked: true }
+  - { name: "Sangalan", name_hi: "", district: mohali, pincode: "", centre: "30.7855, 76.7103", from: "GeoNames", second: "OpenStreetMap 30.7851, 76.7094 (0.1 km away)", checked: true }
+  - { name: "Sangatpur", name_hi: "", district: mohali, pincode: "", centre: "30.8588, 76.6846", from: "GeoNames", second: "OpenStreetMap 30.8585, 76.6833 (0.1 km away)", checked: true }
+  - { name: "Sangota", name_hi: "", district: mohali, pincode: "", centre: "30.4215, 76.8017", from: "GeoNames", second: "OpenStreetMap 30.4217, 76.8007 (0.1 km away)", checked: true }
+  - { name: "Sarsini", name_hi: "", district: mohali, pincode: "", centre: "30.4533, 76.7809", from: "GeoNames", second: "OpenStreetMap 30.4531, 76.7794 (0.1 km away)", checked: true }
+  - { name: "Shafipur", name_hi: "", district: mohali, pincode: "", centre: "30.6551, 76.7714", from: "GeoNames", second: "OpenStreetMap 30.6549, 76.7706 (0.1 km away)", checked: true }
+  - { name: "Shahpur", name_hi: "", district: mohali, pincode: "", centre: "30.7993, 76.6161", from: "GeoNames", second: "OpenStreetMap 30.7990, 76.6156 (0.1 km away)", checked: true }
+  - { name: "Shainpur", name_hi: "", district: mohali, pincode: "", centre: "30.7709, 76.6806", from: "GeoNames", second: "OpenStreetMap 30.7707, 76.6801 (0.1 km away)", checked: true }
+  - { name: "Shatabgarh", name_hi: "", district: mohali, pincode: "", centre: "30.6144, 76.8090", from: "GeoNames", second: "OpenStreetMap 30.6148, 76.8076 (0.1 km away)", checked: true }
+  - { name: "Shukrullahpur", name_hi: "", district: mohali, pincode: "", centre: "30.7504, 76.5682", from: "GeoNames", second: "OpenStreetMap 30.7499, 76.5680 (0.1 km away)", checked: true }
+  - { name: "Sialba Majri", name_hi: "", district: mohali, pincode: "140110", centre: "30.8445, 76.6624", checked: false }
+  - { name: "Siau", name_hi: "", district: mohali, pincode: "", centre: "30.6242, 76.7426", from: "GeoNames", second: "OpenStreetMap 30.6228, 76.7435 (0.2 km away)", checked: true }
+  - { name: "Sihon Majra", name_hi: "", district: mohali, pincode: "140103", centre: "", checked: false }
+  - { name: "Silkapra", name_hi: "", district: mohali, pincode: "", centre: "30.7478, 76.5427", from: "GeoNames", second: "OpenStreetMap 30.7469, 76.5427 (0.1 km away)", checked: true }
+  - { name: "Singhpura", name_hi: "", district: mohali, pincode: "140103", centre: "", checked: false }
+  - { name: "Sirsihni", name_hi: "", district: mohali, pincode: "140501", centre: "", checked: false }
+  - { name: "Siswan", name_hi: "", district: mohali, pincode: "140110", centre: "30.8651, 76.7460", from: "GeoNames", second: "OpenStreetMap 30.8642, 76.7447 (0.2 km away)", checked: true }
+  - { name: "Sohana", name_hi: "सोहाना", district: mohali, pincode: "140308", centre: "30.6867, 76.6914", second: "GeoNames 30.6887, 76.7066 (1.5 km away); OpenStreetMap 30.6880, 76.7063 (1.4 km away)", checked: true }
+  - { name: "Sotal", name_hi: "", district: mohali, pincode: "140103", centre: "30.7203, 76.5636", from: "GeoNames", second: "OpenStreetMap 30.7189, 76.5625 (0.2 km away)", checked: true }
+  - { name: "Sukhgarh", name_hi: "", district: mohali, pincode: "", centre: "30.6563, 76.6977", from: "GeoNames", second: "OpenStreetMap 30.6453, 76.6838 (1.8 km away)", checked: true }
+  - { name: "Sultanpur", name_hi: "", district: mohali, pincode: "", centre: "30.8476, 76.7232", from: "GeoNames", second: "OpenStreetMap 30.8483, 76.7223 (0.1 km away)", checked: true }
+  - { name: "Sunny Enclave", name_hi: "", district: mohali, pincode: "160055", centre: "", checked: false }
+  - { name: "Tajpur", name_hi: "", district: mohali, pincode: "", centre: "30.8743, 76.6090", from: "GeoNames", second: "OpenStreetMap 30.8738, 76.6080 (0.1 km away)", checked: true }
+  - { name: "Tangauri", name_hi: "", district: mohali, pincode: "", centre: "30.5955, 76.7058", from: "GeoNames", second: "OpenStreetMap 30.5951, 76.7055 (0.1 km away)", checked: true }
+  - { name: "Taqipur", name_hi: "", district: mohali, pincode: "", centre: "30.8296, 76.7142", from: "GeoNames", second: "OpenStreetMap 30.8294, 76.7136 (0.1 km away)", checked: true }
+  - { name: "Tarak", name_hi: "", district: mohali, pincode: "", centre: "30.4987, 76.8959", from: "GeoNames", second: "OpenStreetMap 30.4989, 76.8952 (0.1 km away)", checked: true }
+  - { name: "Tassimbli", name_hi: "", district: mohali, pincode: "140501", centre: "", checked: false }
+  - { name: "Tewar", name_hi: "", district: mohali, pincode: "140301", centre: "", checked: false }
+  - { name: "Thana Govindgarh", name_hi: "", district: mohali, pincode: "", centre: "30.8692, 76.6321", from: "GeoNames", second: "OpenStreetMap 30.8692, 76.6317 (0.0 km away)", checked: true }
+  - { name: "Thoska", name_hi: "", district: mohali, pincode: "", centre: "30.7777, 76.6866", from: "GeoNames", second: "OpenStreetMap 30.7773, 76.6853 (0.1 km away)", checked: true }
+  - { name: "Tipari", name_hi: "", district: mohali, pincode: "", centre: "30.7147, 76.6283", from: "GeoNames", second: "OpenStreetMap 30.7140, 76.6282 (0.1 km away)", checked: true }
+  - { name: "Tiwana", name_hi: "", district: mohali, pincode: "140501", centre: "", checked: false }
+  - { name: "Tiwar", name_hi: "", district: mohali, pincode: "", centre: "30.7937, 76.6566", from: "GeoNames", second: "OpenStreetMap 30.7943, 76.6558 (0.1 km away)", checked: true }
+  - { name: "Toghanpur", name_hi: "", district: mohali, pincode: "", centre: "30.5235, 76.8254", from: "GeoNames", second: "OpenStreetMap 30.5233, 76.8242 (0.1 km away)", checked: true }
+  - { name: "Tuhfapur", name_hi: "", district: mohali, pincode: "", centre: "30.5045, 76.8425", from: "GeoNames", second: "OpenStreetMap 30.5049, 76.8420 (0.1 km away)", checked: true }
+  - { name: "Vasepur", name_hi: "", district: mohali, pincode: "", centre: "30.7873, 76.7138", from: "GeoNames", second: "OpenStreetMap 30.7873, 76.7130 (0.1 km away)", checked: true }
+  - { name: "Zirakpur", name_hi: "ज़ीरकपुर", district: mohali, pincode: "140603", centre: "30.6540, 76.8210", second: "GeoNames 30.6562, 76.8209 (0.2 km away); OpenStreetMap 30.6557, 76.8201 (0.2 km away)", checked: true }
   # ── PANCHKULA ──
-  - { name: "Surajpur", name_hi: "सूरजपुर", district: panchkula, pincode: "133301", centre: "30.7743, 76.8948", checked: false }
-  - { name: "Kalka", name_hi: "कालका", district: panchkula, pincode: "133302", centre: "30.8344, 76.9382", checked: false }
-  - { name: "HMT, Pinjore", name_hi: "", district: panchkula, pincode: "134101", centre: "30.7827, 76.9103", checked: false }
-  - { name: "Pinjore", name_hi: "पिंजौर", district: panchkula, pincode: "134102", centre: "30.7977, 76.9144", checked: false }
-  - { name: "ITBP Bhanu", name_hi: "", district: panchkula, pincode: "134103", centre: "30.6343, 76.9153", checked: false }
-  - { name: "CRPF, Pinjore", name_hi: "", district: panchkula, pincode: "134104", centre: "30.7826, 76.9247", checked: false }
+  - { name: "Sector 1", name_hi: "सेक्टर 1", district: panchkula, pincode: "", centre: "30.7035, 76.8680", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 2", name_hi: "सेक्टर 2", district: panchkula, pincode: "", centre: "30.6963, 76.8653", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 3", name_hi: "सेक्टर 3", district: panchkula, pincode: "", centre: "30.6903, 76.8706", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 4", name_hi: "सेक्टर 4", district: panchkula, pincode: "134112", centre: "30.6892, 76.8606", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 5", name_hi: "सेक्टर 5", district: panchkula, pincode: "", centre: "30.6967, 76.8562", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 6", name_hi: "सेक्टर 6", district: panchkula, pincode: "", centre: "30.7061, 76.8577", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 7", name_hi: "सेक्टर 7", district: panchkula, pincode: "", centre: "30.7075, 76.8451", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 8", name_hi: "सेक्टर 8", district: panchkula, pincode: "134109", centre: "30.7000, 76.8445", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 9", name_hi: "सेक्टर 9", district: panchkula, pincode: "", centre: "30.6945, 76.8455", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 10", name_hi: "सेक्टर 10", district: panchkula, pincode: "", centre: "30.6893, 76.8476", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 11", name_hi: "सेक्टर 11", district: panchkula, pincode: "", centre: "30.6851, 76.8522", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 12", name_hi: "सेक्टर 12", district: panchkula, pincode: "134112", centre: "30.6807, 76.8575", from: "OpenStreetMap", second: "India Post 30.7487, 76.8547 (7.6 km away)", checked: false }
+  - { name: "Sector 12A", name_hi: "सेक्टर 12ए", district: panchkula, pincode: "", centre: "30.6745, 76.8512", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 14", name_hi: "सेक्टर 14", district: panchkula, pincode: "", centre: "30.6795, 76.8457", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 15", name_hi: "सेक्टर 15", district: panchkula, pincode: "134113", centre: "30.6848, 76.8404", from: "OpenStreetMap", second: "India Post 30.6853, 76.8392 (0.1 km away)", checked: true }
+  - { name: "Sector 16", name_hi: "सेक्टर 16", district: panchkula, pincode: "", centre: "30.6922, 76.8369", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 17", name_hi: "सेक्टर 17", district: panchkula, pincode: "", centre: "30.6990, 76.8358", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 18", name_hi: "सेक्टर 18", district: panchkula, pincode: "", centre: "30.7041, 76.8369", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 20", name_hi: "सेक्टर 20", district: panchkula, pincode: "134117", centre: "30.6661, 76.8574", from: "OpenStreetMap", second: "India Post 30.6692, 76.8579 (0.3 km away)", checked: true }
+  - { name: "Sector 21", name_hi: "सेक्टर 21", district: panchkula, pincode: "", centre: "30.6764, 76.8658", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 22", name_hi: "सेक्टर 22", district: panchkula, pincode: "", centre: "30.6951, 76.8811", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 23", name_hi: "सेक्टर 23", district: panchkula, pincode: "", centre: "30.6878, 76.8816", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 24", name_hi: "सेक्टर 24", district: panchkula, pincode: "", centre: "30.6697, 76.8786", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 25", name_hi: "सेक्टर 25", district: panchkula, pincode: "", centre: "30.6710, 76.8850", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 26", name_hi: "सेक्टर 26", district: panchkula, pincode: "134116", centre: "30.6618, 76.8830", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 27", name_hi: "सेक्टर 27", district: panchkula, pincode: "", centre: "30.6539, 76.8807", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 28", name_hi: "सेक्टर 28", district: panchkula, pincode: "", centre: "30.6464, 76.8795", from: "OpenStreetMap", checked: false }
+  - { name: "Sector 31", name_hi: "सेक्टर 31", district: panchkula, pincode: "", centre: "30.6928, 76.8909", from: "OpenStreetMap", checked: false }
+  - { name: "Alipur", name_hi: "", district: panchkula, pincode: "", centre: "30.6010, 76.9560", from: "GeoNames", second: "OpenStreetMap 30.6013, 76.9548 (0.1 km away)", checked: true }
   - { name: "Amravati Enclave", name_hi: "", district: panchkula, pincode: "134105", centre: "30.3843, 76.7717", checked: false }
-  - { name: "Chandi Mandir Cantonment", name_hi: "", district: panchkula, pincode: "134107", centre: "", checked: false }
-  - { name: "Chandi Mandir", name_hi: "चंडी मंदिर", district: panchkula, pincode: "134107", centre: "", checked: false }
-  - { name: "Sector 8", name_hi: "सेक्टर 8", district: panchkula, pincode: "134109", centre: "", checked: false }
-  - { name: "Sector 12", name_hi: "सेक्टर 12", district: panchkula, pincode: "134112", centre: "30.7487, 76.8547", checked: false }
-  - { name: "Sector 4", name_hi: "सेक्टर 4", district: panchkula, pincode: "134112", centre: "", checked: false }
-  - { name: "Industrial Area", name_hi: "इंडस्ट्रियल एरिया", district: panchkula, pincode: "134113", centre: "30.6766, 76.8369", checked: false }
-  - { name: "Sector 15", name_hi: "सेक्टर 15", district: panchkula, pincode: "134113", centre: "30.6853, 76.8392", checked: false }
-  - { name: "Mansa Devi Complex, Sector 5", name_hi: "", district: panchkula, pincode: "134114", centre: "30.7212, 76.8526", checked: false }
-  - { name: "Sector 26", name_hi: "सेक्टर 26", district: panchkula, pincode: "134116", centre: "", checked: false }
-  - { name: "Sector 20", name_hi: "सेक्टर 20", district: panchkula, pincode: "134117", centre: "30.6692, 76.8579", checked: false }
-  - { name: "Barwala", name_hi: "बरवाला", district: panchkula, pincode: "134118", centre: "", checked: false }
-  - { name: "Raipur Rani", name_hi: "रायपुर रानी", district: panchkula, pincode: "134204", centre: "30.5867, 77.0192", checked: false }
-  - { name: "Morni", name_hi: "मोरनी", district: panchkula, pincode: "134205", centre: "30.7000, 77.0833", checked: false }
-  - { name: "Kharanwali", name_hi: "", district: panchkula, pincode: "133302", centre: "", checked: false }
+  - { name: "Bahlon", name_hi: "", district: panchkula, pincode: "", centre: "30.6956, 77.0777", from: "GeoNames", second: "OpenStreetMap 30.6958, 77.0780 (0.0 km away)", checked: true }
+  - { name: "Bana", name_hi: "", district: panchkula, pincode: "", centre: "30.6681, 76.8883", from: "GeoNames", second: "OpenStreetMap 30.6670, 76.8872 (0.2 km away)", checked: true }
+  - { name: "Barwala", name_hi: "बरवाला", district: panchkula, pincode: "134118", centre: "30.5564, 76.9394", from: "GeoNames", second: "OpenStreetMap 30.5562, 76.9387 (0.1 km away)", checked: true }
   - { name: "Basolan", name_hi: "", district: panchkula, pincode: "134102", centre: "", checked: false }
-  - { name: "Chiken", name_hi: "", district: panchkula, pincode: "134102", centre: "", checked: false }
-  - { name: "Damaloan", name_hi: "", district: panchkula, pincode: "134102", centre: "", checked: false }
-  - { name: "Mallah", name_hi: "", district: panchkula, pincode: "134102", centre: "", checked: false }
-  - { name: "Nanakpur", name_hi: "", district: panchkula, pincode: "134102", centre: "", checked: false }
-  - { name: "Devi Nagar", name_hi: "", district: panchkula, pincode: "134109", centre: "30.6920, 76.8696", checked: false }
-  - { name: "Railly", name_hi: "", district: panchkula, pincode: "134109", centre: "30.6862, 76.8393", checked: false }
-  - { name: "Suketri", name_hi: "", district: panchkula, pincode: "134109", centre: "30.7457, 76.8469", checked: false }
+  - { name: "Batawar", name_hi: "", district: panchkula, pincode: "", centre: "30.5512, 76.9493", from: "GeoNames", second: "OpenStreetMap 30.5511, 76.9484 (0.1 km away)", checked: true }
+  - { name: "Bharaili", name_hi: "", district: panchkula, pincode: "", centre: "30.5394, 76.9249", from: "GeoNames", second: "OpenStreetMap 30.5389, 76.9237 (0.1 km away)", checked: true }
   - { name: "Bhareli", name_hi: "", district: panchkula, pincode: "134118", centre: "", checked: false }
-  - { name: "Billa", name_hi: "", district: panchkula, pincode: "134118", centre: "", checked: false }
-  - { name: "Jaloli", name_hi: "", district: panchkula, pincode: "134118", centre: "", checked: false }
-  - { name: "Khatauli", name_hi: "", district: panchkula, pincode: "134118", centre: "", checked: false }
-  - { name: "Kot", name_hi: "", district: panchkula, pincode: "134118", centre: "", checked: false }
-  - { name: "Mauli", name_hi: "", district: panchkula, pincode: "134118", centre: "30.5568, 76.9398", checked: false }
-  - { name: "Ramgarh", name_hi: "", district: panchkula, pincode: "134118", centre: "30.6251, 76.8240", checked: false }
-  - { name: "Rattewali", name_hi: "", district: panchkula, pincode: "134118", centre: "", checked: false }
-  - { name: "Toda", name_hi: "", district: panchkula, pincode: "134201", centre: "30.4971, 76.9278", checked: false }
-  - { name: "Garhi Kotaha", name_hi: "", district: panchkula, pincode: "134204", centre: "", checked: false }
-  - { name: "Hangola", name_hi: "", district: panchkula, pincode: "134204", centre: "30.5313, 77.0298", checked: false }
-  - { name: "Haripur", name_hi: "", district: panchkula, pincode: "134204", centre: "30.5697, 76.8345", checked: false }
-  - { name: "Kandiwala", name_hi: "", district: panchkula, pincode: "134204", centre: "", checked: false }
-  - { name: "Khetpurali", name_hi: "", district: panchkula, pincode: "134204", centre: "", checked: false }
-  - { name: "Manak Tabra", name_hi: "", district: panchkula, pincode: "134204", centre: "", checked: false }
   - { name: "Bhojkoti", name_hi: "", district: panchkula, pincode: "134205", centre: "", checked: false }
+  - { name: "Billa", name_hi: "", district: panchkula, pincode: "134118", centre: "30.6380, 76.9283", from: "OpenStreetMap", checked: false }
+  - { name: "Bunga", name_hi: "", district: panchkula, pincode: "", centre: "30.6701, 76.9707", from: "GeoNames", second: "OpenStreetMap 30.6684, 76.9691 (0.2 km away)", checked: true }
+  - { name: "Chandi Mandir", name_hi: "चंडी मंदिर", district: panchkula, pincode: "134107", centre: "", checked: false }
+  - { name: "Chandi Mandir Cantonment", name_hi: "", district: panchkula, pincode: "134107", centre: "", checked: false }
+  - { name: "Chaplana", name_hi: "", district: panchkula, pincode: "", centre: "30.7254, 77.0612", from: "GeoNames", second: "OpenStreetMap 30.7246, 77.0604 (0.1 km away)", checked: true }
+  - { name: "Chauki", name_hi: "", district: panchkula, pincode: "", centre: "30.7103, 76.8867", from: "GeoNames", second: "OpenStreetMap 30.7107, 76.8863 (0.1 km away)", checked: true }
+  - { name: "Chauki nadah", name_hi: "", district: panchkula, pincode: "", centre: "30.7084, 76.9111", from: "GeoNames", second: "OpenStreetMap 30.7080, 76.9088 (0.2 km away)", checked: true }
+  - { name: "Chiken", name_hi: "", district: panchkula, pincode: "134102", centre: "", checked: false }
+  - { name: "CRPF, Pinjore", name_hi: "", district: panchkula, pincode: "134104", centre: "30.7826, 76.9247", checked: false }
+  - { name: "Damaloan", name_hi: "", district: panchkula, pincode: "134102", centre: "", checked: false }
+  - { name: "Devi Nagar", name_hi: "", district: panchkula, pincode: "134109", centre: "30.6920, 76.8696", second: "OpenStreetMap 30.6913, 76.8703 (0.1 km away)", checked: true }
+  - { name: "Dhaman", name_hi: "", district: panchkula, pincode: "", centre: "30.7308, 77.0570", from: "GeoNames", second: "OpenStreetMap 30.7311, 77.0568 (0.0 km away)", checked: true }
+  - { name: "Dudhgarh", name_hi: "", district: panchkula, pincode: "", centre: "30.6944, 77.0027", from: "GeoNames", second: "OpenStreetMap 30.6945, 77.0025 (0.0 km away)", checked: true }
+  - { name: "Garhi Kotaha", name_hi: "", district: panchkula, pincode: "134204", centre: "30.5729, 77.0478", from: "GeoNames", checked: false }
+  - { name: "Gunthala", name_hi: "", district: panchkula, pincode: "", centre: "30.7311, 76.9055", from: "GeoNames", second: "OpenStreetMap 30.7311, 76.9032 (0.2 km away)", checked: true }
+  - { name: "Hangola", name_hi: "", district: panchkula, pincode: "134204", centre: "30.5313, 77.0298", second: "GeoNames 30.5316, 77.0309 (0.1 km away)", checked: true }
+  - { name: "Haripur", name_hi: "", district: panchkula, pincode: "134204", centre: "30.6892, 76.8597", from: "OpenStreetMap", second: "India Post 30.5697, 76.8345 (13.5 km away); GeoNames 30.6888, 76.8602 (0.1 km away)", checked: false }
+  - { name: "HMT, Pinjore", name_hi: "", district: panchkula, pincode: "134101", centre: "30.7827, 76.9103", second: "GeoNames 30.7848, 76.9092 (0.3 km away)", checked: true }
+  - { name: "Industrial Area", name_hi: "इंडस्ट्रियल एरिया", district: panchkula, pincode: "134113", centre: "30.6766, 76.8369", checked: false }
+  - { name: "ITBP Bhanu", name_hi: "", district: panchkula, pincode: "134103", centre: "30.6343, 76.9153", checked: false }
+  - { name: "Jai Singh Pura", name_hi: "", district: panchkula, pincode: "", centre: "30.6529, 76.8855", from: "GeoNames", second: "OpenStreetMap 30.6524, 76.8840 (0.2 km away)", checked: true }
+  - { name: "Jaloli", name_hi: "", district: panchkula, pincode: "134118", centre: "", checked: false }
+  - { name: "Jaswantgarh", name_hi: "", district: panchkula, pincode: "", centre: "30.6358, 76.9382", from: "GeoNames", second: "OpenStreetMap 30.6354, 76.9367 (0.2 km away)", checked: true }
+  - { name: "Kalka", name_hi: "कालका", district: panchkula, pincode: "133302", centre: "30.8344, 76.9382", second: "OpenStreetMap 30.8380, 76.9395 (0.4 km away)", checked: true }
+  - { name: "Kandiwala", name_hi: "", district: panchkula, pincode: "134204", centre: "30.6367, 77.0195", from: "GeoNames", second: "OpenStreetMap 30.6366, 77.0188 (0.1 km away)", checked: true }
+  - { name: "Kazimpur", name_hi: "", district: panchkula, pincode: "", centre: "30.6129, 77.0237", from: "GeoNames", second: "OpenStreetMap 30.6129, 77.0224 (0.1 km away)", checked: true }
+  - { name: "Khangesra", name_hi: "", district: panchkula, pincode: "", centre: "30.6181, 76.9566", from: "GeoNames", second: "OpenStreetMap 30.6182, 76.9552 (0.1 km away)", checked: true }
+  - { name: "Kharanwali", name_hi: "", district: panchkula, pincode: "133302", centre: "", checked: false }
+  - { name: "Kharuni", name_hi: "", district: panchkula, pincode: "", centre: "30.7170, 77.0575", from: "GeoNames", second: "OpenStreetMap 30.7170, 77.0573 (0.0 km away)", checked: true }
+  - { name: "Khatauli", name_hi: "", district: panchkula, pincode: "134118", centre: "30.5908, 76.9734", from: "GeoNames", second: "OpenStreetMap 30.5908, 76.9730 (0.0 km away)", checked: true }
+  - { name: "Khetpurali", name_hi: "", district: panchkula, pincode: "134204", centre: "30.6767, 77.0038", from: "GeoNames", second: "OpenStreetMap 30.6761, 77.0014 (0.2 km away)", checked: true }
+  - { name: "Kot", name_hi: "", district: panchkula, pincode: "134118", centre: "30.6254, 76.9464", from: "GeoNames", checked: false }
+  - { name: "Madanpur", name_hi: "", district: panchkula, pincode: "", centre: "30.6643, 76.8898", from: "GeoNames", second: "OpenStreetMap 30.6720, 76.8958 (1.0 km away)", checked: true }
+  - { name: "Maheshpur", name_hi: "", district: panchkula, pincode: "", centre: "30.6806, 76.8645", from: "GeoNames", second: "OpenStreetMap 30.6809, 76.8634 (0.1 km away)", checked: true }
+  - { name: "Mallah", name_hi: "", district: panchkula, pincode: "134102", centre: "30.7696, 76.9913", from: "OpenStreetMap", checked: false }
+  - { name: "Manak Tabra", name_hi: "", district: panchkula, pincode: "134204", centre: "30.6080, 77.0025", from: "GeoNames", second: "OpenStreetMap 30.6083, 77.0011 (0.1 km away)", checked: true }
   - { name: "Mandhana", name_hi: "", district: panchkula, pincode: "134205", centre: "", checked: false }
+  - { name: "Mandhna", name_hi: "", district: panchkula, pincode: "", centre: "30.7209, 76.9846", from: "GeoNames", second: "OpenStreetMap 30.7171, 76.9920 (0.8 km away)", checked: true }
+  - { name: "Mansa Devi Complex, Sector 5", name_hi: "", district: panchkula, pincode: "134114", centre: "30.7212, 76.8526", checked: false }
+  - { name: "Mauli", name_hi: "", district: panchkula, pincode: "134118", centre: "30.5568, 76.9398", second: "GeoNames 30.5286, 76.9767 (4.7 km away)", checked: false }
+  - { name: "Morni", name_hi: "मोरनी", district: panchkula, pincode: "134205", centre: "30.7000, 77.0833", second: "GeoNames 30.6874, 77.0885 (1.5 km away); OpenStreetMap 30.6870, 77.0883 (1.5 km away)", checked: true }
+  - { name: "Nanakpur", name_hi: "", district: panchkula, pincode: "134102", centre: "", checked: false }
+  - { name: "Palasra", name_hi: "", district: panchkula, pincode: "", centre: "30.6920, 77.0418", from: "GeoNames", second: "OpenStreetMap 30.6921, 77.0412 (0.1 km away)", checked: true }
+  - { name: "Paonta", name_hi: "", district: panchkula, pincode: "", centre: "30.6729, 77.0393", from: "GeoNames", second: "OpenStreetMap 30.6726, 77.0383 (0.1 km away)", checked: true }
+  - { name: "Parwala", name_hi: "", district: panchkula, pincode: "", centre: "30.6360, 77.0129", from: "GeoNames", second: "OpenStreetMap 30.6353, 77.0117 (0.1 km away)", checked: true }
+  - { name: "Pinjore", name_hi: "पिंजौर", district: panchkula, pincode: "134102", centre: "30.7977, 76.9144", second: "GeoNames 30.7987, 76.9182 (0.4 km away); OpenStreetMap 30.8042, 76.9149 (0.7 km away)", checked: true }
+  - { name: "Rahawar", name_hi: "", district: panchkula, pincode: "", centre: "30.5651, 76.9661", from: "GeoNames", second: "OpenStreetMap 30.5651, 76.9649 (0.1 km away)", checked: true }
+  - { name: "Railly", name_hi: "", district: panchkula, pincode: "134109", centre: "30.6862, 76.8393", checked: false }
+  - { name: "Raipur Rani", name_hi: "रायपुर रानी", district: panchkula, pincode: "134204", centre: "30.5867, 77.0192", second: "GeoNames 30.5856, 77.0218 (0.3 km away); OpenStreetMap 30.5855, 77.0208 (0.2 km away)", checked: true }
+  - { name: "Ramgarh", name_hi: "", district: panchkula, pincode: "134118", centre: "30.6251, 76.8240", second: "GeoNames 30.6487, 76.8890 (6.7 km away)", note: "GeoNames puts a place called Ramgarh 1.1 km from here in Mohali. Check which district it is in.", checked: false }
+  - { name: "Rattewali", name_hi: "", district: panchkula, pincode: "134118", centre: "30.6385, 76.9842", from: "OpenStreetMap", checked: false }
+  - { name: "Suketri", name_hi: "", district: panchkula, pincode: "134109", centre: "30.7457, 76.8469", checked: false }
+  - { name: "Sukhdorshanpur", name_hi: "", district: panchkula, pincode: "", centre: "30.6020, 76.9816", from: "GeoNames", second: "OpenStreetMap 30.6022, 76.9803 (0.1 km away)", checked: true }
+  - { name: "Surajpur", name_hi: "सूरजपुर", district: panchkula, pincode: "133301", centre: "30.7743, 76.8948", second: "GeoNames 30.7876, 76.8999 (1.6 km away); OpenStreetMap 30.7629, 76.9018 (1.4 km away)", checked: true }
+  - { name: "Syamtu", name_hi: "", district: panchkula, pincode: "", centre: "30.6240, 76.9808", from: "GeoNames", second: "OpenStreetMap 30.6242, 76.9799 (0.1 km away)", checked: true }
+  - { name: "Taprian", name_hi: "", district: panchkula, pincode: "", centre: "30.6461, 77.0206", from: "GeoNames", second: "OpenStreetMap 30.6458, 77.0196 (0.1 km away)", checked: true }
+  - { name: "Tarlokpur", name_hi: "", district: panchkula, pincode: "", centre: "30.6700, 77.0246", from: "GeoNames", second: "OpenStreetMap 30.6695, 77.0234 (0.1 km away)", checked: true }
   - { name: "Thendog", name_hi: "", district: panchkula, pincode: "134205", centre: "", checked: false }
+  - { name: "Tibbi", name_hi: "", district: panchkula, pincode: "", centre: "30.6651, 76.9824", from: "GeoNames", second: "OpenStreetMap 30.6654, 76.9808 (0.2 km away)", checked: true }
   - { name: "Tikkar", name_hi: "", district: panchkula, pincode: "134205", centre: "", checked: false }
+  - { name: "Toda", name_hi: "", district: panchkula, pincode: "134201", centre: "30.4971, 76.9278", second: "GeoNames 30.5008, 76.9497 (2.1 km away)", checked: false }
+  - { name: "Toka", name_hi: "", district: panchkula, pincode: "", centre: "30.6159, 76.9717", from: "GeoNames", second: "OpenStreetMap 30.6163, 76.9703 (0.1 km away)", checked: true }

@@ -3,21 +3,25 @@ title: "The toolkit"
 ref: toolkit
 permalink: /toolkit/
 colour: yellow
-eyebrow: "Coming soon"
-summary: "A complete guide to what to do, where to go and what you are entitled to. We are finishing it now."
-last_updated: 2026-11-11
+eyebrow: "Download the booklet"
+summary: "A complete guide to what to do, where to go and what you are entitled to."
+last_updated: 2026-11-19
 ---
 
-The Aagaaz Navigation Toolkit is a step-by-step guide for Chandigarh, Panchkula and Mohali. It is being checked by a lawyer and a counsellor before we publish it.
+The Aagaaz Navigation Toolkit is a step-by-step guide for students in Chandigarh, Panchkula and Mohali. You can download the whole booklet now. It is in English, 28 pages.
 
-When it is ready you will be able to read it here, one chapter at a time, or download it as a booklet.
-
-## What will be in it
+## What's in it
 
 {% include toolkit-list.html %}
 
-## Until then
+## Printable flyer
 
-The short pages on this site cover the most important points now.
+One A4 page with the helpline numbers, a QR code to this site, and a note asking students to report unsafe places. Use it at schools, colleges and events.
+
+{% include toolkit-list.html part="flyers" %}
+
+## Short versions
+
+The short pages on this site cover the most important points.
 
 {% include page-cards.html refs="first-steps,law,online,helping" %}

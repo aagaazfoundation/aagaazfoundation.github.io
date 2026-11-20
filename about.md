@@ -4,7 +4,7 @@ ref: about
 permalink: /about/
 colour: blue
 summary: "Who is behind Aagaaz, why it started, and how to get in touch."
-last_updated: 2026-11-11
+last_updated: 2026-11-19
 ---
 
 ## Who we are
@@ -18,7 +18,7 @@ Aagaaz means "a beginning". The aim is simple: from awareness to action.
 ## What we do
 
 - **This website,** with short, plain-language pages on what to do and what the law says
-- **A navigation toolkit** for Chandigarh, Panchkula and Mohali, which we are finishing now
+- **A navigation toolkit** for Chandigarh, Panchkula and Mohali, which you can [download from the Toolkit page](/toolkit/)
 - **Workshops,** run with a counsellor in the room
 
 ## What we are not
@@ -49,7 +49,7 @@ Contact details are coming soon.
 
 ## Your privacy on this site
 
-- There are no logins and no forms. We never ask for your name or your story
+- There are no logins. The only form is the one for [reporting an unsafe place](/unsafe-places/), on Google Forms. It asks about places, never for your name or your story
 - There are no cookies, no adverts and no tracking or analytics
 - Like every website, the company that hosts this site receives your device's IP address when a page loads. We never see it
 - Your browser may still keep a record of your visit. [Staying safe on this site](/safety/) explains what to do about that

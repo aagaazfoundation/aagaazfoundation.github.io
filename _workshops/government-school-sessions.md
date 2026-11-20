@@ -1,4 +1,5 @@
 ---
+published: false        # hidden for now (18 Nov 2026). Change to true, or delete this line, to show it again.
 title: "Government school sessions"
 status: upcoming
 when:
