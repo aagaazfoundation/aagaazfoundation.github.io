@@ -265,6 +265,7 @@ details.refs > * + * { margin-top: 0.75rem; }
 .button--quiet { background: #fff; color: var(--primary); border: 2px solid var(--primary); }
 .button--quiet:hover { background: var(--primary); color: var(--on-primary); }
 .flyer-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.form-buttons { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem; }
 .tel { font-weight: 700; white-space: nowrap; }
 
 .chapter-link { background: var(--bg); border: 1px solid var(--line); border-radius: 12px; padding: 1.1rem; margin-top: 2rem; }

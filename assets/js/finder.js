@@ -220,10 +220,10 @@
         navigator.geolocation.getCurrentPosition(function (pos) {
           locateBtn.disabled = false;
           located([pos.coords.latitude, pos.coords.longitude]);
-        }, function () {
+        }, function (err) {
           locateBtn.disabled = false;
-          say(T.locate_failed);
-        }, { enableHighAccuracy: false, timeout: 15000, maximumAge: 0 });
+          say(err && err.code === 1 && T.locate_denied ? T.locate_denied : T.locate_failed);
+        }, { enableHighAccuracy: false, timeout: 20000, maximumAge: 60000 });
       });
     }
   }

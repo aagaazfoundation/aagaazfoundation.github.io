@@ -92,6 +92,7 @@ finder:
   locate_note: "Your location stays on your phone. Your browser may remember that you allowed it for this site. If someone checks your phone, type your area instead."
   locate_wait: "Finding your location…"
   locate_failed: "We couldn't get your location. Type your area or choose your district instead."
+  locate_denied: "Your phone is not letting this site see your location. On an iPhone or iPad: open Settings, then Privacy & Security, then Location Services, then Safari Websites, and choose While Using the App. On Android: tap the icon next to the web address, then Permissions, then Location. Or type your area instead."
   locate_which: "We have your location. Which district are you in?"
   locate_far: "You seem to be outside the districts we cover so far. You can still choose one to see its places."
   or_district: "Or choose your district"
